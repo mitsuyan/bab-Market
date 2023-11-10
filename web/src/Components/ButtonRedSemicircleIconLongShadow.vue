@@ -29,7 +29,7 @@ export default {
     /* 背景色を設定 */
     color: #ffffff;
     /* 文字色を設定 */
-    
+    box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
 .Process::after {
