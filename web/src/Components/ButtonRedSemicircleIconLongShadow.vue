@@ -34,7 +34,7 @@ export default {
 
 <style>
 .Process {
-    position: fixed;
+    position: absolute;
     border-radius: 23px;
     font-size: 17px;
     text-decoration: none;
@@ -42,6 +42,7 @@ export default {
     /* 背景色を設定 */
     color: #ffffff;
     /* 文字色を設定 */
+    box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
 .Process::after {
@@ -59,7 +60,6 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-
     content: '>';
     /* 矢印の内容 */
     font-size: 1em;
@@ -67,4 +67,5 @@ export default {
     color: #FF6969;
     /* 矢印の色を設定 */
 }
+
 </style>

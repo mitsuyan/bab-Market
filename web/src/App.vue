@@ -44,7 +44,6 @@ export default {
   top: 262pt;
   left: 50pt;
   bottom: 624pt;
-  box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
 .LoginText{
