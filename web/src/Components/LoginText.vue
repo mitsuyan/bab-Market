@@ -62,7 +62,10 @@ export default defineComponent({
     border-radius: 0px;
     font-weight: bold;
     outline: 0;
-    margin-bottom: 10px; /* 間隔を縦方向に10pxに設定 */
+    padding-left: 57px;
+    height: 16pt;
+    font-size: 16pt;
+    /* margin-bottom: 10px; /* 間隔を縦方向に10pxに設定 */
 }
 
 .InputUser:focus,
@@ -76,19 +79,15 @@ export default defineComponent({
     color: #6C6C6C;
     font-weight: bold;
     letter-spacing: 1px;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     padding-left: 57px;
     padding-top: 15px;
 }
 
 .LoginInputForm{
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     background-color: #FFFFFF;
-    width: 325pt;
-    margin: auto; /* 上下左右のマージンを自動で設定し、中央に寄せる */
-    position: absolute; /* 絶対位置指定 */
-    left: 0;
-    right: 0; 
-    border-radius: 20px;
+    width: 330pt;
+    border-radius: 10px;
 }
 </style>
