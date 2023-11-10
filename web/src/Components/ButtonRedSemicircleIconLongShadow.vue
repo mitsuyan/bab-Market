@@ -1,5 +1,12 @@
 <template>
-    <a href="正しいリンク先" class="Process" :style="{ 'background-color': back_color, color: fore_color }">購入手続きへ</a>
+    <a href="正しいリンク先" class="Process" :style="{
+        'background-color': back_color,
+        color: fore_color,
+        padding: buttonPadding,
+        width: buttonWidth
+    }">
+        購入手続きへ
+    </a>
 </template>
 
 <script>
@@ -7,29 +14,34 @@ export default {
     props: {
         back_color: {
             type: String,
-            default: "#FF6969"
+            default: "#FF6969",
         },
         fore_color: {
             type: String,
-            default: "#ffffff"
-        }
-    }
-}
+            default: "#ffffff",
+        },
+        buttonPadding: {
+            type: String,
+            default: "10px 70px 10px 40px",
+        },
+        buttonWidth: {
+            type: String,
+            default: "165px",
+        },
+    },
+};
 </script>
 
 <style>
 .Process {
-    position: relative;
-    display: inline-block;
+    position: fixed;
     border-radius: 23px;
     font-size: 17px;
     text-decoration: none;
-    padding: 10px 70px 10px 40px;
     background-color: #FF6969;
     /* 背景色を設定 */
     color: #ffffff;
     /* 文字色を設定 */
-    
 }
 
 .Process::after {
