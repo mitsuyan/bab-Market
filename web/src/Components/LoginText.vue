@@ -1,4 +1,4 @@
-<!-- LoginText.vue -->
+<!-- ログインページテキスト -->
 <template>
     <div class="LoginInputForm">
         <div class="InputGroup">

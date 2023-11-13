@@ -1,3 +1,4 @@
+<!-- ログインボタン -->
 <template>
     <a href="正しいリンク先" class="Process" :style="{
         'background-color': back_color,
