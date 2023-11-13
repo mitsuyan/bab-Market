@@ -1,41 +1,42 @@
 <template>
-    <a href="" class="MiddleRegist" :style="{ 
+    <a href="" class="Redframe" :style="{ 
         'background-color': back_color,
         color: fore_color
         }">
-    <div class="RegistText">{{ text }}</div></a>
+        <div class="RedFrameText">{{ text }}</div></a>
 </template>
+
 <script>
 export default {
     props: {
         back_color: {
             type: String,
-            default: "#FF6969"
+            default: "#FFFFFF"
         },
         fore_color: {
             type: String,
-            default: "#ffffff"
+            default: "#FF6969"
         },
         text: {
-            text: String,
-            default: "BUTTON"
+            type: String,
+            default: "Button"
         }
     }
 };
 </script>
 
 <style>
-.MiddleRegist {
+.Redframe {
+    border-radius: 5px;
     position: absolute;
-    border-radius: 7px;
     text-decoration: none;
-    width: 219pt;
-    height: 34pt;
+    border: 2px solid #FF6969;
+    width: 216pt;
+    height: 30pt;
 }
-
-.RegistText {
+.RedFrameText {
     text-align: center;
-    font-size: 17px;
     padding: 7pt 0;
+    font-size: 13px;
 }
 </style>

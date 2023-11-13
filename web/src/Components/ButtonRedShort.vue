@@ -1,9 +1,10 @@
 <template>
-    <a href="" class="MiddleRegist" :style="{ 
+    <a href="" class="LongRegist" :style="{
         'background-color': back_color,
         color: fore_color
-        }">
-    <div class="RegistText">{{ text }}</div></a>
+    }">
+        <div class="RegistText">{{ text }}</div>
+    </a>
 </template>
 <script>
 export default {
@@ -25,11 +26,11 @@ export default {
 </script>
 
 <style>
-.MiddleRegist {
+.LongRegist {
     position: absolute;
     border-radius: 7px;
     text-decoration: none;
-    width: 219pt;
+    width: 128pt;
     height: 34pt;
 }
 

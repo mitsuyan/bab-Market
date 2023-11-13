@@ -2,7 +2,10 @@
 import ButtonRedSemicircleIconLongShadow from '../components/ButtonRedSemicircleIconLongShadow.vue';
 import ButtonRedIconShadow from '../components/ButtonRedIconShadow.vue';
 import ButtonRedPicture from '../Components/ButtonRedPicture.vue';
-import ButtonRedMiddle from '../Components/ButtonRedMiddle.vue'
+import ButtonRedMiddle from '../Components/ButtonRedMiddle.vue';
+import ButtonRedLong from '../Components/ButtonRedLong.vue';
+import ButtonRedShort from '../Components/ButtonRedShort.vue';
+import ButtonWhiteLong from '../Components/ButtonWhiteLong.vue';
 
 /* コンポーネントの設定 */
 export default {
@@ -10,7 +13,10 @@ export default {
     component: ButtonRedSemicircleIconLongShadow,
     component: ButtonRedIconShadow,
     component: ButtonRedPicture,
-    component: ButtonRedMiddle
+    component: ButtonRedMiddle,
+    component: ButtonRedLong,
+    component: ButtonRedShort,
+    component: ButtonWhiteLong
 };
 
 /* story記述 */
@@ -32,4 +38,19 @@ export const Buttonredpicture = () => ({
 export const Buttonredmiddle = () => ({
     components: { ButtonRedMiddle },
     template: '<ButtonRedMiddle />'
+});
+
+export const Buttonredlong = () => ({
+    components: { ButtonRedLong },
+    template: '<ButtonRedLong />'
+});
+
+export const Buttonredshort = () => ({
+    components: { ButtonRedShort },
+    template: '<ButtonRedShort />'
+});
+
+export const Buttonwhitelong = () => ({
+    components: { ButtonWhiteLong },
+    template: '<ButtonWhiteLong />'
 });
