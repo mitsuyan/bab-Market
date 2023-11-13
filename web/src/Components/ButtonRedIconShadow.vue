@@ -1,6 +1,6 @@
-<!-- ログインボタン -->
+<!--  -->
 <template>
-    <a href="正しいリンク先" class="LoginProcess" :style="{
+    <a href="" class="Process" :style="{
         'background-color': back_color,
         color: fore_color,
         padding: buttonPadding,
@@ -38,9 +38,9 @@ export default {
 </script>
 
 <style>
-.LoginProcess {
+.Process {
     position: absolute;
-    border-radius: 23px;
+    border-radius: 10px;
     font-size: 17px;
     text-decoration: none;
     text-align: center;
@@ -51,7 +51,7 @@ export default {
     box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
-.LoginProcess::after {
+.Process::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -73,5 +73,4 @@ export default {
     color: #FF6969;
     /* 矢印の色を設定 */
 }
-
 </style>

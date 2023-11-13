@@ -24,7 +24,7 @@
 						</g>
 					</g>
 				</svg></div>
-          <div class="FormControlLabel">
+            <div class="FormControlLabel">
 						PASSWORD
             <input type="password" class="InputPass" v-model="InputPass" />
 					</div>
