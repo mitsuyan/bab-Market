@@ -5,7 +5,7 @@
         padding: buttonPadding,
         width: buttonWidth
     }">
-        購入手続きへ
+        {{ text }}
     </a>
 </template>
 
@@ -28,6 +28,9 @@ export default {
             type: String,
             default: "165px",
         },
+        text: {
+            text: String,
+        }
     },
 };
 </script>
@@ -38,15 +41,12 @@ export default {
     border-radius: 23px;
     font-size: 17px;
     text-decoration: none;
+    text-align: center;
     background-color: #FF6969;
     /* 背景色を設定 */
     color: #ffffff;
     /* 文字色を設定 */
-<<<<<<< HEAD
     box-shadow: 8pt 8pt 15pt #E7EAF0;
-=======
-    box-shadow: 8pt 8pt 5pt #E7EAF0;
->>>>>>> main
 }
 
 .Process::after {
