@@ -1,9 +1,10 @@
 <template>
-    <a href="" class="whiteLongframe" :style="{ 
+    <a href="" class="whiteShortframe" :style="{
         'background-color': back_color,
         color: fore_color
-        }">
-        <div class="RedFrameText">{{ text }}</div></a>
+    }">
+        <div class="whiteShortFrameText">{{ text }}</div>
+    </a>
 </template>
 
 <script>
@@ -24,18 +25,20 @@ export default {
     }
 };
 </script>
+
 <style>
-.whiteLongframe {
+.whiteShortframe {
     border-radius: 5px;
     position: absolute;
     text-decoration: none;
     border: 2px solid #FF6969;
-    width: 216pt;
-    height: 30pt;
+    width: 192pt;
+    height: 24.3pt;
 }
-.RedFrameText {
+
+.whiteShortFrameText {
     text-align: center;
-    padding: 7pt 0;
+    padding: 6pt 0;
     font-size: 13px;
 }
 </style>

@@ -6,6 +6,7 @@ import ButtonRedMiddle from '../Components/ButtonRedMiddle.vue';
 import ButtonRedLong from '../Components/ButtonRedLong.vue';
 import ButtonRedShort from '../Components/ButtonRedShort.vue';
 import ButtonWhiteLong from '../Components/ButtonWhiteLong.vue';
+import ButtonWhiteMiddle from '../Components/ButtonWhiteMiddle.vue';
 
 /* コンポーネントの設定 */
 export default {
@@ -16,7 +17,8 @@ export default {
     component: ButtonRedMiddle,
     component: ButtonRedLong,
     component: ButtonRedShort,
-    component: ButtonWhiteLong
+    component: ButtonWhiteLong,
+    component: ButtonWhiteMiddle
 };
 
 /* story記述 */
@@ -53,4 +55,9 @@ export const Buttonredshort = () => ({
 export const Buttonwhitelong = () => ({
     components: { ButtonWhiteLong },
     template: '<ButtonWhiteLong />'
+});
+
+export const Buttonwhitemiddle = () => ({
+    components: { ButtonWhiteMiddle },
+    template: '<ButtonWhiteMiddle />'
 });
