@@ -1,6 +1,6 @@
 // LoginText.stories.js
 
-import LoginText from '../Components/LoginText.vue';
+import LoginText from '../ComponentText/LoginText.vue';
 //コンポーネントの設定
 export default {
     title: 'InputTextVariation',

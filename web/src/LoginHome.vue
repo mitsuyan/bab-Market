@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import LoginText from './Components/LoginText.vue';
-import ButtonRedSemicircleIconLongShadow from './Components/ButtonRedSemicircleIconLongShadow.vue';
+import LoginText from './InputText/LoginText.vue';
+import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 
 export default {
   name: 'LoginMain',
