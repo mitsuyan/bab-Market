@@ -1,10 +1,10 @@
 <!-- PictureButton -->
 <template>
-    <button class="IconButton" :style="{
+    <button class="iconButton" :style="{
         'background-color': back_color,
         color: fore_color
         }">
-        <div class="ButtonText">
+        <div class="buttonText">
             <span class="pic"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="33" viewBox="0 0 35 33">
                     <g id="グループ_176" data-name="グループ 176" transform="translate(-902 -228)">
                         <rect id="長方形_128" data-name="長方形 128" width="35" height="33" transform="translate(902 228)"
@@ -18,7 +18,7 @@
                     </g>
                 </svg>
             </span>
-            <div class="SpanText">BUTTON</div>
+            <div class="spanText">BUTTON</div>
         </div>
     </button>
 </template>
@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style>
-.IconButton {
+.iconButton {
     display: flex;
     border: none;
     align-items: center;
@@ -49,11 +49,11 @@ export default {
     height: 36pt;
 }
 
-.ButtonText {
+.buttonText {
     display: flex;
 }
 
-.SpanText {
+.spanText {
     padding: 18pt 0 13pt 0;
 }
 span.pic {

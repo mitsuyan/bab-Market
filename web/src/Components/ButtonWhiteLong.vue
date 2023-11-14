@@ -3,7 +3,7 @@
         'background-color': back_color,
         color: fore_color
         }">
-        <div class="RedFrameText">{{ text }}</div>
+        <div class="redFrameText">{{ text }}</div>
         </button>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     width: 231pt;
     height: 38pt;
 }
-.RedFrameText {
+.redFrameText {
     text-align: center;
     padding: 7pt 0;
     font-size: 13px;

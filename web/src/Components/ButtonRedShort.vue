@@ -1,9 +1,9 @@
 <template>
-    <button class="LongRegist" :style="{
+    <button class="longRegist" :style="{
         'background-color': back_color,
         color: fore_color
     }">
-        <div class="RegistText">{{ text }}</div>
+        <div class="registText">{{ text }}</div>
     </button>
 </template>
 <script>
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style>
-.LongRegist {
+.longRegist {
     position: absolute;
     border-radius: 7px;
     border: none;
@@ -35,7 +35,7 @@ export default {
     height: 32pt;
 }
 
-.RegistText {
+.registText {
     text-align: center;
     font-size: 17px;
     padding: 7pt 0;

@@ -1,11 +1,11 @@
 <!--  -->
 <template>
-    <button class="ButtonProfile" :style="{
+    <button class="buttonProfile" :style="{
         'background-color': back_color,
         color: fore_color,
         width: buttonWidth
     }">
-    <div class="ButtonImg"><img src=""></div>
+    <div class="buttonImg"><img src=""></div>
         {{ text }}
     </button>
 </template>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-.ButtonProfile{
+.buttonProfile{
     position: absolute;
     border: 0.6pt solid #707070;
     border-radius: 8px;

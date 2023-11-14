@@ -1,6 +1,6 @@
 <!--  -->
 <template>
-    <button class="Process" :style="{
+    <button class="process" :style="{
         'background-color': back_color,
         color: fore_color,
         width: buttonWidth
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style>
-.Process {
+.process {
     position: absolute;
     border: none;
     border-radius: 10px;
@@ -42,7 +42,7 @@ export default {
     height: 30pt;
 }
 
-.Process::after {
+.process::after {
     content: '';
     position: absolute;
     top: 50%;

@@ -1,12 +1,12 @@
 <template>
-    <button class="LoginProcess" :style="{
+    <button class="loginProcess" :style="{
         'background-color': back_color,
         color: fore_color,
         padding: buttonPadding,
         width: buttonWidth
     }">
         {{ text }}
-        <span :style="{ backgroundColor: arrowBackgroundColor }" class="Arrow">{{ icon }}</span>
+        <span :style="{ backgroundColor: arrowBackgroundColor }" class="arrow">{{ icon }}</span>
     </button>
 </template>
 
@@ -42,7 +42,7 @@ export default {
 </script>
 
 <style>
-.LoginProcess {
+.loginProcess {
     position: relative;
     border-radius: 23px;
     font-size: 17px;
@@ -51,7 +51,7 @@ export default {
     box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
-.Arrow {
+.arrow {
     position: absolute;
     top: 50%;
     right: 10px;

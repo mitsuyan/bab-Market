@@ -1,5 +1,5 @@
 <template>
-    <input type="text" class="GrayRadius18" :text="text">
+    <input type="text" class="grayRadius18" :text="text">
 </template>
 
 <script>
