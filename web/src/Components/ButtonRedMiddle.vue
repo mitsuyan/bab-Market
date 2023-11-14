@@ -1,9 +1,10 @@
 <template>
-    <a href="" class="MiddleRegist" :style="{ 
+    <button class="MiddleRegist" :style="{ 
         'background-color': back_color,
         color: fore_color
         }">
-    <div class="RegistText">{{ text }}</div></a>
+    <div class="RegistText">{{ text }}</div>
+    </button>
 </template>
 <script>
 export default {
@@ -28,9 +29,9 @@ export default {
 .MiddleRegist {
     position: absolute;
     border-radius: 7px;
-    text-decoration: none;
-    width: 219pt;
-    height: 34pt;
+    border: none;
+    width: 292px;
+    height: 45px;
 }
 
 .RegistText {

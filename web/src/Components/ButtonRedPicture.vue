@@ -1,11 +1,11 @@
 <!-- PictureButton -->
 <template>
-    <a href="" class="IconButton" :style="{
+    <button class="IconButton" :style="{
         'background-color': back_color,
         color: fore_color
         }">
         <div class="ButtonText">
-            <div class="SpanCameraImg"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="33" viewBox="0 0 35 33">
+            <span class="pic"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="33" viewBox="0 0 35 33">
                     <g id="グループ_176" data-name="グループ 176" transform="translate(-902 -228)">
                         <rect id="長方形_128" data-name="長方形 128" width="35" height="33" transform="translate(902 228)"
                             fill="#FF6969" />
@@ -17,10 +17,10 @@
                         </g>
                     </g>
                 </svg>
-            </div>
+            </span>
             <div class="SpanText">BUTTON</div>
         </div>
-    </a>
+    </button>
 </template>
 
 <script>
@@ -41,23 +41,23 @@ export default {
 <style>
 .IconButton {
     display: flex;
+    border: none;
     align-items: center;
     border-radius: 7px;
     font-size: 17px;
-    text-decoration: none;
-    width: 231pt;
-    height: 35pt;
+    width: 240pt;
+    height: 36pt;
 }
 
 .ButtonText {
     display: flex;
-    width: 308pt;
-}
-
-.SpanCameraImg {
-    padding: 17pt 0 15pt 69pt;
 }
 
 .SpanText {
-    padding: 20pt 108pt 13pt 0;
-}</style>
+    padding: 18pt 0 13pt 0;
+}
+span.pic {
+    padding: 13pt 0;
+    padding-left: 70pt;
+}
+</style>

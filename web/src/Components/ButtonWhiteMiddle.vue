@@ -1,10 +1,10 @@
 <template>
-    <a href="" class="whiteMiddleframe" :style="{
+    <button class="whiteMiddleframe" :style="{
         'background-color': back_color,
         color: fore_color
     }">
         <div class="whiteMiddleFrameText">{{ text }}</div>
-    </a>
+    </button>
 </template>
 
 <script>
@@ -30,10 +30,11 @@ export default {
 .whiteMiddleframe {
     border-radius: 5px;
     position: absolute;
+    border: none;
     text-decoration: none;
     border: 2px solid #FF6969;
-    width: 192pt;
-    height: 24.3pt;
+    width: 207pt;
+    height: 31pt;
 }
 
 .whiteMiddleFrameText {

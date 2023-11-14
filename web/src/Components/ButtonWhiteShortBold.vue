@@ -1,10 +1,10 @@
 <template>
-    <button class="whiteShortframe" :style="{
+    <button class="whiteShortBoldframe" :style="{
         'background-color': back_color,
         color: fore_color
     }">
-        <div class="whiteShortFrameText">{{ text }}</div>
-</button>
+        <div class="whiteShortBoldText">{{ text }}</div>
+    </button>
 </template>
 
 <script>
@@ -27,19 +27,18 @@ export default {
 </script>
 
 <style>
-.whiteShortframe {
+.whiteShortBoldframe {
     border-radius: 5px;
     position: absolute;
-    border: none;
     text-decoration: none;
     border: 2px solid #FF6969;
-    width: 140pt;
-    height: 39pt;
+    width: 99pt;
+    height: 26pt;
 }
 
-.whiteShortFrameText {
+.whiteShortBoldText {
     text-align: center;
-    padding: 8pt 0;
+    padding: 2pt 0;
     font-size: 13px;
 }
 </style>

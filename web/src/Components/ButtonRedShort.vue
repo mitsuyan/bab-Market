@@ -1,10 +1,10 @@
 <template>
-    <a href="" class="LongRegist" :style="{
+    <button class="LongRegist" :style="{
         'background-color': back_color,
         color: fore_color
     }">
         <div class="RegistText">{{ text }}</div>
-    </a>
+    </button>
 </template>
 <script>
 export default {
@@ -29,9 +29,10 @@ export default {
 .LongRegist {
     position: absolute;
     border-radius: 7px;
+    border: none;
     text-decoration: none;
-    width: 128pt;
-    height: 34pt;
+    width: 137pt;
+    height: 32pt;
 }
 
 .RegistText {

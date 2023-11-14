@@ -7,6 +7,11 @@ import ButtonRedLong from '../Components/ButtonRedLong.vue';
 import ButtonRedShort from '../Components/ButtonRedShort.vue';
 import ButtonWhiteLong from '../Components/ButtonWhiteLong.vue';
 import ButtonWhiteMiddle from '../Components/ButtonWhiteMiddle.vue';
+import ButtonWhiteShort from '../Components/ButtonWhiteShort.vue';
+import ButtonWhiteShortBold from '../Components/ButtonWhiteShortBold.vue';
+import ButtonWhiteShortRegular from '../Components/ButtonWhiteShortRegular.vue';
+import ButtonWhiteShortLight from "../Components/ButtonWhiteShortLight.vue";
+import ButtonProfile from "../Components/ButtonProfile.vue";
 
 /* コンポーネントの設定 */
 export default {
@@ -18,7 +23,12 @@ export default {
     component: ButtonRedLong,
     component: ButtonRedShort,
     component: ButtonWhiteLong,
-    component: ButtonWhiteMiddle
+    component: ButtonWhiteMiddle,
+    component: ButtonWhiteShort,
+    component: ButtonWhiteShortBold,
+    component: ButtonWhiteShortRegular,
+    component: ButtonWhiteShortLight,
+    component: ButtonProfile
 };
 
 /* story記述 */
@@ -60,4 +70,29 @@ export const Buttonwhitelong = () => ({
 export const Buttonwhitemiddle = () => ({
     components: { ButtonWhiteMiddle },
     template: '<ButtonWhiteMiddle />'
+});
+
+export const Buttonwhiteshort = () => ({
+    components: { ButtonWhiteShort },
+    template: '<ButtonWhiteShort />'
+});
+
+export const Buttonwhiteshortbold = () => ({
+    components: { ButtonWhiteShortBold },
+    template: '<ButtonWhiteShortBold />'
+});
+
+export const Buttonwhiteshortregular = () => ({
+    components: { ButtonWhiteShortRegular },
+    template: '<ButtonWhiteShortRegular />'
+});
+
+export const Buttonwhiteshortlight = () => ({
+    components: { ButtonWhiteShortLight },
+    template: '<ButtonWhiteShortLight />'
+});
+
+export const Buttonprofile = () => ({
+    components: { ButtonProfile },
+    template: '<ButtonProfile />'
 });

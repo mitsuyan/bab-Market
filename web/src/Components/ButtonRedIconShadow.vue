@@ -1,13 +1,12 @@
 <!--  -->
 <template>
-    <a href="" class="Process" :style="{
+    <button class="Process" :style="{
         'background-color': back_color,
         color: fore_color,
-        padding: buttonPadding,
         width: buttonWidth
     }">
         {{ text }}
-    </a>
+    </button>
 </template>
 
 <script>
@@ -21,13 +20,9 @@ export default {
             type: String,
             default: "#ffffff",
         },
-        buttonPadding: {
-            type: String,
-            default: "10px 70px 10px 40px",
-        },
         buttonWidth: {
             type: String,
-            default: "165px",
+            default: "292px",
         },
         text: {
             text: String,
@@ -40,15 +35,11 @@ export default {
 <style>
 .Process {
     position: absolute;
+    border: none;
     border-radius: 10px;
     font-size: 17px;
-    text-decoration: none;
-    text-align: center;
-    background-color: #FF6969;
-    /* 背景色を設定 */
-    color: #ffffff;
-    /* 文字色を設定 */
     box-shadow: 8pt 8pt 15pt #E7EAF0;
+    height: 30pt;
 }
 
 .Process::after {

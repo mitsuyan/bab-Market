@@ -1,13 +1,13 @@
-<!-- ログインボタン -->
 <template>
-    <a href="正しいリンク先" class="LoginProcess" :style="{
+    <button class="LoginProcess" :style="{
         'background-color': back_color,
         color: fore_color,
         padding: buttonPadding,
         width: buttonWidth
     }">
         {{ text }}
-    </a>
+        <span :style="{ backgroundColor: arrowBackgroundColor }" class="Arrow">{{ icon }}</span>
+    </button>
 </template>
 
 <script>
@@ -21,17 +21,21 @@ export default {
             type: String,
             default: "#ffffff",
         },
-        buttonPadding: {
-            type: String,
-            default: "10px 70px 10px 40px",
-        },
         buttonWidth: {
             type: String,
-            default: "165px",
+            default: "303px",
         },
         text: {
-            text: String,
+            type: String,
             default: "BUTTON"
+        },
+        arrowBackgroundColor: {
+            type: String,
+            default: "#ffffff" // 初期値を設定
+        },
+        icon: {
+            type: String,
+            default: ">"
         }
     },
 };
@@ -39,39 +43,27 @@ export default {
 
 <style>
 .LoginProcess {
-    position: absolute;
+    position: relative;
     border-radius: 23px;
     font-size: 17px;
-    text-decoration: none;
-    text-align: center;
-    background-color: #FF6969;
-    /* 背景色を設定 */
-    color: #ffffff;
-    /* 文字色を設定 */
+    border: none;
+    height: 34pt;
     box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
-.LoginProcess::after {
-    content: '';
+.Arrow {
     position: absolute;
     top: 50%;
     right: 10px;
-    /* 矢印の位置を調整 */
     transform: translateY(-50%);
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #ffffff;
-    /* 白丸の色を設定 */
     display: flex;
     align-items: center;
     justify-content: center;
-    content: '>';
-    /* 矢印の内容 */
     font-size: 1em;
     font-weight: bold;
     color: #FF6969;
-    /* 矢印の色を設定 */
 }
-
 </style>

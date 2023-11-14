@@ -1,9 +1,10 @@
 <template>
-    <a href="" class="whiteLongframe" :style="{ 
+    <button class="whiteLongframe" :style="{ 
         'background-color': back_color,
         color: fore_color
         }">
-        <div class="RedFrameText">{{ text }}</div></a>
+        <div class="RedFrameText">{{ text }}</div>
+        </button>
 </template>
 
 <script>
@@ -30,8 +31,8 @@ export default {
     position: absolute;
     text-decoration: none;
     border: 2px solid #FF6969;
-    width: 216pt;
-    height: 30pt;
+    width: 231pt;
+    height: 38pt;
 }
 .RedFrameText {
     text-align: center;
