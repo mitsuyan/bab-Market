@@ -4,6 +4,8 @@ import Rectangle18GrayRadius from '../ComponentText/Rectangle18GrayRadius.vue';
 import Rectangle56Radius from '../ComponentText/Rectangle56Radius.vue';
 import Rectangle33Radius from '../ComponentText/Rectangle33Radius.vue';
 import Rectangle47Radius from '../ComponentText/Rectangle47Radius.vue';
+import RectangleNotIncludedRadius from '../ComponentText/RectangleNotIncludedRadius.vue';
+import InputPrice from '../ComponentText/InputPrice.vue';
 
 //コンポーネントの設定
 export default {
@@ -12,7 +14,9 @@ export default {
     component: Rectangle18GrayRadius,
     component: Rectangle56Radius,
     component: Rectangle33Radius,
-    component: Rectangle47Radius
+    component: Rectangle47Radius,
+    component: RectangleNotIncludedRadius,
+    component: InputPrice
 };
 //ストーリーの追加
 export const Logininputtext = () => ({
@@ -33,9 +37,19 @@ export const Rectangle56radius = () => ({
 export const Rectangle33radius = () => ({
     components: { Rectangle33Radius },
     template: '<Rectangle33Radius />'
-})
+});
 
 export const Rectangle47radius = () => ({
     components: { Rectangle47Radius },
     template: '<Rectangle47Radius />'
-})
+});
+
+export const Rectanglenotincludedradius = () => ({
+    components: { RectangleNotIncludedRadius },
+    template: '<RectangleNotIncludedRadius />'
+});
+
+export const Inputprice = () => ({
+    components: { InputPrice },
+    template: '<InputPrice />'
+});

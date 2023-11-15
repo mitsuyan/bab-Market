@@ -8,7 +8,7 @@
                             transform="translate(0.3 0.3)" fill="#727c8e" stroke="#727c8e" stroke-width="0.6" opacity="0.998" />
                     </svg></div>
                     <div class="formControlLabel">EMAIL
-                        <input type="text" class="inputEmail" v-model="InputEmail" />
+                        <input type="text" class="inputEmail" v-model="inputEmail" />
                     </div>
         </div>
         <div class="inputGroup">
@@ -18,7 +18,7 @@
                         transform="translate(0.3 0.3)" fill="#727c8e" stroke="#727c8e" stroke-width="0.6" opacity="0.998" />
                 </svg></div>
             <div class="formControlLabel">USERNAME
-                <input type="text" class="inputUser" v-model="InputUser" />
+                <input type="text" class="inputUser" v-model="inputUser" />
             </div>
         </div>
         <div class="inputGroup">
@@ -42,7 +42,7 @@
                     </g>
                 </svg></div>
             <div class="formControlLabel">PASSWORD
-                <input type="password" class="inputPass" v-model="InputPass" />
+                <input type="password" class="inputPass" v-model="inputPass" />
             </div>
         </div>
     </div>
@@ -54,8 +54,9 @@ export default defineComponent({
     name: 'LoginForm',
     data() {
         return {
-            email: '',
-            password: ''
+            inputEmail: '',
+            inputUser: '',
+            inputPass: ''
         }
     },
     props: {
@@ -68,8 +69,9 @@ export default defineComponent({
         handle() {
             return this.login({
                 'user': {
-                    'email': this.email,
-                    'password': this.password,
+                    'email': this.inputEmail,
+                    'user': this.inputUser,
+                    'password': this.inputPass
                 }
             })
                 .catch(err => { throw err })
