@@ -1,17 +1,17 @@
 /* Storyにコンポーネント追加 */
-import ButtonRedSemicircleIconLongShadow from '../components/ButtonRedSemicircleIconLongShadow.vue';
-import ButtonRedIconShadow from '../components/ButtonRedIconShadow.vue';
-import ButtonRedPicture from '../Components/ButtonRedPicture.vue';
-import ButtonRedMiddle from '../Components/ButtonRedMiddle.vue';
-import ButtonRedLong from '../Components/ButtonRedLong.vue';
-import ButtonRedShort from '../Components/ButtonRedShort.vue';
-import ButtonWhiteLong from '../Components/ButtonWhiteLong.vue';
-import ButtonWhiteMiddle from '../Components/ButtonWhiteMiddle.vue';
-import ButtonWhiteShort from '../Components/ButtonWhiteShort.vue';
-import ButtonWhiteShortBold from '../Components/ButtonWhiteShortBold.vue';
-import ButtonWhiteShortRegular from '../Components/ButtonWhiteShortRegular.vue';
-import ButtonWhiteShortLight from "../Components/ButtonWhiteShortLight.vue";
-import ButtonProfile from "../Components/ButtonProfile.vue";
+import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import ButtonRedIconShadow from '../ComponentButton/ButtonRedIconShadow.vue';
+import ButtonRedPicture from '../ComponentButton/ButtonRedPicture.vue';
+import ButtonRedMiddle from '../ComponentButton/ButtonRedMiddle.vue';
+import ButtonRedLong from '../ComponentButton/ButtonRedLong.vue';
+import ButtonRedShort from '../ComponentButton/ButtonRedShort.vue';
+import ButtonWhiteLong from '../ComponentButton/ButtonWhiteLong.vue';
+import ButtonWhiteMiddle from '../ComponentButton/ButtonWhiteMiddle.vue';
+import ButtonWhiteShort from '../ComponentButton/ButtonWhiteShort.vue';
+import ButtonWhiteShortBold from '../ComponentButton/ButtonWhiteShortBold.vue';
+import ButtonWhiteShortRegular from '../ComponentButton/ButtonWhiteShortRegular.vue';
+import ButtonWhiteShortLight from "../ComponentButton/ButtonWhiteShortLight.vue";
+import ButtonProfile from "../ComponentButton/ButtonProfile.vue";
 
 /* コンポーネントの設定 */
 export default {
