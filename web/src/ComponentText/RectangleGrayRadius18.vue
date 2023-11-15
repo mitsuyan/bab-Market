@@ -19,11 +19,17 @@ export default {
 </script>
 
 <style>
-.grayRadius18 {
+input.grayRadius18 {
     background-color: #727C8E;
     border: none;
     border-radius: 18pt;
-    width: 243pt;
+    width: 147pt;
     height: 25pt;
+    padding-left: 50pt;
+    padding-right: 50pt;
 }
+input:focus {
+outline: none;
+}
+
 </style>
