@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 input.grayRadius21 {
     background-color: #727C8E;
     border: none;

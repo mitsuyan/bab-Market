@@ -3,6 +3,7 @@ import LoginText from '../ComponentText/LoginText.vue';
 import Rectangle18GrayRadius from '../ComponentText/Rectangle18GrayRadius.vue';
 import Rectangle56Radius from '../ComponentText/Rectangle56Radius.vue';
 import Rectangle33Radius from '../ComponentText/Rectangle33Radius.vue';
+import Rectangle47Radius from '../ComponentText/Rectangle47Radius.vue';
 
 //コンポーネントの設定
 export default {
@@ -10,7 +11,8 @@ export default {
     component: LoginText,
     component: Rectangle18GrayRadius,
     component: Rectangle56Radius,
-    component: Rectangle33Radius
+    component: Rectangle33Radius,
+    component: Rectangle47Radius
 };
 //ストーリーの追加
 export const Logininputtext = () => ({
@@ -31,4 +33,9 @@ export const Rectangle56radius = () => ({
 export const Rectangle33radius = () => ({
     components: { Rectangle33Radius },
     template: '<Rectangle33Radius />'
+})
+
+export const Rectangle47radius = () => ({
+    components: { Rectangle47Radius },
+    template: '<Rectangle47Radius />'
 })

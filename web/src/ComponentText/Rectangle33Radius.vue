@@ -79,7 +79,7 @@ export default defineComponent({
 </script>
 
 
-<style>
+<style scoped>
 .inputGroup {
     width: 325px;
     /* 幅を325ptに設定 */

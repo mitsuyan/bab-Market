@@ -1,5 +1,5 @@
 <template>
-    <input type="text" class="grayRadius18" v-model="text">
+    <textarea class="Radius47" v-model="text" >{{ text }}</textarea>
 </template>
 
 <script>
@@ -19,17 +19,16 @@ export default {
 </script>
 
 <style scoped>
-input.grayRadius18 {
-    background-color: #727C8E;
-    border: none;
-    border-radius: 18pt;
-    width: 147pt;
-    height: 25pt;
-    padding-left: 50pt;
-    padding-right: 50pt;
-}
-input.grayRadius18:focus {
-outline: none;
+textarea.Radius47 {
+    border: 1pt solid #A2A2A2;
+    border-radius: 3pt;
+    resize: none;
+    width: 268pt;
+    height: 130pt;
+    padding: 2pt 7pt;
 }
 
+textarea.Radius47:focus {
+    outline: 1pt solid #A2A2A2;
+}
 </style>

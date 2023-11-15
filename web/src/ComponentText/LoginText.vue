@@ -30,7 +30,7 @@
     </div>
 </template>
 
-<script>
+<script scoped>
 import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'LoginForm',
