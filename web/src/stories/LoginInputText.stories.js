@@ -1,19 +1,27 @@
 // LoginText.stories.js
 import LoginText from '../ComponentText/LoginText.vue';
-import RectangleGrayRadius18 from '../ComponentText/RectangleGrayRadius18.vue';
+import Rectangle18GrayRadius from '../ComponentText/Rectangle18GrayRadius.vue';
+import Rectangle56Radius from '../ComponentText/Rectangle56Radius.vue';
+
 //コンポーネントの設定
 export default {
     title: 'InputTextVariation',
     component: LoginText,
-    component: RectangleGrayRadius18
+    component: Rectangle18GrayRadius,
+    component: Rectangle56Radius
 };
 //ストーリーの追加
-export const LoginInputText = () => ({
+export const Logininputtext = () => ({
     components: { LoginText },
     template: '<LoginText />'
 });
 
-export const rectangleGrayRadius18 = () => ({
-    components: { RectangleGrayRadius18 },
-    template: '<RectangleGrayRadius18 />'
+export const Rectangle18grayradius = () => ({
+    components: { Rectangle18GrayRadius },
+    template: '<Rectangle18GrayRadius />'
+});
+
+export const Rectangle56radius = () => ({
+    components: { Rectangle56Radius },
+    template: '<Rectangle56Radius />'
 });
