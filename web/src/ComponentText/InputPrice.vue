@@ -7,7 +7,7 @@ export default {
     props: {
         data: {
             type: Object,
-            default: () => ({ text: "0" })
+            default: () => ({ text: "￥000" })
         }
     },
     data() {

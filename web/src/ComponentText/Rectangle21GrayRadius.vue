@@ -5,14 +5,14 @@
 <script>
 export default {
     props: {
-        data: {
-            type: Object,
-            default: () => ({ text: "Text" })
+        inText: {
+            type: String,
+            default: "Text"
         }
     },
     data() {
         return {
-            text: this.data.text
+            text: this.inText.default
         };
     }
 };
