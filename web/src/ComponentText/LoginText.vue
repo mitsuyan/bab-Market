@@ -31,33 +31,28 @@
 </template>
 
 <script scoped>
-import { defineComponent } from 'vue';
-export default defineComponent({
-    name: 'LoginForm',
+export default {
     data(){
         return {
-            inputEmail: '',
-            inputPass: ''
+            inputEmail: this.propEmail,
+            inputPass: this.propPass
         }
     },
     props: {
         login: {
             type: Function,
             required: true
-        }
-    },
-    methods: {
-        handle() {
-            return this.login({
-                'user': {
-                    'email': this.inputEmail,
-                    'password': this.inputPass,
-                }
-            })
-                .catch(err => { throw err })
+        },
+        propEmail: {
+            type: String,
+            required: true
+        },
+        propPass: {
+            type: String,
+            required: true
         }
     }
-});
+};
 </script>
 
 

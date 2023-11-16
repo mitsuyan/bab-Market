@@ -7,7 +7,7 @@ export default {
     props: {
         data: {
             type: Object,
-            default: () => ({ text: "0" })
+            default: () => ({ text: "￥000" })
         }
     },
     data() {
@@ -30,9 +30,8 @@ export default {
     outline: none;
     border-bottom: 1px solid #727C8E;
     text-align: right;
-    padding: 5px 10px;
-    width: 270pt;
-    height: 29pt;
+    width: 282pt;
+    height: 36pt;
 }
 
 .inputNumber:focus {
