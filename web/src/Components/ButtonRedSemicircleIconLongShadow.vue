@@ -30,7 +30,8 @@ export default {
             default: "165px",
         },
         text: {
-            text: String,
+            text: "tring",
+            default: 'BUTTON'
         }
     },
 };
