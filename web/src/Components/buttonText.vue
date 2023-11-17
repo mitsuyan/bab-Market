@@ -1,6 +1,6 @@
 <template>
     <link rel="stylesheet" href="https://use.typekit.net/oie4jfa.css">
-    <div :class="level">{{ text }}</div>
+    <div :class="level">{{ propText }}</div>
 </template>
 
 <script>
@@ -10,9 +10,9 @@ export default{
             type: String,
             default: "level1",
         },
-        text:{
-            type:String,
-            default:"defaultText　デフォルトテキスト"
+        propText: {
+            type: String,
+            required: true
         }
     }
 };

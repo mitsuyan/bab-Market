@@ -18,13 +18,19 @@
                     </g>
                 </svg>
             </span>
-            <div class="spanText">BUTTON</div>
+            <div class="spanText">
+                <buttonText :level="level1White" :propText="data" />
+            </div>
         </div>
     </button>
 </template>
 
 <script>
+import buttonText from '../Components/buttonText.vue';
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -33,6 +39,12 @@ export default {
         fore_color: {
             type: String,
             default: "#ffffff"
+        }
+    },
+    data() {
+        return {
+            data: "登録",
+            level1White: "level1White"
         }
     }
 }
@@ -54,10 +66,9 @@ export default {
 }
 
 .spanText {
-    padding: 18pt 0 13pt 0;
+    padding: 7pt 0 0 0;
 }
 span.pic {
-    padding: 13pt 0;
-    padding-left: 70pt;
+    padding: 5pt 0 0 70pt;
 }
 </style>
