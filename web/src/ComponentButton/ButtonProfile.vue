@@ -6,12 +6,16 @@
         width: buttonWidth
     }">
     <div class="buttonImg"><img src=""></div>
-        {{ text }}
+        <formText :level="textFormLabelGrayLevel1" :text="data1"/>
     </button>
 </template>
 
 <script>
+import  formText  from "../Components/footerText.vue";
 export default {
+    components: {
+        formText
+    },  
     props: {
         back_color: {
             type: String,
@@ -24,12 +28,14 @@ export default {
         buttonWidth: {
             type: String,
             default: "82pt",
-        },
-        text: {
-            text: String,
-            default: "BUTTON"
         }
     },
+    data() {
+        return {
+            data1: "登録",
+            textFormLabelGrayLevel1: "textFormLabelGrayLevel1"
+        }
+    }
 };
 </script>
 

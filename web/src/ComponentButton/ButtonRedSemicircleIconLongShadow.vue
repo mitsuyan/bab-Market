@@ -5,13 +5,17 @@
         padding: buttonPadding,
         width: buttonWidth
     }">
-        {{ text }}
+        <buttonText :level="level3White" :propText="data1" />
         <span :style="{ backgroundColor: arrowBackgroundColor }" class="arrow">{{ icon }}</span>
     </button>
 </template>
 
 <script>
+import buttonText from '../Components/buttonText.vue';
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -25,10 +29,6 @@ export default {
             type: String,
             default: "303px",
         },
-        text: {
-            type: String,
-            default: "BUTTON"
-        },
         arrowBackgroundColor: {
             type: String,
             default: "#ffffff" // 初期値を設定
@@ -38,6 +38,12 @@ export default {
             default: ">"
         }
     },
+    data() {
+        return {
+            data1: "登録",
+            level3White: "level3White"
+        }
+    }
 };
 </script>
 

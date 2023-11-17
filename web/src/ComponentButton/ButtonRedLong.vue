@@ -3,11 +3,15 @@
         'background-color': back_color,
         color: fore_color
     }">
-        <div class="registLongText">{{ text }}</div>
+    <buttonText :level="level1White" :hoge="data1"/>
     </button>
 </template>
 <script>
+import buttonText from '../Components/buttonText.vue';
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -16,10 +20,12 @@ export default {
         fore_color: {
             type: String,
             default: "#ffffff"
-        },
-        text: {
-            text: String,
-            default: "BUTTON"
+        }
+    },
+    data() {
+        return {
+            data1: "登録",
+            level1White: "level1White"
         }
     }
 };
@@ -34,9 +40,4 @@ export default {
     height: 45px;
 }
 
-.registLongText {
-    text-align: center;
-    font-size: 17px;
-    padding: 7pt 0;
-}
 </style>
