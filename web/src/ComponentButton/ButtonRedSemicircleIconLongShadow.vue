@@ -5,7 +5,7 @@
         padding: buttonPadding,
         width: buttonWidth
     }">
-        <buttonText :level="level3White" :propText="data1" />
+        <buttonText :level="level3White" :propText="data" />
         <span :style="{ backgroundColor: arrowBackgroundColor }" class="arrow">{{ icon }}</span>
     </button>
 </template>
@@ -36,11 +36,14 @@ export default {
         icon: {
             type: String,
             default: ">"
+        },
+        data: {
+            type: String,
+            required: true
         }
     },
     data() {
         return {
-            data1: "ログイン",
             level3White: "level3White"
         }
     }
