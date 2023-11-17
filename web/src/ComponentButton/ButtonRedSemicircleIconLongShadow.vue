@@ -40,7 +40,7 @@ export default {
     },
     data() {
         return {
-            data1: "登録",
+            data1: "ログイン",
             level3White: "level3White"
         }
     }

@@ -3,7 +3,7 @@
         'background-color': back_color,
         color: fore_color
     }">
-    <buttonText :level="level1White" :hoge="data1"/>
+    <buttonText :level="level1White" :propText="data"/>
     </button>
 </template>
 <script>
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            data1: "登録",
+            data: "登録",
             level1White: "level1White"
         }
     }
