@@ -5,7 +5,7 @@
     </div>
     <div class="loginForm">
         <div class="loginText">
-            <LoginText />
+            <LoginText :propEmail="userMail" :propPass="userPass" />
         </div>
         <div class="buttoIcon">
             <!-- buttonWidth プロパティに新しい値を設定 -->
@@ -47,7 +47,13 @@ export default {
                     userMail: this.userMail,
                     userPass: this.userPass
                 });
-                console.log(response);
+                if (response.status === 200) {
+                    // ログイン成功時の処理
+                    console.log("ログイン成功");
+                } else if (response.status === 401) {
+                    // ログイン失敗時の処理
+                    console.log("ログイン失敗");
+                }
             } catch (error) {
                 console.error(error);
             }
