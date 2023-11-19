@@ -49,8 +49,7 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-export default defineComponent({
+export default {
     name: 'LoginForm',
     data() {
         return {
@@ -60,24 +59,20 @@ export default defineComponent({
         }
     },
     props: {
-        login: {
-            type: Function,
+        propEmail: {
+            type: String,
+            required: true
+        },
+        propUser: {
+            type: String,
+            required: true
+        },
+        propPass: {
+            type: String,
             required: true
         }
-    },
-    methods: {
-        handle() {
-            return this.login({
-                'user': {
-                    'email': this.inputEmail,
-                    'user': this.inputUser,
-                    'password': this.inputPass
-                }
-            })
-                .catch(err => { throw err })
-        }
     }
-});
+};
 </script>
 
 

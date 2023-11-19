@@ -3,12 +3,18 @@
         'background-color': back_color,
         color: fore_color
     }">
-        <div class="whiteShortBoldText">{{ text }}</div>
+        <div class="whiteShortBoldText">
+            <buttonText :level="level3Pink" :propText="data" />
+        </div>
     </button>
 </template>
 
 <script>
+import buttonText from '../Components/buttonText.vue';
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -17,10 +23,12 @@ export default {
         fore_color: {
             type: String,
             default: "#FF6969"
-        },
-        text: {
-            type: String,
-            default: "Button"
+        }
+    },
+    data() {
+        return {
+            data: "登録",
+            level3Pink: "level3Pink"
         }
     }
 };

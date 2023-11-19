@@ -20,7 +20,7 @@ export default{
 <style scoped>
 
 ::placeholder {
-   color: #848383;
+    color: #848383;
 }
 
 .textFormLabelBluegray{

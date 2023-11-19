@@ -5,12 +5,16 @@
         color: fore_color,
         width: buttonWidth
     }">
-        {{ text }}
+        <buttonText :level="level2White" :propText="data" />
     </button>
 </template>
 
 <script>
+import buttonText from '../Components/buttonText.vue';
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -23,12 +27,14 @@ export default {
         buttonWidth: {
             type: String,
             default: "292px",
-        },
-        text: {
-            text: String,
-            default: "BUTTON"
         }
     },
+    data() {
+        return {
+            data: "ログイン",
+            level2White: "level2White"
+        }
+    }
 };
 </script>
 

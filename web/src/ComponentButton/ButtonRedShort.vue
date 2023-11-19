@@ -3,11 +3,17 @@
         'background-color': back_color,
         color: fore_color
     }">
-        <div class="registText">{{ text }}</div>
+        <div class="registText">
+            <buttonText :level="level1White" :propText="data" />
+        </div>
     </button>
 </template>
 <script>
+import buttonText from "../Components/buttonText.vue";
 export default {
+    components: {
+        buttonText
+    },
     props: {
         back_color: {
             type: String,
@@ -16,10 +22,12 @@ export default {
         fore_color: {
             type: String,
             default: "#ffffff"
-        },
-        text: {
-            text: String,
-            default: "BUTTON"
+        }
+    },
+    data(){
+        return {
+            data: "登録",
+            level1White: "level1White"
         }
     }
 };
@@ -38,6 +46,6 @@ export default {
 .registText {
     text-align: center;
     font-size: 17px;
-    padding: 7pt 0;
+    padding: 5pt 0;
 }
 </style>
