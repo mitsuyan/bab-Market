@@ -47,40 +47,4 @@ export default {
 }
 </script>
 
-<style>
-.loginForm {
-    position: relative;
-    width: 430pt;
-    height: 932pt;
-}
-
-.buttoIcon {
-    position: absolute;
-    top: 262pt;
-    left: 220pt;
-    bottom: 624pt;
-}
-
-.loginText {
-    position: absolute;
-    left: 20%;
-    bottom: 720pt;
-    box-shadow: 10pt 10pt 15pt #E7EAF0;
-    border-radius: 10pt;
-}
-
-a {
-    text-decoration: none;
-}
-
-.createLink {
-    position: absolute;
-    top: 391pt;
-    left: 35%;
-
-}
-
-div.mbImg {
-    position: absolute;
-    left: 220pt;
-}</style>
+<style></style>
