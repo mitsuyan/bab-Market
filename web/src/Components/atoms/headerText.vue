@@ -1,6 +1,6 @@
 <template>
     <link rel="stylesheet" href="https://use.typekit.net/oie4jfa.css">
-    <h2 :class="level">{{ text }}</h2>
+    <h1 :class="level">{{ text }}</h1>
 </template>
 
 <script>
@@ -22,10 +22,10 @@ export default{
 <style scoped>
 
 .level1{
-    font-size:15px;
-    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
-    font-style: normal;
-    font-weight: 400;
+    font-size:26px;
+    font-family:neusa-next-std,'游ゴシック Bold', sans-serif;
+    font-style:"Bold";
+    font-weight: 700;
     color:#444444;
 }
 
@@ -34,7 +34,30 @@ export default{
     font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
     font-weight: 400;
     font-style: normal;
-    color:#000000;
+    color:#444444;
+}
+
+.level3{
+    font-size:15px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#FF6969;
+}
+.level4{
+    font-size:13px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#727C8E;
+}
+
+.level4Selected{
+    font-size:13px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#FF6969;
 }
 
 </style>

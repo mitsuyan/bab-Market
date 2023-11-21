@@ -1,4 +1,4 @@
-import buttonText from '../Components/buttonText.vue';
+import buttonText from '../Components/atoms/buttonText.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Text',

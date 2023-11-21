@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import  formText  from "../Components/footerText.vue";
+import  formText  from "../Components/atoms/footerText.vue";
 export default {
     components: {
         formText
