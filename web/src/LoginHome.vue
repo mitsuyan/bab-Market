@@ -1,25 +1,14 @@
 <!-- 親コンポーネント -->
 <template>
-    <div class="mbImg"><svg id="コンポーネント_128_14" data-name="コンポーネント 128 – 14" xmlns="http://www.w3.org/2000/svg" width="83"
-            height="84" viewBox="0 0 83 84">
-            <ellipse id="楕円形_22" data-name="楕円形 22" cx="23" cy="22.5" rx="23" ry="22.5" transform="translate(0 31)"
-                fill="#ff6969" />
-            <ellipse id="楕円形_23" data-name="楕円形 23" cx="28" cy="28.5" rx="28" ry="28.5" transform="translate(27 19)"
-                fill="#ff6969" />
-            <text id="b" transform="translate(44 67)" fill="#fff" font-size="58"
-                font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700">
-                <tspan x="0" y="0">b</tspan>
-            </text>
-            <text id="m" transform="translate(4 66)" fill="#fff" font-size="46"
-                font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700">
-                <tspan x="0" y="0">m</tspan>
-            </text>
-        </svg></div>
+    <div class="mbImg">
+        <headerIcon />
+    </div>
     <div class="loginForm">
         <div class="loginText">
-            <LoginText />
+            <LoginText :propEmail="userMail" :propPass="userPass" />
         </div>
         <div class="buttoIcon">
+
             <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
         </div>
         <div class="createLink">
@@ -31,22 +20,45 @@
 <script>
 import LoginText from './ComponentText/LoginText.vue';
 import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import headerIcon from './Components/headerIcon.vue';
 import accountLink from './Components/accountLink.vue';
-
+import apiServices from '../services/apiService.js';
 export default {
     name: 'LoginMain',
     components: {
         LoginText,
         ButtonRedSemicircleIconLongShadow,
+        headerIcon,
         accountLink
     },
     data() {
         return {
             // ボタンの初期幅を変更
             buttonWidth: '220px',
-            text: 'ログイン'
+            text: 'ログイン',
+            userMail: 'mail',
+            userPass: 'pass'
         };
     },
+    methods: {
+        async handleLogin() {
+            try{
+                const response = apiServices.login({
+                    email: this.userMail,
+                    password: this.userPass
+                });
+                if (response.status === 200) {
+                    // ログイン成功時の処理
+                    console.log("ログイン成功");
+                } else if (response.status === 401) {
+                    // ログイン失敗時の処理
+                    console.log("ログイン失敗");
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    }
 }
 </script>
 
