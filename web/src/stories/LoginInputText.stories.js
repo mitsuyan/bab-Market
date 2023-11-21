@@ -11,12 +11,6 @@ import InputPrice from '../ComponentText/InputPrice.vue';
 export default {
     title: 'InputTextVariation',
     component: LoginText,
-    component: Rectangle18GrayRadius,
-    component: Rectangle56Radius,
-    component: Rectangle33Radius,
-    component: Rectangle47Radius,
-    component: RectangleNotIncludedRadius,
-    component: InputPrice
 };
 //ストーリーの追加
 export const Logininputtext = () => ({

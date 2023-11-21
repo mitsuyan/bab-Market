@@ -1,6 +1,6 @@
-<!-- 親コンポーネント -->
 <template>
-    <div class="mbImg"><svg id="コンポーネント_128_14" data-name="コンポーネント 128 – 14" xmlns="http://www.w3.org/2000/svg" width="83"
+    <div class="mbImg">
+        <svg id="コンポーネント_128_14" data-name="コンポーネント 128 – 14" xmlns="http://www.w3.org/2000/svg" width="83"
             height="84" viewBox="0 0 83 84">
             <ellipse id="楕円形_22" data-name="楕円形 22" cx="23" cy="22.5" rx="23" ry="22.5" transform="translate(0 31)"
                 fill="#ff6969" />
@@ -14,36 +14,25 @@
                 font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700">
                 <tspan x="0" y="0">m</tspan>
             </text>
-        </svg></div>
-    <div class="loginForm">
-        <div class="loginText">
-            <LoginText />
-        </div>
-        <div class="buttoIcon">
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
-        </div>
-        <div class="createLink"><a href="">アカウント作成</a></div>
+        </svg>
+    </div>
+    <div class="createAcountArea">
+        <Rectangle33Radius />
+    </div>
+    <div class="buttoIcon">
+        <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
     </div>
 </template>
 
 <script>
-import LoginText from './ComponentText/LoginText.vue';
+import Rectangle33Radius from './ComponentText/Rectangle33Radius.vue';
 import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 
 export default {
-    name: 'LoginMain',
+    name: 'CreateAcount',
     components: {
-        LoginText,
+        Rectangle33Radius,
         ButtonRedSemicircleIconLongShadow
-    },
-    data() {
-        return {
-            // ボタンの初期幅を変更
-            buttonWidth: '220px',
-            text: 'ログイン'
-        };
-    },
+    }
 }
 </script>
-
-<style></style>
