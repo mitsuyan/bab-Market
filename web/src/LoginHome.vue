@@ -8,8 +8,8 @@
             <LoginText :propEmail="userMail" :propPass="userPass" />
         </div>
         <div class="buttoIcon">
-            <!-- buttonWidth プロパティに新しい値を設定 -->
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :data="text" @click="handleLogin" />
+
+            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
         </div>
         <div class="createLink">
             <accountLink />

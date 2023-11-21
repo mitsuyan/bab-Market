@@ -16,19 +16,7 @@ import ButtonProfile from "../ComponentButton/ButtonProfile.vue";
 /* コンポーネントの設定 */
 export default {
     title: 'ButtonVariation',
-    component: ButtonRedSemicircleIconLongShadow,
-    component: ButtonRedIconShadow,
-    component: ButtonRedPicture,
-    component: ButtonRedMiddle,
-    component: ButtonRedLong,
-    component: ButtonRedShort,
-    component: ButtonWhiteLong,
-    component: ButtonWhiteMiddle,
-    component: ButtonWhiteShort,
-    component: ButtonWhiteShortBold,
-    component: ButtonWhiteShortRegular,
-    component: ButtonWhiteShortLight,
-    component: ButtonProfile
+    component: ButtonRedSemicircleIconLongShadow
 };
 
 /* story記述 */
