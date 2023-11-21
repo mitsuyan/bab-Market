@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import buttonText from '../Components/buttonText.vue';
+import buttonText from '../Components/atoms/buttonText.vue';
 export default {
     components: {
         buttonText

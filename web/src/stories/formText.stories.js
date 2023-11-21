@@ -1,4 +1,4 @@
-import formText from '../Components/formText.vue';
+import formText from '../Components/atoms/formText.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Text',
