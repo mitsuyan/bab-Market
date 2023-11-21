@@ -30,7 +30,7 @@
 <script>
 import Rectangle33Radius from './ComponentText/Rectangle33Radius.vue';
 import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
-import formText from './Components/formText.vue';
+import formText from './Components/atoms/formText.vue';
 
 export default {
     name: 'CreateAcount',
