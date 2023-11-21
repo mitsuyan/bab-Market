@@ -23,7 +23,7 @@
         <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
     </div>
     <div class="formConsentText">
-        <formText>アカウント作成することで、当社の利用規約とプライバシーポリシーに同意します。</formText>
+        <formText>アカウント作成することで、当社の利用規約と<br>プライバシーポリシーに同意します。</formText>
     </div>
 </template>
 
