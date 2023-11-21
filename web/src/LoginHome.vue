@@ -22,19 +22,23 @@
         <div class="buttoIcon">
             <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
         </div>
-        <div class="createLink"><a href="">アカウント作成</a></div>
+        <div class="createLink">
+            <accountLink />
+        </div>
     </div>
 </template>
 
 <script>
 import LoginText from './ComponentText/LoginText.vue';
 import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import accountLink from './Components/accountLink.vue';
 
 export default {
     name: 'LoginMain',
     components: {
         LoginText,
-        ButtonRedSemicircleIconLongShadow
+        ButtonRedSemicircleIconLongShadow,
+        accountLink
     },
     data() {
         return {

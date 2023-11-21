@@ -22,17 +22,28 @@
     <div class="buttoIcon">
         <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
     </div>
+    <div class="formConsentText">
+        <formText>アカウント作成することで、当社の利用規約とプライバシーポリシーに同意します。</formText>
+    </div>
 </template>
 
 <script>
 import Rectangle33Radius from './ComponentText/Rectangle33Radius.vue';
 import ButtonRedSemicircleIconLongShadow from './ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import formText from './Components/formText.vue';
 
 export default {
     name: 'CreateAcount',
     components: {
         Rectangle33Radius,
-        ButtonRedSemicircleIconLongShadow
+        ButtonRedSemicircleIconLongShadow,
+        formText
+    },
+    data() {
+        return {
+            buttonWidth: '220px',
+            text: 'サインアップ'
+        }
     }
 }
 </script>
