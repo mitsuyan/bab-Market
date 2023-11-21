@@ -1,5 +1,5 @@
-import headerText from '../Components/headerText.vue';
-import headerTextSub from '../Components/headerTextSub.vue';
+import headerText from '../Components/atoms/headerText.vue';
+import headerTextSub from '../Components/atoms/headerTextSub.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Text',
@@ -22,12 +22,22 @@ export const headerTextLevel3 = () => ({
     template: '<headerText level="level3" />'
 });
 
-export const headerTextLevel3Selected = () => ({
+export const headerTextLevel4 = () => ({
     components: { headerText },
-    template: '<headerText level="level3Selected" />'
+    template: '<headerText level="level4" />'
+});
+
+export const headerTextLevel4Selected = () => ({
+    components: { headerText },
+    template: '<headerText level="level4Selected" />'
 });
 
 export const headerTextSubLevel1 = () => ({
     components: { headerTextSub },
     template: '<headerTextSub />',
+});
+
+export const headerTextSubLevel2Pink = () => ({
+    components: { headerTextSub },
+    template: '<headerTextSub level="level2Pink"/>',
 });

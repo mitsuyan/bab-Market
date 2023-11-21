@@ -1,4 +1,4 @@
-import listText from '../Components/listText.vue';
+import listText from '../Components/atoms/listText.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Text',

@@ -1,4 +1,4 @@
-import footerText from '../Components/footerText.vue';
+import footerText from '../Components/atoms/footerText.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'Text',
