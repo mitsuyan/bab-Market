@@ -1,5 +1,5 @@
-import LoginHome from '../LoginHome.vue';
-import CreateAcount from '../CreateAcount.vue';
+import LoginHome from '../Pages/LoginHome.vue';
+import CreateAcount from '../Pages/CreateAcount.vue';
 
 export default {
     title: 'Main',
