@@ -44,8 +44,8 @@ export default {
         async handleLogin() {
             try{
                 const response = apiServices.login({
-                    userMail: this.userMail,
-                    userPass: this.userPass
+                    email: this.userMail,
+                    password: this.userPass
                 });
                 if (response.status === 200) {
                     // ログイン成功時の処理
