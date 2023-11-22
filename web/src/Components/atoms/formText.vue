@@ -23,6 +23,13 @@ export default{
     color: #848383;
 }
 
+.textFormLabelGrayBlack{
+    font-size:18px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#444444;
+}
 .textFormLabelBluegray{
     font-size:12px;
     font-family:neusa-next-std,'游ゴシック Medium', sans-serif;

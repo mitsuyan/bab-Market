@@ -1,18 +1,17 @@
 <template>
     <div class="container">
-        <listText level="level2" text="すべて"></listText>
+        <formText level="textFormLabelGrayBlack" text="すべて"></formText>
         <div>
-            
-            <listText level="level2"></listText>
+            <formText level="textFormLabelGrayBlack"></formText>
         </div>
     </div>
 </template>
 
 <script>
-import listText from '../atoms/listText.vue';
+import formText from '../atoms/formText.vue';
 export default{
     components:{
-        listText,
+        formText,
     },
     data() {
         return{
@@ -25,14 +24,6 @@ export default{
 
 <style scoped>
 
-.container {
-display: flex;
-  justify-content: space-between; /* 要素を均等に配置 */
-  align-items: center;
-  margin-top: 13px;
-  margin-bottom: 13px;
-  border-bottom: 1px solid #c2c2c2;
-}
 
 </style>
 
