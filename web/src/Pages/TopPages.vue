@@ -1,8 +1,12 @@
 <template>
 <mainBase>
-    <headerHome />
+    <div class="header">
+        <headerHome />
+    </div>
     <shohinDisplay />
-    <footerNavigation />
+    <div class="footer">
+        <footerNavigation />
+    </div>
 </mainBase>
 </template>
 
@@ -21,3 +25,16 @@ export default {
     }
 }
 </script>
+
+<style>
+.header{
+    position: fixed;
+    z-index:10000;
+    top: 0;
+}
+.footer{
+    position: fixed;
+    z-index:10000;
+    bottom: 0;
+}
+</style>

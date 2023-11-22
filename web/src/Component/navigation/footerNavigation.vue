@@ -97,6 +97,7 @@
     <style>
     .tabGroup{
         width: 323pt;
+        background-color: #ffffff;
     }
     .tabnav {
         display: flex;

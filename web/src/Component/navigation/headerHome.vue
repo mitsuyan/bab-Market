@@ -29,7 +29,9 @@
 .headerHome{
     display: flex;
     width: 323pt;
+    height: 43pt;
     align-items: center;
+    background-color: #ffffff;
 }
 .svgMb{
     padding-left: 41%;
