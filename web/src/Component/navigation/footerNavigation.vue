@@ -95,6 +95,9 @@
     </script>
 
     <style>
+    .tabGroup{
+        width: 323pt;
+    }
     .tabnav {
         display: flex;
         align-items: center;

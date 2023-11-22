@@ -1,5 +1,5 @@
 <template>
-    <div :class="base"></div>
+    <div :class="base"><slot></slot></div>
 </template>
 <script>
 export default{
@@ -13,7 +13,7 @@ export default{
 </script>
 <style scoped>
 .mainBase{
-    width: 344pt;
+    width: 323pt;
     height: 935pt;
     background-color: #FFFFFF;
     box-shadow: 0 63pt 56pt #727C8E4E;
