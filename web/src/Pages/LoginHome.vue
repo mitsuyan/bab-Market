@@ -1,20 +1,21 @@
 <!-- 親コンポーネント -->
 <template>
-    <div class="mbImg">
-        <headerIcon />
-    </div>
-    <div class="loginForm">
-        <div class="loginText">
-            <LoginText :propEmail="userMail" :propPass="userPass" />
+    <mainBase>
+        <div class="mbImg">
+            <headerIcon />
         </div>
-        <div class="buttoIcon">
-
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+        <div class="loginForm">
+            <div class="loginText">
+                <LoginText :propEmail="userMail" :propPass="userPass" />
+            </div>
+            <div class="buttoIcon">
+                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+            </div>
+            <div class="createLink">
+                <accountLink />
+            </div>
         </div>
-        <div class="createLink">
-            <accountLink />
-        </div>
-    </div>
+    </mainBase>
 </template>
 
 <script>
@@ -23,13 +24,15 @@ import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemic
 import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
 import apiServices from '/services/apiService.js';
+import mainBase from '../Component/mainBase.vue';
 export default {
     name: 'LoginMain',
     components: {
         LoginText,
         ButtonRedSemicircleIconLongShadow,
         headerIcon,
-        accountLink
+        accountLink,
+        mainBase
     },
     data() {
         return {
