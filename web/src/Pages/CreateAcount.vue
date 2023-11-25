@@ -1,4 +1,5 @@
 <template>
+    <mainBase>
     <div class="mbImg">
         <svg id="コンポーネント_128_14" data-name="コンポーネント 128 – 14" xmlns="http://www.w3.org/2000/svg" width="83"
             height="84" viewBox="0 0 83 84">
@@ -25,19 +26,22 @@
     <div class="formConsentText">
         <formText>アカウント作成することで、当社の利用規約と<br>プライバシーポリシーに同意します。</formText>
     </div>
+    </mainBase>
 </template>
 
 <script>
 import Rectangle33Radius from '../ComponentText/Rectangle33Radius.vue';
 import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 import formText from '../Components/atoms/formText.vue';
+import mainBase from '../Component/mainBase.vue';
 
 export default {
     name: 'CreateAcount',
     components: {
         Rectangle33Radius,
         ButtonRedSemicircleIconLongShadow,
-        formText
+        formText,
+        mainBase
     },
     data() {
         return {

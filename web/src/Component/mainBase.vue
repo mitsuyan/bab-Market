@@ -1,5 +1,5 @@
 <template>
-    <div :class="base"></div>
+    <div :class="base" :style="{ height }"><slot></slot></div>
 </template>
 <script>
 export default{
@@ -7,14 +7,17 @@ export default{
         base: {
             type: String,
             default: "mainBase"
+        },
+        height: {
+            type: String,
+            required: true
         }
     }
 };
 </script>
 <style scoped>
 .mainBase{
-    width: 344pt;
-    height: 935pt;
+    width: 323pt;
     background-color: #FFFFFF;
     box-shadow: 0 63pt 56pt #727C8E4E;
 }
@@ -22,20 +25,17 @@ export default{
 .grayBase{
     background: linear-gradient(180deg, #F5F6F8AD, #F5F6F8);
     width: 430pt;
-    height: 78pt;
 }
 
 .outline{
     background-color: #FFFFFF;
     width: 428pt;
-    height: 60pt;
     border: 0.5pt solid #707070;
 }
 
 .radius11 {
     background-color: #FFFFFF;
     width: 380pt;
-    height: 90pt;
     border-radius: 11pt;
 }
 
@@ -43,12 +43,10 @@ export default{
     opacity:0.2;
     background-color: #727C8E;
     width: 324pt;
-    height: 139pt;
     border-radius: 7pt;
 }
 .yelloBase{
     background-color: #FFF9CE;
     width: 430pt;
-    height: 114pt;
 }
 </style>

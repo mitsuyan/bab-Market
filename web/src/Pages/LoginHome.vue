@@ -1,20 +1,21 @@
 <!-- 親コンポーネント -->
 <template>
-    <div class="mbImg">
-        <headerIcon />
-    </div>
-    <div class="loginForm">
-        <div class="loginText">
-            <LoginText :propEmail="userMail" :propPass="userPass" />
+    <mainBase :height="mainHeight">
+        <div class="mbImg">
+            <headerIcon />
         </div>
-        <div class="buttoIcon">
-
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+        <div class="loginForm">
+            <div class="loginText">
+                <LoginText :propEmail="userMail" :propPass="userPass" />
+            </div>
+            <div class="buttoIcon">
+                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+            </div>
+            <div class="createLink">
+                <accountLink />
+            </div>
         </div>
-        <div class="createLink">
-            <accountLink />
-        </div>
-    </div>
+    </mainBase>
 </template>
 
 <script>
@@ -23,21 +24,24 @@ import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemic
 import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
 import apiServices from '/services/apiService.js';
+import mainBase from '../Component/mainBase.vue';
 export default {
     name: 'LoginMain',
     components: {
         LoginText,
         ButtonRedSemicircleIconLongShadow,
         headerIcon,
-        accountLink
+        accountLink,
+        mainBase
     },
     data() {
         return {
             // ボタンの初期幅を変更
-            buttonWidth: '220px',
+            buttonWidth: '330px',
             text: 'ログイン',
             userMail: 'mail',
-            userPass: 'pass'
+            userPass: 'pass',
+            mainHeight: '699pt'
         };
     },
     methods: {
@@ -62,4 +66,21 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+svg#コンポーネント_128_14 {
+    margin-left: 122pt;
+}
+.loginInputForm{
+    margin: 25pt 37pt;
+    box-shadow: 0 8pt 15pt #E7EAF0;
+}
+.loginProcess{
+    margin: 20pt 36pt;
+}
+.createLink {
+    margin-top: 65pt;
+}
+a {
+    margin-left: 116pt;
+}
+</style>
