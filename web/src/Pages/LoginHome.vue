@@ -1,6 +1,6 @@
 <!-- 親コンポーネント -->
 <template>
-    <mainBase>
+    <mainBase :height="mainHeight">
         <div class="mbImg">
             <headerIcon />
         </div>
@@ -37,10 +37,11 @@ export default {
     data() {
         return {
             // ボタンの初期幅を変更
-            buttonWidth: '220px',
+            buttonWidth: '330px',
             text: 'ログイン',
             userMail: 'mail',
-            userPass: 'pass'
+            userPass: 'pass',
+            mainHeight: '699pt'
         };
     },
     methods: {
@@ -65,4 +66,21 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+svg#コンポーネント_128_14 {
+    margin-left: 122pt;
+}
+.loginInputForm{
+    margin: 25pt 37pt;
+    box-shadow: 0 8pt 15pt #E7EAF0;
+}
+.loginProcess{
+    margin: 20pt 36pt;
+}
+.createLink {
+    margin-top: 65pt;
+}
+a {
+    margin-left: 116pt;
+}
+</style>

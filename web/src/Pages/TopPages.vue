@@ -1,5 +1,5 @@
 <template>
-<mainBase>
+<mainBase :height="mainHeight">
     <div class="header">
         <headerHome />
     </div>
@@ -27,6 +27,11 @@ export default {
         footerNavigation,
         mainBase,
         tabNavigation
+    },
+    data(){
+        return{
+            mainHeight:'1210pt'
+        }
     }
 }
 </script>
