@@ -25,7 +25,7 @@
 
 </script>
 
-<style>
+<style scoped>
 .headerHome{
     display: flex;
     width: 323pt;

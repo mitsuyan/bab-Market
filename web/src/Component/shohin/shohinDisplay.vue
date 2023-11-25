@@ -19,6 +19,12 @@ export default {
                 { id: 4, name: '商品4', price: 3000, image: '/img/logo.png' },
                 { id: 5, name: '商品5', price: 2500, image: '/img/logo.png' },
                 { id: 6, name: '商品6', price: 5000, image: '/img/logo.png' },
+                { id: 1, name: '商品1', price: 1000, image: '/img/logo.png' },
+                { id: 2, name: '商品2', price: 1500, image: '/img/logo.png' },
+                { id: 3, name: '商品3', price: 2000, image: '/img/logo.png' },
+                { id: 4, name: '商品4', price: 3000, image: '/img/logo.png' },
+                { id: 5, name: '商品5', price: 2500, image: '/img/logo.png' },
+                { id: 6, name: '商品6', price: 5000, image: '/img/logo.png' }
             ]
         };
     },
@@ -33,13 +39,11 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .productList {
-    position: absolute;
     display: flex;
     width: 323pt;
     flex-flow: row wrap;
-    top: 97pt;
 }
 .product {
     margin: 5pt;
