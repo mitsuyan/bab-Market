@@ -9,7 +9,7 @@
                 <LoginText :propEmail="userMail" :propPass="userPass" />
             </div>
             <div class="buttoIcon">
-                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+                <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" @click="handleButtonClick"/>
             </div>
             <div class="createLink">
                 <accountLink />
@@ -25,6 +25,7 @@ import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
 import apiServices from '/services/apiService.js';
 import mainBase from '../Component/mainBase.vue';
+
 export default {
     name: 'LoginMain',
     components: {
@@ -45,24 +46,28 @@ export default {
         };
     },
     methods: {
+        handleButtonClick() {
+            // ボタンがクリックされたときの処理をここに記述
+            this.handleLogin();
+        },
         async handleLogin() {
-            try{
-                const response = apiServices.login({
+            try {
+                const response = await apiServices.login({
                     email: this.userMail,
-                    password: this.userPass
+                    password: this.userPass,
                 });
                 if (response.status === 200) {
                     // ログイン成功時の処理
-                    console.log("ログイン成功");
+                    console.log('ログイン成功');
                 } else if (response.status === 401) {
                     // ログイン失敗時の処理
-                    console.log("ログイン失敗");
+                    console.log('メールアドレスもしくはパスワードが間違っています');
                 }
             } catch (error) {
-                console.error(error);
+                console.error(error.message);
             }
-        }
-    }
+        }, 
+    },
 }
 </script>
 

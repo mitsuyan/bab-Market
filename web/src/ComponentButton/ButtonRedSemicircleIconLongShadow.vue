@@ -1,5 +1,5 @@
 <template>
-    <button class="loginProcess" :style="{
+    <button class="loginProcess" @click="handleClick" :style="{
         'background-color': back_color,
         color: fore_color,
         padding: buttonPadding,
@@ -47,6 +47,11 @@ export default {
             level3White: "level3White"
         }
     },
+    methods: {
+        handleClick(){
+            this.$emit('buttonClick')
+        }
+    }
 };
 </script>
 
