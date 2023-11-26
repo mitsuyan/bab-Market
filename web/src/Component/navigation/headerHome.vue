@@ -34,7 +34,6 @@
     background-color: #ffffff;
 }
 .svgMb{
-    padding-left: 41%;
     padding-bottom: 4pt;
 }
 .svgBell{

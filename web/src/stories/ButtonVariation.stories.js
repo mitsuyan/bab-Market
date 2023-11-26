@@ -12,6 +12,7 @@ import ButtonWhiteShortBold from '../ComponentButton/ButtonWhiteShortBold.vue';
 import ButtonWhiteShortRegular from '../ComponentButton/ButtonWhiteShortRegular.vue';
 import ButtonWhiteShortLight from "../ComponentButton/ButtonWhiteShortLight.vue";
 import ButtonProfile from "../ComponentButton/ButtonProfile.vue";
+import ButtonGrayIcon from "../ComponentButton/ButtonGrayIcon.vue";
 
 /* コンポーネントの設定 */
 export default {
@@ -19,6 +20,10 @@ export default {
     component: ButtonRedSemicircleIconLongShadow
 };
 
+export const Buttongrayicon = () => ({
+    components: { ButtonGrayIcon },
+    template: '<ButtonGrayIcon />'
+});
 /* story記述 */
 export const LoginButton = () => ({
     components: { ButtonRedSemicircleIconLongShadow },

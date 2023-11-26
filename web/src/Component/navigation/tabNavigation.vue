@@ -14,7 +14,7 @@
             </ul>
         </div>
         <div class="productContainer">
-            <div class="scrollableContent">
+            <div v-if="show === '1'" class="scrollableContent">
                 <shohinDisplay />
             </div>
         </div>
