@@ -1,7 +1,7 @@
 <template>
     <link rel="stylesheet" href="https://use.typekit.net/oie4jfa.css">
     <label :class="level">
-        <slot>defaultText デフォルトのテキスト</slot>
+        <slot></slot>
     </label>
 </template>
 

@@ -5,7 +5,9 @@
         padding: buttonPadding,
         width: buttonWidth
     }">
-        <buttonText :level="level3White" :propText="text" />
+        <div class="redtext">
+            <buttonText :level="level3White" :propText="text" />
+        </div>
         <span :style="{ backgroundColor: arrowBackgroundColor }" class="arrow">{{ icon }}</span>
     </button>
 </template>
@@ -55,14 +57,23 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .loginProcess {
+    display: flex;
+    align-items: center;
     position: relative;
     border-radius: 23px;
     font-size: 17px;
     border: none;
     height: 34pt;
     box-shadow: 8pt 8pt 15pt #E7EAF0;
+    margin: 13pt 19pt;
+}
+
+.redtext {
+    display: flex;
+    align-items: center;
+    margin-left: 20pt;
 }
 
 .arrow {
@@ -79,5 +90,8 @@ export default {
     font-size: 1em;
     font-weight: bold;
     color: #FF6969;
+}
+.level3White {
+    padding-left: 20pt;
 }
 </style>

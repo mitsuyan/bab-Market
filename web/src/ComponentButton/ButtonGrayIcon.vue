@@ -46,7 +46,6 @@ export default {
     data() {
         return {
             level1Gray: "level1Gray",
-            text: "ボタン"
         }
     },
     methods: {
@@ -69,6 +68,7 @@ export default {
     border: none;
     height: 34pt;
     box-shadow: 8pt 8pt 15pt #E7EAF0;
+    margin: 13pt 19pt;
 }
 .textGray{
     margin: auto;
