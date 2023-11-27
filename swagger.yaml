@@ -241,6 +241,140 @@ paths:
         '400':
           $ref: '#/components/responses/BadRequestError'
 
+  /api/search:
+    get:
+      summary: 検索キーワードに基づいて商品を検索する。
+      parameters:
+        - $ref: '#/components/parameters/KeywordQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/search/history:
+    get:
+      summary: ユーザーの過去の検索履歴を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/search/history/{searchHistoryId}:
+    get:
+      summary: 過去の検索履歴IDに基づいて商品を検索する。
+      parameters:
+        - $ref: '#/components/parameters/SearchHistoryIdInPath'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/search/filtered:
+    get:
+      summary: 検索キーワードと絞り込み条件に基づいて商品を検索する。
+      parameters:
+        - $ref: '#/components/parameters/ExcludeKeywordQueryParam'
+        - $ref: '#/components/parameters/AgeQueryParam'
+        - $ref: '#/components/parameters/WeightQueryParam'
+        - $ref: '#/components/parameters/HeightQueryParam'
+        - $ref: '#/components/parameters/CategoryQueryParam'
+        - $ref: '#/components/parameters/BrandQueryParam'
+        - $ref: '#/components/parameters/ProductConditionQueryParam'
+        - $ref: '#/components/parameters/ColorQueryParam'
+        - $ref: '#/components/parameters/ShippingFeeResponsibilityQueryParam'
+        - $ref: '#/components/parameters/ShippingMethodQueryParam'
+        - $ref: '#/components/parameters/MaxPriceQueryParam'
+        - $ref: '#/components/parameters/MinPriceQueryParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/search/category/{categoryId}:
+    get:
+      summary: カテゴリIDに基づいて商品を検索する。
+      parameters:
+        - $ref: '#/components/parameters/CategoryIdInPath'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  
+  /api/search/favorites/list:
+    get:
+      summary: ユーザーのお気に入り商品の一覧を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/favorites/{productId}:
+    post:
+      summary: ユーザーが商品をお気に入りに追加する。
+      parameters:
+        - $ref: '#/components/parameters/ProductIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '201':
+          $ref: '#/components/responses/CreatedResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+    delete:
+      summary: ユーザーが商品をお気に入りに削除する。
+      parameters:
+        - $ref: '#/components/parameters/ProductIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /api//api/productviews/history:
+    get:
+      summary: ユーザーの閲覧履歴を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/ProductsResponse'
+        '401':
+          $ref: '#/components/responses/UnauthorizedError'
+
+  /api/productviews/{productId}:
+    post:
+      summary: ユーザーが商品詳細画面に遷移した際に、その情報を記録する。
+      parameters:
+        - $ref: '#/components/parameters/ProductIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '201':
+          $ref: '#/components/responses/CreatedResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
   # 他のエンドポイントも同様に定義...
 
 components:
@@ -269,6 +403,22 @@ components:
       schema:
         $ref: '#/components/schemas/productId'
 
+    SearchHistoryIdInPath:
+      description: URLに含める検索履歴ID
+      name: searchHistoryId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/searchHistoryId'
+
+    CategoryIdInPath:
+      description: URLに含めるカテゴリID
+      name: categoryId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/codeMasterId'
+
     SessionIdInHeader:
       description: リクエストヘッダに含めるセッションID
       in: header
@@ -284,6 +434,133 @@ components:
       required: true
       schema:
         $ref: '#/components/schemas/userId'
+
+    KeywordQueryParam:
+      description: クエリパラメータに含めるキーワード
+      in: query
+      name: keyword
+      schema:
+        $ref: '#/components/schemas/searchQuery'
+
+    ExcludeKeywordQueryParam:
+      description: クエリパラメータに含める除外キーワード
+      in: query
+      name: excludeKeyword
+      schema:
+        $ref: '#/components/schemas/searchQuery'
+
+    AgeQueryParam:
+      description: クエリパラメータに含める月齢
+      in: query
+      name: ages
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    WeightQueryParam:
+      description: クエリパラメータに含める体重
+      in: query
+      name: weights
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    HeightQueryParam:
+      description: クエリパラメータに含める身長
+      in: query
+      name: heights
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    CategoryQueryParam:
+      description: クエリパラメータに含めるカテゴリ
+      in: query
+      name: categories
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    BrandQueryParam:
+      description: クエリパラメータに含めるブランド
+      in: query
+      name: brands
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    ProductConditionQueryParam:
+      description: クエリパラメータに含める商品の状態
+      in: query
+      name: productConditions
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    ColorQueryParam:
+      description: クエリパラメータに含める色
+      in: query
+      name: colors
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    ShippingFeeResponsibilityQueryParam:
+      description: クエリパラメータに含める配送料の負担
+      in: query
+      name: shippingFeeResponsibilities
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    ShippingMethodQueryParam:
+      description: クエリパラメータに含める発送オプション
+      in: query
+      name: shippingMethods
+      schema:
+        type: array
+        items:
+          $ref: "#/components/schemas/codeMasterId"
+      style: form
+      explode: true
+    
+    MaxPriceQueryParam:
+      description: クエリパラメータに含める上限価格
+      in: query
+      name: maxPrice
+      schema:
+        $ref: '#/components/schemas/price'
+
+    MinPriceQueryParam:
+      description: クエリパラメータに含める下限価格
+      in: query
+      name: minPrice
+      schema:
+        $ref: '#/components/schemas/price'
 
   requestBodies: 
     PersonalUserInfoRequest:
@@ -400,6 +677,13 @@ components:
           schema:
             $ref: '#/components/schemas/shippingAddressWithId'
 
+    ProductsResponse:
+      description: 商品の一覧情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/products'
+
     ProductDetailsResponse:
       description: 商品の詳細情報
       content:
@@ -473,6 +757,7 @@ components:
 
     price:
       type: integer
+      minimum: 0
       description: 価格
 
     isFlag:
@@ -487,6 +772,15 @@ components:
     codeMasterName:
       type: string
       description: コードマスタ名
+
+    searchQuery:
+      type: string
+      description: 検索キーワード
+
+    searchHistoryId:
+      type: integer
+      format: int64
+      description: 検索履歴ID
 
     categoryInfo:
       type: object
