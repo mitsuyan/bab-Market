@@ -2,6 +2,7 @@ import shohinDisplay from '../Component/shohin/shohinDisplay.vue';
 import shohinInformation from '../Component/shohin/shohinInformation.vue';
 import shohinExplanation from '../Component/shohin/shohinExplanation.vue';
 import shohinSellorTest from '../Component/shohin/shohinSellorTest.vue';
+import shohinName from '../Component/shohin/shohinName.vue';
 export default {
     title: 'shohin'
 };
@@ -24,4 +25,9 @@ export const Shohinexplanation = () => ({
 export const Shohinsellortest = () => ({
     components: { shohinSellorTest },
     template: '<shohinSellorTest />'
+});
+
+export const Shohinname = () => ({
+    components: { shohinName },
+    template: '<shohinName />'
 });

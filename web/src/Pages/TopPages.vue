@@ -38,7 +38,7 @@ export default {
     },
     data() {
         return {
-            mainHeight: '438pt',
+            mainHeight: '600pt',
             show: '1'
         };
     },
