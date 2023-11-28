@@ -260,7 +260,7 @@ paths:
         - $ref: '#/components/parameters/UserIdInHeader'
       responses:
         '200':
-          $ref: '#/components/responses/ProductsResponse'
+          $ref: '#/components/responses/SearchHistoryResponse'
         '400':
           $ref: '#/components/responses/BadRequestError'
 
@@ -375,6 +375,71 @@ paths:
         '404':
           $ref: '#/components/responses/NotFoundError'
 
+  /api/transactions/start:
+    post:
+      summary: 新しい取引を開始する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      requestBody:
+        $ref: '#/components/requestBodies/TransactionRequest'
+      responses:
+        '201':
+          $ref: '#/components/responses/CreatedResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  
+  /api/transactions/{transactionId}/shipping:
+    patch:
+      summary: 取引の状況を発送後状態に更新する。
+      parameters:
+        - $ref: '#/components/parameters/TransactionIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+  
+  /api/transactions/{transactionId}/receipt:
+    patch:
+      summary: 取引の状況を受け取り状態に更新する。
+      parameters:
+        - $ref: '#/components/parameters/TransactionIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+      responses:
+        '204':
+          $ref: '#/components/responses/NoContentResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/transactions/history:
+    get:
+      summary: ユーザーが購入または出品した商品の取引履歴を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/TransactionsResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /api/transactions/{transactionId}/evaluations:
+    post:
+      summary: 取引に対する評価を投稿する。
+      parameters:
+        - $ref: '#/components/parameters/TransactionIdInPath'
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      requestBody:
+        $ref: '#/components/requestBodies/EvaluationRequest'
+      responses:
+        '201':
+          $ref: '#/components/responses/CreatedResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
   # 他のエンドポイントも同様に定義...
 
 components:
@@ -419,6 +484,14 @@ components:
       schema:
         $ref: '#/components/schemas/codeMasterId'
 
+    TransactionIdInPath:
+      description: URLに含める取引ID
+      name: transactionId
+      in: path
+      required: true
+      schema:
+        $ref: '#/components/schemas/transactionId'
+
     SessionIdInHeader:
       description: リクエストヘッダに含めるセッションID
       in: header
@@ -440,14 +513,14 @@ components:
       in: query
       name: keyword
       schema:
-        $ref: '#/components/schemas/searchQuery'
+        $ref: '#/components/schemas/keyword'
 
     ExcludeKeywordQueryParam:
       description: クエリパラメータに含める除外キーワード
       in: query
       name: excludeKeyword
       schema:
-        $ref: '#/components/schemas/searchQuery'
+        $ref: '#/components/schemas/keyword'
 
     AgeQueryParam:
       description: クエリパラメータに含める月齢
@@ -456,7 +529,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -467,7 +540,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -478,7 +551,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -489,7 +562,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -500,7 +573,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -511,7 +584,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -522,7 +595,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -533,7 +606,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -544,7 +617,7 @@ components:
       schema:
         type: array
         items:
-          $ref: "#/components/schemas/codeMasterId"
+          $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
     
@@ -627,6 +700,22 @@ components:
           schema:
             $ref: '#/components/schemas/reviewRequest'
 
+    TransactionRequest:
+      description: 取引開始時情報
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/transactionRequestInfo'
+
+    EvaluationRequest:
+      description: 取引評価情報
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/evaluationRequestInfo'
+
   responses: 
     MypageResponse:
       description: プロフィール情報
@@ -690,6 +779,20 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/productDetailsResponseInfo'
+
+    SearchHistoryResponse:
+      description: ユーザーの検索履歴情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/searchHistories'
+
+    TransactionsResponse:
+      description: ユーザーの取引履歴情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/transactions'
 
     CreatedResponse:
       description: リクエストに成功して、正常に作成されました(201)
@@ -773,7 +876,7 @@ components:
       type: string
       description: コードマスタ名
 
-    searchQuery:
+    keyword:
       type: string
       description: 検索キーワード
 
@@ -781,6 +884,21 @@ components:
       type: integer
       format: int64
       description: 検索履歴ID
+
+    transactionId:
+      type: integer
+      format: int64
+      description: 取引ID
+
+    comment:
+      type: string
+      description: コメント
+
+    score:
+      type: integer
+      maximum: 5
+      minimum: 1
+      description: 評価値
 
     categoryInfo:
       type: object
@@ -956,6 +1074,16 @@ components:
         product:
           $ref: '#/components/schemas/product'
 
+    productWithIdAndInProgress:
+      type: object
+      properties:
+        productId:
+          $ref: '#/components/schemas/productId'
+        product:
+          $ref: '#/components/schemas/product'
+        isInProgress:
+          $ref: '#/components/schemas/isFlag'
+
     products:
       type: array
       items:
@@ -1076,27 +1204,28 @@ components:
       type: object
       properties:
         rating:
-          type: integer
+          $ref: '#/components/schemas/score'
           description: 評価値
         usageDuration:
           $ref: '#/components/schemas/codeMasterName'
           description: 使用期間
         comment:
-          type: string
-          description: コメント
+          $ref: '#/components/schemas/comment'
+          description:  レビューコメント
+            
 
     reviewRequest:
       type: object
       properties:
         rating:
-          type: integer
+          $ref: "#/components/schemas/score"
           description: 評価値
         usageDuration:
           $ref: '#/components/schemas/codeMasterName'
           description: 使用期間
         comment:
-          type: string
-          description: コメント
+          $ref: "#/components/schemas/comment"
+          description: レビューコメント
 
     reviews:
       type: array
@@ -1132,7 +1261,7 @@ components:
           description: いいね！かどうか
         isSold:
           $ref: '#/components/schemas/isFlag'
-          description: いいね！かどうか
+          description: 売れたかどうか
         isSeller:
           $ref: '#/components/schemas/isFlag'
           description: 出品者かどうか
@@ -1169,3 +1298,50 @@ components:
         shippingDetails:
           $ref: '#/components/schemas/shippingDetailIds'
           description: 配送について
+
+    searchHistory:
+      type: object
+      properties:
+        searchHistoryId:
+          $ref: '#/components/schemas/searchHistoryId'
+          description: 検索履歴ID
+        keyword:
+          $ref: '#/components/schemas/keyword'
+          description: キーワード
+
+    searchHistories:
+      type: array
+      items:
+        $ref: '#/components/schemas/searchHistory'
+
+    transactionRequestInfo:
+     type: object
+     properties:
+       productId:
+        $ref: '#/components/schemas/productId'
+
+    transaction:
+      type: object
+      properties:
+        transactionId:
+          $ref: '#/components/schemas/transactionId'
+        product:
+          $ref: '#/components/schemas/productWithIdAndInProgress'
+        isBuyer:
+          $ref: '#/components/schemas/isFlag'
+
+    transactions:
+      type: array
+      items:
+        $ref: '#/components/schemas/transaction'
+
+    evaluationRequestInfo:
+      type: object
+      properties:
+        comment:
+          $ref: '#/components/schemas/comment'
+          description: 取引コメント
+        score:
+         $ref: '#/components/schemas/score'
+         description: 評価値
+        
