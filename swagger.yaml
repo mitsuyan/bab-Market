@@ -166,7 +166,7 @@ paths:
           $ref: '#/components/responses/BadRequestError'
         '404':
           $ref: '#/components/responses/NotFoundError'
-  
+
   /api/shipping-addresses/active:
     get:
       summary: アクティブな配送先を取得する。
@@ -211,7 +211,7 @@ paths:
           $ref: '#/components/responses/NoContentResponse'
         '404':
           $ref: '#/components/responses/NotFoundError'
-  
+
   /api/products:
     post:
       summary: 新しい商品を出品する。
@@ -307,7 +307,7 @@ paths:
           $ref: '#/components/responses/ProductsResponse'
         '400':
           $ref: '#/components/responses/BadRequestError'
-  
+
   /api/search/favorites/list:
     get:
       summary: ユーザーのお気に入り商品の一覧を取得する。
@@ -388,25 +388,15 @@ paths:
           $ref: '#/components/responses/CreatedResponse'
         '400':
           $ref: '#/components/responses/BadRequestError'
-  
-  /api/transactions/{transactionId}/shipping:
+
+  /api/transactions/{transactionId}:
     patch:
-      summary: 取引の状況を発送後状態に更新する。
+      summary: 取引の状況を更新する。
       parameters:
         - $ref: '#/components/parameters/TransactionIdInPath'
         - $ref: '#/components/parameters/SessionIdInHeader'
-      responses:
-        '204':
-          $ref: '#/components/responses/NoContentResponse'
-        '400':
-          $ref: '#/components/responses/BadRequestError'
-  
-  /api/transactions/{transactionId}/receipt:
-    patch:
-      summary: 取引の状況を受け取り状態に更新する。
-      parameters:
-        - $ref: '#/components/parameters/TransactionIdInPath'
-        - $ref: '#/components/parameters/SessionIdInHeader'
+      requestBody:
+        $ref: '#/components/requestBodies/TransactionStatusRequest'
       responses:
         '204':
           $ref: '#/components/responses/NoContentResponse'
@@ -439,6 +429,42 @@ paths:
           $ref: '#/components/responses/CreatedResponse'
         '400':
           $ref: '#/components/responses/BadRequestError'
+
+  /api/points/current:
+    get:
+      summary: 現在のポイント数を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/CurrentPointsResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
+
+  /api/points/charge:
+    post:
+      summary: 指定された金額でユーザーのポイントをチャージする。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '201':
+          $ref: '#/components/responses/ChargePointsResponse'
+        '400':
+          $ref: '#/components/responses/BadRequestError'
+
+  /api/points/history:
+    get:
+      summary: ユーザーのポイント履歴（取引による増減履歴とチャージ履歴）を取得する。
+      parameters:
+        - $ref: '#/components/parameters/SessionIdInHeader'
+        - $ref: '#/components/parameters/UserIdInHeader'
+      responses:
+        '200':
+          $ref: '#/components/responses/PointsHistoryResponse'
+        '404':
+          $ref: '#/components/responses/NotFoundError'
 
   # 他のエンドポイントも同様に定義...
 
@@ -576,7 +602,7 @@ components:
           $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
-    
+
     ProductConditionQueryParam:
       description: クエリパラメータに含める商品の状態
       in: query
@@ -587,7 +613,7 @@ components:
           $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
-    
+
     ColorQueryParam:
       description: クエリパラメータに含める色
       in: query
@@ -598,7 +624,7 @@ components:
           $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
-    
+
     ShippingFeeResponsibilityQueryParam:
       description: クエリパラメータに含める配送料の負担
       in: query
@@ -609,7 +635,7 @@ components:
           $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
-    
+
     ShippingMethodQueryParam:
       description: クエリパラメータに含める発送オプション
       in: query
@@ -620,7 +646,7 @@ components:
           $ref: '#/components/schemas/codeMasterId'
       style: form
       explode: true
-    
+
     MaxPriceQueryParam:
       description: クエリパラメータに含める上限価格
       in: query
@@ -708,6 +734,14 @@ components:
           schema:
             $ref: '#/components/schemas/transactionRequestInfo'
 
+    TransactionStatusRequest:
+      description: 取引更新時情報
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/transactionStatusRequestInfo'
+
     EvaluationRequest:
       description: 取引評価情報
       required: true
@@ -730,7 +764,7 @@ components:
                 $ref: '#/components/schemas/profileUserInfoWithRating'
               products:
                 $ref: '#/components/schemas/products'
-    
+
     PersonalUserInfoResponse:
       description: プロフィール情報
       content:
@@ -793,6 +827,27 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/transactions'
+
+    CurrentPointsResponse:
+      description: ユーザーの現在のポイント残高情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/currentPointsInfo'
+
+    ChargePointsResponse:
+      description: ユーザーがチャージするポイント数情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/chargePointsInfo'
+
+    PointsHistoryResponse:
+      description: ユーザーのポイント履歴情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/pointHistories'
 
     CreatedResponse:
       description: リクエストに成功して、正常に作成されました(201)
@@ -867,11 +922,15 @@ components:
       type: boolean
       description: かどうか
 
+    date-time:
+      type: string
+      format: date-time
+
     codeMasterId:
       type: integer
       format: int32
       description: コードマスタID
-    
+
     codeMasterName:
       type: string
       description: コードマスタ名
@@ -899,6 +958,11 @@ components:
       maximum: 5
       minimum: 1
       description: 評価値
+
+    points:
+      type: integer
+      minimum: 0
+      description: ポイント
 
     categoryInfo:
       type: object
@@ -973,7 +1037,7 @@ components:
           $ref: '#/components/schemas/userId'
         sessionId:
           $ref: '#/components/schemas/sessionId'
-    
+
     signupInfo:
       allOf:
         - $ref: '#/components/schemas/loginInfo'
@@ -1040,7 +1104,7 @@ components:
             $ref: '#/components/schemas/shippingAddressId'
         shippingAddress:
           $ref: '#/components/schemas/shippingAddress'
-  
+
     shippingAddresses:
       type: array
       items:
@@ -1062,8 +1126,7 @@ components:
           $ref: '#/components/schemas/isFlag'
           description: 商品が売れたかどうか
         date:
-          type: string
-          format: date-time
+          $ref: '#/components/schemas/date-time'
           description: 出品時刻
 
     productWithId:
@@ -1212,7 +1275,6 @@ components:
         comment:
           $ref: '#/components/schemas/comment'
           description:  レビューコメント
-            
 
     reviewRequest:
       type: object
@@ -1315,10 +1377,17 @@ components:
         $ref: '#/components/schemas/searchHistory'
 
     transactionRequestInfo:
-     type: object
-     properties:
-       productId:
-        $ref: '#/components/schemas/productId'
+      type: object
+      properties:
+        productId:
+          $ref: '#/components/schemas/productId'
+
+    transactionStatusRequestInfo:
+      type: object
+      properties:
+        statusType:
+          type: string
+          enum: [shipping, receipt]
 
     transaction:
       type: object
@@ -1344,4 +1413,48 @@ components:
         score:
          $ref: '#/components/schemas/score'
          description: 評価値
+
+    currentPointsInfo:
+      type: object
+      properties:
+        currentPoints:
+          $ref: '#/components/schemas/points'
+          description: 現在のポイント数
+
+    chargePointsInfo:
+      type: object
+      properties:
+        chargePoints:
+          $ref: '#/components/schemas/points'
+          description: チャージするポイント数
+
+    pointHistory:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: [charge, transaction]
+          description: ポイント種別
+        points:
+          $ref: '#/components/schemas/points'
+          description: ポイント数
+        isPlus:
+          $ref: '#/components/schemas/isFlag'
+          description: プラスかどうか
+        date:
+          $ref: '#/components/schemas/date-time'
+          description: 取引日時
+        transactionId:
+          $ref: '#/components/schemas/transactionId'
+          nullable: true
+          description: 取引ID
+        productName:
+          $ref: '#/components/schemas/productName'
+          nullable: true
+          description: 商品名
+
+    pointHistories:
+      type: array
+      items:
+        $ref: '#/components/schemas/pointHistory'
         
