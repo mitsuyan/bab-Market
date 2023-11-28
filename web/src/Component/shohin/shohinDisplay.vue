@@ -39,7 +39,7 @@ export default {
             return `¥${price.toLocaleString()}`;
         },
         goToProductDetail(productId) {
-            this.$router.push({ path: `/product/${productId}` });
+            this.$router.push({ path: `/product/${productId}` })
         }
     }
 };

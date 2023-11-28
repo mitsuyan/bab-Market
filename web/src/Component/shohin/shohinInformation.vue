@@ -34,7 +34,11 @@
         <!-- カラー -->
         <div class="color">
             <div class="h1"><formText :level="textFormLabelBluegray">色</formText></div>
-            <div class="h2"><formText :level="textFormLevel2">API実装</formText></div>
+            <div class="h2"><formText :level="textFormLevel2">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8" cy="8" r="8" :fill="color" /></svg>
+                API実装</formText>
+            </div>
         </div>
     </div>
 </template>
@@ -56,7 +60,8 @@ export default {
             textFormLabelBluegray: 'textFormLabelBluegray',
             //詳細の文字
             textFormLevel2: 'textFormLevel2',
-            text: "商品の情報"
+            text: "商品の情報",
+            color: 'green'
         }
     }
 }
@@ -68,7 +73,6 @@ export default {
 }
 .informationBase{
     display: flex;
-    width: 323pt;
     flex-flow: row wrap;
     padding-left: 32pt;
 }

@@ -7,6 +7,7 @@
                 <div class="imageText">mitsukun</div>
                 <div class="sellorEvaluation">
                     <div class="sellorImg">
+                        <div class="sellorAverage">4.9</div>
                         <svg id="rating" xmlns="http://www.w3.org/2000/svg" width="28.583" height="13.944"
                             viewBox="0 0 28.583 13.944">
                             <rect id="長方形_12" data-name="長方形 12" width="28.583" height="13.944" rx="6.972"
@@ -16,7 +17,6 @@
                                 transform="translate(-50.33 -61.064)" fill="#fff" />
                         </svg>
                     </div>
-                    <div class="sellorAverage">4.9</div>
                 </div>
             </div>
         </div>
@@ -50,9 +50,8 @@ export default {
 .sellorAverage {
     font-size: 6pt;
     position: absolute;
-    top: 571pt;
-    left: 128pt;
-    padding: 0;
+    padding-left: 12px;
+    padding-top: 1px;
     margin: 0;
     font-weight: 900;
     color: #ffffff;
@@ -75,7 +74,6 @@ img.selimg {
     overflow: hidden;
     border-radius: 50%;
 }
-
 .imageText {
     bottom: 0;
     left: 0;

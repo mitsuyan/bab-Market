@@ -1,4 +1,5 @@
 <template>
+    <div class="shohinNameBase">
         <!-- Goodボタン -->
         <div class="shohinGood" @click="toggleLike">
             <svg v-if="liked" xmlns="http://www.w3.org/2000/svg" width="19.25" height="16.079" viewBox="0 0 19.25 16.079">
@@ -10,23 +11,23 @@
         </div>
         <div class="shohinName">
             <formText :level="textFormLevel1">商品名をここに記入</formText>
-            <formText :level="textFormLevel2">￥00000</formText>
+            <formText :level="textFormLevel1">￥00000</formText>
         </div>
+    </div>
 </template>
 
 <script>
 import formText from '../../Components/atoms/formText.vue';
 
 export default {
-    ccomponents: {
+    components: {
         formText
     },
     data() {
         return {
             liked: false,
             disliked: false,
-            textFormLevel1: 'textFormLevel1',
-            textFormLevel2: 'textFormLevel2'
+            textFormLevel1: 'textFormLevel1'
         };
     },
     methods: {
@@ -41,3 +42,21 @@ export default {
     },
 };
 </script>
+
+<style>
+.shohinGood{
+    width: 17pt;
+    height: 15pt;
+}
+.shohinNameBase{
+    display: flex;
+}
+.shohinGood{
+    margin: 4pt 40pt;
+}
+.shohinName{
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+}
+</style>

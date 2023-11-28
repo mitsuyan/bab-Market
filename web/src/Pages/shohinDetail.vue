@@ -4,6 +4,7 @@
         <div class="center-container">
             <img src="/img/logo.png" class="shohinDetailImg">
         </div>
+            <shohinName />
             <ShohinInformation />
             <shohinExplanation />
             <ShohinSellorTest />
@@ -12,6 +13,7 @@
 </template>
 <script>
 import detailHeader from '../Component/header/detailHeader.vue';
+import shohinName from '../Component/shohin/shohinName.vue';
 import shohinExplanation from '../Component/shohin/shohinExplanation.vue';
 import ShohinInformation from '../Component/shohin/shohinInformation.vue';
 import ShohinSellorTest from '../Component/shohin/shohinSellorTest.vue';
@@ -25,7 +27,8 @@ export default {
         ShohinSellorTest,
         mainBase,
         shohinDetailfooter,
-        detailHeader
+        detailHeader,
+        shohinName
     },
     data(){
         return{
@@ -44,5 +47,7 @@ export default {
 }
 img.shohinDetailImg{
     align-items: center;
+    width: 218pt;
+    height: 218pt;
 }
 </style>
