@@ -5,7 +5,7 @@
         color: fore_color,
         width: buttonWidth
     }">
-        <buttonText :level="level2White" :propText="data" />
+        <buttonText :level="level2White" :propText="propText" />
     </button>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     },
     data() {
         return {
-            data: "ログイン",
+            propText: "ログイン",
             level2White: "level2White"
         }
     }

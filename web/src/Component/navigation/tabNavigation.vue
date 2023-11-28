@@ -1,24 +1,35 @@
 <template>
     <div class="homeTab">
-        <ul class="homeTabNav">
-            <li @click="select('1', 'level4Selected')" :class="{ 'active': show === '1' }">
-                <headerText :level="level1" :headerText="headerText1" />
-            </li>
-            <li @click="select('2', 'level4Selected')" :class="{ 'active': show === '2' }">
-                <headerText :level="level2" :headerText="headerText2" />
-            </li>
-            <li @click="select('3', 'level4Selected')" :class="{ 'active': show === '3' }">
-                <headerText :level="level3" :headerText="headerText3" />
-            </li>
-        </ul>
+        <div class="tabContainerContainer">
+            <ul class="homeTabNav">
+                <li @click="select('1', 'level4Selected')" :class="{ 'active': show === '1' }">
+                    <headerText :level="level1" :headerText="headerText1" />
+                </li>
+                <li @click="select('2', 'level4Selected')" :class="{ 'active': show === '2' }">
+                    <headerText :level="level2" :headerText="headerText2" />
+                </li>
+                <li @click="select('3', 'level4Selected')" :class="{ 'active': show === '3' }">
+                    <headerText :level="level3" :headerText="headerText3" />
+                </li>
+            </ul>
+        </div>
+        <div class="productContainer">
+            <div v-if="show === '1'" class="scrollableContent">
+                <shohinDisplay />
+            </div>
+        </div>
+        <div v-if="show === '2'">タブ2のコンテンツ</div>
+        <div v-if="show === '3'">タブ3のコンテンツ</div>
     </div>
 </template>
 
 <script>
 import headerText from '../../Components/atoms/headerText.vue';
+import shohinDisplay from '../shohin/shohinDisplay.vue';
 export default {
         components: {
-            headerText
+            headerText,
+            shohinDisplay
         },
         data() {
             return {
@@ -55,30 +66,45 @@ export default {
     }
     </script>
 
-<style>
-.homeTab{
-        width: 323pt;
-        background-color: #ffffff;
-    }
-    .homeTabNav {
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-        box-shadow: 0 8pt 15pt #727C8E10;
-        width: 323pt;
-        height: 36pt;
-    }
 
-    .homeTabNav li {
-        cursor: pointer;
-        width: 50%;
-        background: #ffffff;
-        text-align: center;
-    }
+<style scoped>
+.homeTab {
+    width: 323pt;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
 
-    ul {
-        padding-inline-start: 0;
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
+.tabContainerContainer {
+    overflow-y: auto;
+    max-height: 100vh;
+}
+
+.productContainer {
+    overflow-y: auto;
+    max-height: calc(100vh - 36pt);
+    /* タブナビゲーションの高さを考慮 */
+}
+
+.scrollableContent {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.homeTabNav {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    box-shadow: 0 8pt 15pt #727C8E10;
+    width: 323pt;
+    height: 36pt;
+    margin: 0;
+    padding: 0;
+}
+
+.homeTabNav li {
+    cursor: pointer;
+    width: 50%;
+    background: #ffffff;
+    text-align: center;
+}
 </style>

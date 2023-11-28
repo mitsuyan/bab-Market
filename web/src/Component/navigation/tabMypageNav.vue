@@ -25,3 +25,14 @@ export default {
     }
 };
 </script>
+
+<style>
+.svg {
+    text-align: center;
+    padding-top: 10pt;
+}
+
+.text {
+    text-align: center;
+}
+</style>

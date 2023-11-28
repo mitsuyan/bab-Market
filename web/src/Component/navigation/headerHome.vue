@@ -25,7 +25,7 @@
 
 </script>
 
-<style>
+<style scoped>
 .headerHome{
     display: flex;
     width: 323pt;
@@ -34,7 +34,6 @@
     background-color: #ffffff;
 }
 .svgMb{
-    padding-left: 41%;
     padding-bottom: 4pt;
 }
 .svgBell{

@@ -24,7 +24,6 @@ export default {
 <style scoped>
 .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 322.5pt;
     height: 42.75pt;

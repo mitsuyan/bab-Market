@@ -24,7 +24,7 @@ export default{
 
 .grayBase{
     background: linear-gradient(180deg, #F5F6F8AD, #F5F6F8);
-    width: 430pt;
+    width: 323pt;
 }
 
 .outline{
