@@ -34,49 +34,49 @@ export default {
             level2Pink: 'level2Pink',
             textFormLevel2: 'textFormLevel2',
             text: "出品者",
-            // userProfile: null, // ユーザのプロフィール情報を保持する変数
-            // userMypage: null
+            userProfile: null, // ユーザのプロフィール情報を保持する変数
+            userMypage: null
         };
     },
-    // mounted() {
-    //     this.fetchUserProfile();
-    // }, 
-    // methods: {
-    //     // ユーザのプロフィール情報を取得するメソッド
-    //     fetchUserProfile() {
-    //         // 実際のAPIエンドポイントを指定
-    //         const apiMypage = 'http://api.example.com/v1/api/users/{userId}/mypage';
-    //         const apiProfile = 'http://api.example.com/v1/api/users/profile';
-    //         // axiosを使用してAPIにGETリクエストを送信
-    //         axios.get(apiMypage, {
-    //             // 必要な場合、ヘッダー情報やクエリパラメータを指定
-    //             params: {
-    //                 'userId': 123,
-    //             },
-    //         })
-    //         .then(response => {
-    //             // APIからのレスポンスを処理
-    //             // 例: 必要な情報だけを変数に代入する
-    //             this.userMypage = {
-    //                 averageRating: response.data.averageRating
-    //             };
-    //         })
-    //         .catch(error => {
-    //             // エラー処理
-    //             console.error('API通信エラー:', error);
-    //         });
-    //         axios.get(apiProfile, {
-    //         })
-    //             .then(response => {
-    //                 this.userProfile = {
-    //                     nickname: response.data.nickname,
-    //                     imagePath: response.data.imagePath
-    //                 };
-    //             })
-    //             .catch(error => {
-    //                 console.error('API通信エラー:', error);
-    //             });
-    //     }
-    //}
+    mounted() {
+        this.fetchUserProfile();
+    }, 
+    methods: {
+    // ユーザのプロフィール情報を取得するメソッド
+        fetchUserProfile() {
+        // 実際のAPIエンドポイントを指定
+        const apiMypage = 'http://api.example.com/v1/api/users/{userId}/mypage';
+            const apiProfile = 'http://api.example.com/v1/api/users/profile';
+            // axiosを使用してAPIにGETリクエストを送信
+            axios.get(apiMypage, {
+            // 必要な場合、ヘッダー情報やクエリパラメータを指定
+                params: {
+                    'userId': 123,
+                },
+            })
+            .then(response => {
+            // APIからのレスポンスを処理
+            // 例: 必要な情報だけを変数に代入する
+                this.userMypage = {
+                    averageRating: response.data.averageRating
+                };
+            })
+            .catch(error => {
+                // エラー処理
+                console.error('API通信エラー:', error);
+            });
+            axios.get(apiProfile, {
+            })
+            .then(response => {
+                this.userProfile = {
+                    nickname: response.data.nickname,
+                    imagePath: response.data.imagePath
+                };
+            })
+            .catch(error => {
+                console.error('API通信エラー:', error);
+            });
+        }
+    }
 };
 </script>

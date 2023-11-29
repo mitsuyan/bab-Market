@@ -32,6 +32,7 @@ export default {
     padding-top: 10pt;
 }
 .text {
-    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 </style>

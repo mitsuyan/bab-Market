@@ -1,3 +1,4 @@
+<!-- フッターボタン -->
 <template>
     <div class="tabContent">
         <div v-if="show === '1'">
@@ -57,12 +58,12 @@ export default {
             this.tabs.forEach((tab) => {
                 if (tab.id === tabId) {
                     tab.fill = '#FF6969';
-                    tab.level = tabId;
+                    tab.level = 'level1Selected';
                 } else {
                     tab.fill = '#515c6f';
                     tab.level = 'level1';
                 }
-                return true; // プロパティが正常に変更されたことを示す
+                return true;
             });
         }
     }
@@ -97,13 +98,5 @@ ul {
     padding-inline-start: 0;
     margin-block-start: 0;
     margin-block-end: 0;
-}
-
-.svg,
-.text {
-    text-align: center;
-}
-.text {
-    text-align: center;
 }
 </style>

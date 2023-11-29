@@ -85,11 +85,25 @@ export default {
     /* タブナビゲーションの高さを考慮 */
 }
 
-.scrollableContent {
-    max-height: 100%;
-    overflow-y: auto;
+.productContainer {
+    overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */
+    scrollbar-width: thin; /* Firefox 対応 */
+    -webkit-scrollbar-width: thin; /* Chrome, Safari 対応 */
+    scrollbar-color: transparent transparent; /* Firefox 対応 */
+    -webkit-scrollbar: thin; /* Chrome, Safari 対応 */
 }
 
+/* コンテンツがはみ出た場合のスクロールバーのスタイル */
+.productContainer::-webkit-scrollbar {
+    width: 6px; /* スクロールバーの幅 */
+}
+.productContainer::-webkit-scrollbar-thumb {
+    background-color: transparent; /* スクロールバーの中央の色 */
+}
+
+.productContainer::-webkit-scrollbar-track {
+    background-color: transparent; /* スクロールバーのトラックの色 */
+}
 .homeTabNav {
     display: flex;
     align-items: center;

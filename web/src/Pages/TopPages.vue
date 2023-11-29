@@ -15,7 +15,7 @@
             </template>
             <template v-slot:4>
                 <!-- 4番目のタブのコンテンツをここに挿入 -->
-                <div>Content for Tab 4</div>
+                <div><mypage /></div>
             </template>
         </tabContent>
     </mainBase>
@@ -25,16 +25,16 @@
 import headerHome from '../Component/navigation/headerHome.vue';
 import footerNavigation from '../Component/navigation/footerNavigation.vue';
 import mainBase from '../Component/mainBase.vue';
-import tabNavigation from '../Component/navigation/tabNavigation.vue';
 import tabContent from '../Component/navigation/tabContent.vue';
+import mypage from './mypage.vue';
 
 export default {
     components: {
         headerHome,
         footerNavigation,
         mainBase,
-        tabNavigation,
-        tabContent
+        tabContent,
+        mypage
     },
     data() {
         return {
