@@ -1,56 +1,90 @@
 <template>
-        <input type="checkbox" v-model="isChecked" />
-        <div  @click="handleChange" >
-            <img src="../../assets/checked.svg" alt="checked">
-        </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        isChecked: false,
-      };
-    },
-    methods: {
-      handleChange() {
-        this.isChecked = !this.isChecked;
-        console.log('Checkbox value changed:', this.isChecked);
-      },
-    },
-  };
-  </script>
-  
-  <style scoped>
-  input[type=checkbox]{
-    display: none;
-  }
-  
-  input[type=checkbox] + div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    width: 19px;
-    height: 19px;
-    border: 2px solid #969696;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  input[type=checkbox]:checked + div{
-    border: 2px solid #969696;
-  }
+  <div :class="containerLevel" @click="handleChange" :id="id">
+    <input type="checkbox" :checked="checked" />
+    <div :class="checkBoxLevel">
+      <Img fileName="checked.svg" altName="checked" />
+    </div>
+    <slot></slot>
+  </div>
+</template>
 
-  input[type=checkbox] + div > img{
-    opacity: 0%;
-    width: 10.55px;
-    transition: opacity 200ms 0s ease;
-  }
+<script>
+import Img from '../atoms/img.vue';
 
-  input[type=checkbox]:checked + div > img{
-    opacity: 100%;
-    width: 10.55px;
-  }
-  </style>
-  
+export default {
+  components: {
+    Img,
+  },
+  props: {
+    checkBoxLevel: {
+      type: String,
+      default: "",
+    },
+    id: {
+      type: Number,
+      default: "defaultId",
+    },
+    containerLevel: {
+      type: String,
+      default: "defaultClass",
+    },
+    checked: {
+      type: Boolean,
+      default:false,
+    },
+  },
+  methods: {
+    handleChange() {
+      this.$emit('change', this.id ,!this.checked);
+    },
+  },
+};
+</script>
+
+<style scoped>
+.containerLevel1 {
+  display: flex;
+  height: 50px;
+  width: 315px;
+  align-items: center;
+  gap: 29px;
+  background-color: white;
+  transition: background-color 100ms 0s ease;
+}
+
+.containerLevel1:active {
+  background-color: #f8f8f8;
+  transition: background-color 100ms 0s ease;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + .checkBoxGray {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 19px;
+  height: 19px;
+  border: 2px solid #969696;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + .checkBoxGray {
+  border: 2px solid #969696;
+}
+
+input[type=checkbox] + .checkBoxGray > Img {
+  opacity: 0%;
+  width: 10.55px;
+  transition: opacity 200ms 0s ease;
+}
+
+input[type=checkbox]:checked + .checkBoxGray > Img {
+  opacity: 100%;
+  width: 10.55px;
+}
+</style>

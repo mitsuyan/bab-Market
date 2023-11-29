@@ -1,6 +1,6 @@
 <template>
     <link rel="stylesheet" href="https://use.typekit.net/oie4jfa.css">
-    <label :class="level">
+    <label :class="level" :for="labelId">
         <slot>defaultText デフォルトのテキスト</slot>
     </label>
 </template>
@@ -11,8 +11,12 @@ export default{
         level: {
             type: String,
             default: "level1",
+        },
+        labelId:{
+            type: Number,
+            default: 1,
         }
-    }
+    },
 };
 </script>
 

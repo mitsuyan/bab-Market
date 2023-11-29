@@ -1,5 +1,7 @@
 <template>
-    <div :class="base"></div>
+    <div :class="base">
+        <slot></slot>
+    </div>
 </template>
 <script>
 export default{
@@ -13,10 +15,14 @@ export default{
 </script>
 <style scoped>
 .mainBase{
+    display: flex;
+    flex-direction: column; /* 列方向に配置 */
+    align-items: center; /* 縦方向に中央揃え */
     width: 344px;
     height: 100vh;
     background-color: #FFFFFF;
     box-shadow: -4px 0px 6px #727C8E4E;
+
 }
 
 .grayBase{
