@@ -50,6 +50,7 @@ export default {
     display: flex;
     width: 323pt;
     flex-flow: row wrap;
+    padding-bottom: 20pt;
 }
 .product {
     margin: 5pt;

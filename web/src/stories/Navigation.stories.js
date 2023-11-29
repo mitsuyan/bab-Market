@@ -1,6 +1,7 @@
 import footerNavigation from '../Component/navigation/footerNavigation.vue';
 import headerHome from '../Component/navigation/headerHome.vue';
-import tabNavigation from '../Component/navigation/tabNavigation.vue';
+import shohinList from '../Component/shohin/shohinList.vue';
+import tabContent from '../Component/navigation/tabContent.vue';
 
 export default {
     title: 'Navigation'
@@ -16,7 +17,12 @@ export const hederhome = () => ({
     template: '<headerHome />'
 });
 
-export const tabnavigation = () => ({
-    components: { tabNavigation },
-    template: '<tabNavigation />'
+export const shohinlist = () => ({
+    components: { shohinList },
+    template: '<shohinList />'
+});
+
+export const Tabcontent = () => ({
+    components: { tabContent },
+    template: '<tabContent />'
 });

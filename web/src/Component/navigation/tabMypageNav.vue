@@ -33,6 +33,7 @@ export default {
 }
 
 .text {
-    text-align: center;
+    justify-content: center;
+    display: flex;
 }
 </style>
