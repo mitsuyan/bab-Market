@@ -655,7 +655,7 @@ components:
       schema:
         type: array
         items:
-          $ref: '#/components/schemas/codeMasterId'
+          $ref: '#/components/schemas/colorId'
       style: form
       explode: true
 
@@ -1012,6 +1012,11 @@ components:
       minimum: 0
       description: ポイント
 
+    colorId:
+      type: integer
+      format: int32
+      description: 色ID
+
     categoryInfo:
       type: object
       properties:
@@ -1021,6 +1026,19 @@ components:
         name:
           $ref: '#/components/schemas/codeMasterName'
           description: カテゴリ名
+
+    colorInfo:
+      type: object
+      properties:
+        colorId:
+          $ref: '#/components/schemas/colorId'
+          description: 色ID
+        name:
+          type: string
+          description: 色名
+        colorCode:
+          type: string
+          description: 色コード
 
     personalUserInfo:
       type: object
@@ -1235,7 +1253,7 @@ components:
         minorCategory:
           $ref: '#/components/schemas/categoryInfo'
         color:
-          $ref: '#/components/schemas/codeMasterName'
+          $ref: '#/components/schemas/colorInfo'
           description: 色
         condition:
           $ref: '#/components/schemas/codeMasterName'
