@@ -29,6 +29,7 @@ import tabContent from '../Component/navigation/tabContent.vue';
 import mypage from './mypage.vue';
 
 export default {
+    name: 'MyPage',
     components: {
         headerHome,
         footerNavigation,

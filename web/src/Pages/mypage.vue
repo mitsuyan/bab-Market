@@ -1,10 +1,12 @@
 <template>
+    <div id="app">
     <mainBase :height="mainHeight" class="scrollable-container">
         <mypageHeader />
         <myAcount />
         <comentText />
         <shohinDisplay class="shohinList" />
     </mainBase>
+    </div>
 </template>
 
 <script>
@@ -15,6 +17,7 @@ import myAcount from '../Component/mypage/myAcount.vue';
 import comentText from '../Component/mypage/comentText.vue';
 
 export default {
+    name: 'MyPage',
     components: {
         mypageHeader,
         mainBase,

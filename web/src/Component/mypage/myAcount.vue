@@ -25,14 +25,12 @@
 </template>
 
 <script>
-import buttonText from '../../Components/atoms/buttonText.vue';
 import formText from '../../Components/atoms/formText.vue';
 import ButtonWhiteShortBold from "../../ComponentButton/ButtonWhiteShortBold.vue";
 
 
 export default {
     components: {
-        buttonText,
         formText,
         ButtonWhiteShortBold
     },
