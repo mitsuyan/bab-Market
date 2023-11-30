@@ -348,7 +348,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFoundError'
 
-  /api//api/productviews/history:
+  /api/productviews/history:
     get:
       summary: ユーザーの閲覧履歴を取得する。
       parameters:
