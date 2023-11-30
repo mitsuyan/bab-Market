@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# /api/search へのリクエストを search/getProducts.php にルーティング
+RewriteRule ^search$ search/getProducts.php [NC,L]
+
+# /api/search/history へのリクエストを search/getSearchHistory.php にルーティング
+RewriteRule ^search/history$ search/getSearchHistory.php [NC,L]
+
+# /api/search/filtered へのリクエストを search/getFilteredResults.php にルーティング
+RewriteRule ^search/filtered$ search/getFilteredResults.php [NC,L]
