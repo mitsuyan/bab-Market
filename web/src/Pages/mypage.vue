@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            mainHeight: '600pt',
+            mainHeight: '580pt',
         };
     }
 };
@@ -33,7 +33,6 @@ export default {
 <style>
 .shohinList{
     padding-top: 20pt;
-    padding-bottom: 10pt;
 }
 .scrollable-container {
     overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */

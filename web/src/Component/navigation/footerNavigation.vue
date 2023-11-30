@@ -30,11 +30,10 @@ export default {
 .headerTab{
     position: fixed;
     z-index:10000;
-    top:42pt;
+    top:60pt;
 }
 .header{
     position: fixed;
     z-index:10000;
-    top: 0;
 }
 </style>

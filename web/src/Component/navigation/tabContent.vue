@@ -74,13 +74,13 @@ export default {
 .tabGroup {
     position: fixed;
     z-index: 10000;
-    bottom: 0;
+    bottom: 1px;
 }
 
 .tabnav {
     display: flex;
     list-style-type: none;
-    width: 322pt;
+    width: 323pt;
     height: 45pt;
 }
 

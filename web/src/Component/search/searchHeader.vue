@@ -1,17 +1,20 @@
 <template>
-    <div class="headerHome">
-        <div class="svgMb"><svg xmlns="http://www.w3.org/2000/svg" width="69" height="84" viewBox="0 0 83 84">
-            <ellipse id="楕円形_22" data-name="楕円形 22" cx="23" cy="22.5" rx="23" ry="22.5" transform="translate(0 31)" fill="#ff6969"/>
-            <ellipse id="楕円形_23" data-name="楕円形 23" cx="28" cy="28.5" rx="28" ry="28.5" transform="translate(27 19)" fill="#ff6969"/>
-            <text id="b" transform="translate(44 67)" fill="#fff" font-size="58" font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700"><tspan x="0" y="0">b</tspan></text>
-            <text id="m" transform="translate(4 66)" fill="#fff" font-size="46" font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700"><tspan x="0" y="0">m</tspan></text>
-        </svg></div>
-        <div class="svgBell">
-            <svg id="Icon_Notifications" data-name="Icon Notifications" xmlns="http://www.w3.org/2000/svg" width="26" height="30" viewBox="0 0 18.741 22">
-            <path id="notifications" d="M12.37,24a2.209,2.209,0,0,0,2.2-2.2h-4.41A2.209,2.209,0,0,0,12.37,24Zm7.166-6.6V11.35a7.082,7.082,0,0,0-5.512-6.93V3.65a1.654,1.654,0,0,0-3.307,0v.77A7.082,7.082,0,0,0,5.2,11.35V17.4L3,19.6v1.1H21.741V19.6Zm-2.2,1.1H7.41V11.35a4.961,4.961,0,0,1,9.922,0Z" transform="translate(-3 -2)" fill="#727c8e"/>
+    <div class="serchHeaderSvg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="69" height="84" viewBox="0 0 83 84">
+        <ellipse id="楕円形_22" data-name="楕円形 22" cx="23" cy="22.5" rx="23" ry="22.5" transform="translate(0 31)" fill="#ff6969"/>
+        <ellipse id="楕円形_23" data-name="楕円形 23" cx="28" cy="28.5" rx="28" ry="28.5" transform="translate(27 19)" fill="#ff6969"/>
+        <text id="b" transform="translate(44 67)" fill="#fff" font-size="58" font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700"><tspan x="0" y="0">b</tspan></text>
+        <text id="m" transform="translate(4 66)" fill="#fff" font-size="46" font-family="ZenMaruGothic-Bold, Zen Maru Gothic" font-weight="700"><tspan x="0" y="0">m</tspan></text>
         </svg>
+    </div>
+    <div class="parallelPoint">
+        <Rectangle18GrayRadius />
+        <div class="searchSvgBell">
+            <svg id="Icon_Notifications" data-name="Icon Notifications" xmlns="http://www.w3.org/2000/svg" width="26" height="30" viewBox="0 0 18.741 22">
+                <path id="notifications" d="M12.37,24a2.209,2.209,0,0,0,2.2-2.2h-4.41A2.209,2.209,0,0,0,12.37,24Zm7.166-6.6V11.35a7.082,7.082,0,0,0-5.512-6.93V3.65a1.654,1.654,0,0,0-3.307,0v.77A7.082,7.082,0,0,0,5.2,11.35V17.4L3,19.6v1.1H21.741V19.6Zm-2.2,1.1H7.41V11.35a4.961,4.961,0,0,1,9.922,0Z" transform="translate(-3 -2)" fill="#727c8e"/>
+            </svg>
         </div>
-        <div class="svgMessage">
+        <div class="searchSvgMessage">
             <svg xmlns="http://www.w3.org/2000/svg" width="26" height="30" viewBox="0 0 20.383 21.395">
             <g id="Icon_Messages" data-name="Icon Messages" transform="translate(2.1 2.1)">
             <g id="Messages" transform="translate(-48 -48)" fill="none" stroke-linecap="round">
@@ -21,27 +24,29 @@
         </div>
     </div>
 </template>
-<script>
 
+<script>
+import Rectangle18GrayRadius from '../../ComponentText/Rectangle18GrayRadius.vue';
+
+export default {
+    components: {
+        Rectangle18GrayRadius
+    }
+}
 </script>
 
-<style scoped>
-.headerHome{
-    display: flex;
-    width: 323pt;
-    height: 43pt;
-    align-items: center;
-    background-color: #ffffff;
-    top: 2px;
-}
-.svgMb{
+<style>
+.serchHeaderSvg{
     padding-left: 42%;
 }
-.svgBell{
-    padding-left: 26%;
+.parallelPoint{
+    display: flex;
+    padding-left: 4%;
 }
-.svgMessage{
-    padding-left: 8pt;
-    padding-right: 10pt;
+.searchSvgBell{
+    padding-left: 4%;
+}
+.searchSvgMessage{
+    padding-left: 2%;
 }
 </style>

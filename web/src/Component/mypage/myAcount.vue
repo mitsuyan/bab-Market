@@ -16,6 +16,9 @@
                         <formText :level="textFormLevel5">18</formText>
                     </div>
                 </div>
+                <div class="buttonWhiteLight">
+                    <ButtonWhiteShortBold :width="width" :text="text" />
+                </div>
             </div>
         </div>
     </div>
@@ -24,17 +27,22 @@
 <script>
 import buttonText from '../../Components/atoms/buttonText.vue';
 import formText from '../../Components/atoms/formText.vue';
+import ButtonWhiteShortBold from "../../ComponentButton/ButtonWhiteShortBold.vue";
+
 
 export default {
     components: {
         buttonText,
-        formText
+        formText,
+        ButtonWhiteShortBold
     },
     data() {
         return {
             textFormLevel4: 'textFormLevel4',
             textFormLevel5: 'textFormLevel5',
-            rating: 3 // アカウントの評価値（仮の値）
+            rating: 3, // アカウントの評価値（仮の値）
+            width: '200px',
+            text: 'プロフィールを編集する'
         };
     }
 };
@@ -53,7 +61,9 @@ export default {
 .sellorSubMain {
     padding-left: 30pt;
 }
-
+.buttonWhiteLight{
+    padding-top: 20px;
+}
 img.selimg {
     width: 95pt;
     height: 95pt;

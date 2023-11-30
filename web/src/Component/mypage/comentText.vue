@@ -17,6 +17,7 @@
 <script>
 import formText from "../../Components/atoms/formText.vue";
 import footerText from "../../Components/atoms/footerText.vue";
+import ButtonWhiteShortBold from "../../ComponentButton/ButtonWhiteShortBold.vue";
 
 export default {
     components: {

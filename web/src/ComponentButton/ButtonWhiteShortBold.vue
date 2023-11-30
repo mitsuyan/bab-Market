@@ -1,10 +1,11 @@
 <template>
     <button class="whiteShortBoldframe" :style="{
         'background-color': back_color,
-        color: fore_color
+        color: fore_color,
+        width: width
     }">
         <div class="whiteShortBoldText">
-            <buttonText :level="level3Pink" :propText="data" />
+            <buttonText :level="level3Pink" :propText="text" />
         </div>
     </button>
 </template>
@@ -23,6 +24,14 @@ export default {
         fore_color: {
             type: String,
             default: "#FF6969"
+        },
+        width: {
+            type: String,
+            required: true
+        },
+        text: {
+            type: String,
+            required: true
         }
     },
     data() {
@@ -37,10 +46,8 @@ export default {
 <style>
 .whiteShortBoldframe {
     border-radius: 5px;
-    position: absolute;
     text-decoration: none;
-    border: 2px solid #FF6969;
-    width: 99pt;
+    border: 2px solid #FF6969;  
     height: 26pt;
 }
 
