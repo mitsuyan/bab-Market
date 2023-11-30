@@ -2,20 +2,24 @@
     <mainBase :height="mainHeight">
         <tabContent :show="show">
             <template v-slot:1>
-                <!-- 1番目のタブのコンテンツをここに挿入 -->
-                <div><footerNavigation /></div>
+                <!-- 1番目のタブのコンテンツ -->
+                <div>
+                    <footerNavigation />
+                </div>
             </template>
             <template v-slot:2>
-                <!-- 2番目のタブのコンテンツをここに挿入 -->
+                <!-- 2番目のタブのコンテンツ -->
                 <div>Content for Tab 2</div>
             </template>
             <template v-slot:3>
-                <!-- 3番目のタブのコンテンツをここに挿入 -->
+                <!-- 3番目のタブのコンテンツ -->
                 <div>Content for Tab 3</div>
             </template>
             <template v-slot:4>
-                <!-- 4番目のタブのコンテンツをここに挿入 -->
-                <div><mypage /></div>
+                <!-- 4番目のタブのコンテンツ -->
+                <div>
+                    <mypage />
+                </div>
             </template>
         </tabContent>
     </mainBase>
@@ -39,7 +43,7 @@ export default {
     },
     data() {
         return {
-            mainHeight: '600pt',
+            mainHeight: '430pt',
             show: '1'
         };
     },
@@ -50,3 +54,4 @@ export default {
     }
 };
 </script>
+

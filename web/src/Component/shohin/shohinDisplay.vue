@@ -49,9 +49,8 @@ export default {
 .productList {
     display: flex;
     width: 323pt;
-    height: 430px;
+    height: 400px;
     flex-flow: row wrap;
-    padding-bottom: 50%;
 }
 .product {
     margin: 5pt;

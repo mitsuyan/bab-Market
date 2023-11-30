@@ -91,6 +91,7 @@ export default {
     -webkit-scrollbar-width: thin; /* Chrome, Safari 対応 */
     scrollbar-color: transparent transparent; /* Firefox 対応 */
     -webkit-scrollbar: thin; /* Chrome, Safari 対応 */
+    height: 445px;
 }
 
 /* コンテンツがはみ出た場合のスクロールバーのスタイル */
