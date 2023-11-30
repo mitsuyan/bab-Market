@@ -563,7 +563,7 @@ components:
     UserIdInHeader:
       description: リクエストヘッダに含めるユーザーID
       in: header
-      name: sessionId
+      name: userId
       required: true
       schema:
         $ref: '#/components/schemas/userId'
