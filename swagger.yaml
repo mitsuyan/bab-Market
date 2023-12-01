@@ -448,9 +448,11 @@ paths:
       parameters:
         - $ref: '#/components/parameters/SessionIdInHeader'
         - $ref: '#/components/parameters/UserIdInHeader'
+      requestBody:
+          $ref: '#/components/requestBodies/ChargePointsRequest'
       responses:
         '201':
-          $ref: '#/components/responses/ChargePointsResponse'
+          $ref: '#/components/responses/NoContentResponse'
         '400':
           $ref: '#/components/responses/BadRequestError'
 
@@ -784,6 +786,14 @@ components:
           schema:
             $ref: '#/components/schemas/evaluationRequestInfo'
 
+    ChargePointsRequest:
+      description: ユーザーがチャージするポイント数情報
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/chargePointsInfo'
+
   responses: 
     MypageResponse:
       description: プロフィール情報
@@ -868,13 +878,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/currentPointsInfo'
-
-    ChargePointsResponse:
-      description: ユーザーがチャージするポイント数情報
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/chargePointsInfo'
 
     PointsHistoryResponse:
       description: ユーザーのポイント履歴情報
