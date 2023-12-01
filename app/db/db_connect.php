@@ -1,5 +1,5 @@
 <?php
-const SERVER = 'mysql210.phy.lolipop.lan';
+const SERVER = 'mysql219.phy.lolipop.lan';
 const DBNAME = 'LAA1517347-baby';
 const USER = 'LAA1517347';
 const PASS = 'babymotsu';
