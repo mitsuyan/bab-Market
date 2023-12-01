@@ -1,17 +1,13 @@
-import refine from '../Components/moleclese/refineMain.vue';
+import refines from '../Components/organisms/toggleRefines.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'refine',
-    component: refine,
+    component: refines,
 };
 
 /* story記述 */
-export const minorRefine = () => ({
-    components: { refine },
-    template: '<refine />',
-});
 
-export const majorRefine = () => ({
-    components: { refine },
-    template: '<refine minorCategoryId=0 />',
+export const refinese = () => ({
+    components: { refines },
+    template: '<refines />',
 });

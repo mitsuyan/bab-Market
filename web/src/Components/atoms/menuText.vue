@@ -13,7 +13,7 @@ export default{
             default: "level1",
         },
         label:{
-            type: String,
+            type: [String, Array],
             default: "デフォルトテキスト　defaulttext",
         }
     },

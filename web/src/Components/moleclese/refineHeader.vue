@@ -1,6 +1,6 @@
 <template>
     <div class="container" v-if="receivedValue === 1">
-        <Img fileName="back.svg" className="next"  />
+        <Img fileName="back.svg" className="back"  />
         <headerText level="level2" :text="title"></headerText>
         <headerTextSub level="level2Pink" :text="'クリア'"></headerTextSub>
     </div>
@@ -24,15 +24,14 @@ export default{
         headerTextSub,
         Img,
     },
-    data() {
-        return{
-            title:'ヘッダー',
-        };
-    },
     props:{
         receivedValue: {
             type: Number,
         },
+        title:{
+            type: String,
+            default: 'ヘッダー',
+        }
     }
 };
 </script>
@@ -48,6 +47,14 @@ export default{
     margin-bottom: 13px;
     border-bottom: 1px solid #c2c2c2;
     width:344px;
+}
+
+.container > :first-child {
+    margin-left: 10px;
+}
+
+.container > :last-child {
+    margin-right: 10px;
 }
 
 </style>

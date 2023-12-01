@@ -20,9 +20,11 @@ export default {
       type: String,
       default: "",
     },
+    majorId:{
+      type: Number,
+    },
     id: {
       type: Number,
-      default: "defaultId",
     },
     containerLevel: {
       type: String,
@@ -35,7 +37,7 @@ export default {
   },
   methods: {
     handleChange() {
-      this.$emit('change', this.id ,!this.checked);
+      this.$emit('change', this.id ,!this.checked,this.majorId);
     },
   },
 };
