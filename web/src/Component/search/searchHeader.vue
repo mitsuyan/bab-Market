@@ -8,7 +8,7 @@
         </svg>
     </div>
     <div class="parallelPoint">
-        <Rectangle18GrayRadius />
+        <Rectangle18GrayRadius @inText="addText" />
         <div class="searchSvgBell">
             <svg id="Icon_Notifications" data-name="Icon Notifications" xmlns="http://www.w3.org/2000/svg" width="26" height="30" viewBox="0 0 18.741 22">
                 <path id="notifications" d="M12.37,24a2.209,2.209,0,0,0,2.2-2.2h-4.41A2.209,2.209,0,0,0,12.37,24Zm7.166-6.6V11.35a7.082,7.082,0,0,0-5.512-6.93V3.65a1.654,1.654,0,0,0-3.307,0v.77A7.082,7.082,0,0,0,5.2,11.35V17.4L3,19.6v1.1H21.741V19.6Zm-2.2,1.1H7.41V11.35a4.961,4.961,0,0,1,9.922,0Z" transform="translate(-3 -2)" fill="#727c8e"/>
@@ -29,10 +29,23 @@
 import Rectangle18GrayRadius from '../../ComponentText/Rectangle18GrayRadius.vue';
 
 export default {
+    data(){
+        return{
+            sessionData:[]
+        }
+    },
     components: {
-        Rectangle18GrayRadius
-    }
-}
+        Rectangle18GrayRadius,
+    },
+    methods: {
+        addText(value) {
+            // 親コンポーネントにイベントを発火
+            this.$emit('updateSessionData', value);
+            this.sessionData.push(value);
+            sessionStorage.setItem('history', JSON.stringify(this.sessionData));
+        },
+    },
+};
 </script>
 
 <style>

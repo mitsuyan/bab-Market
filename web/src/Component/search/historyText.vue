@@ -5,6 +5,9 @@
         <line id="線_40" data-name="線 40" x2="390" transform="translate(0 0.5)" fill="none" stroke="#c2c2c2" stroke-width="1"/>
         </svg>
     </div>
+    <div class="history">
+
+    </div>
 </template>
 
 <script>

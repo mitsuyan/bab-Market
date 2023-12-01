@@ -4,22 +4,21 @@
             <path id="Search" d="M24.7,23.275l-4.5-4.5A9.1,9.1,0,1,0,18.774,20.2l4.5,4.5A1.011,1.011,0,1,0,24.7,23.275ZM13.1,20.171A7.075,7.075,0,1,1,20.171,13.1,7.075,7.075,0,0,1,13.1,20.171Z"
             transform="translate(-4 -4)" fill="#515c6f" />
         </svg>
-        <input type="text" class="grayRadius18" v-model="text">
+        <input type="text" class="grayRadius18" v-on:keydown.enter="addInputText" v-model="inputText">
     </div>
 </template>
 
 <script>
 export default {
-    props: {
-        inText: {
-            type: String,
-            default: "Text"
+    data(){
+        return{
+            inputText: null,
         }
     },
-    data() {
-        return {
-            text: this.inText.default
-        };
+    methods:{
+        addInputText(){
+            this.$emit('inText',this.inputText);
+        }
     }
 };
 </script>

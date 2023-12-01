@@ -1,8 +1,11 @@
 <template>
     <mainBase :height="mainHeight">
-        <searchHeader />
+        <searchHeader @updateSessionData="updateSession" />
     <div class="historyComp">
         <historyText />
+    </div>
+    <div v-for="(sessionItem, index) in sessionData" :key="index">
+        {{ sessionItem }}
     </div>
     </mainBase>
 </template>
@@ -18,9 +21,27 @@ export default {
         searchHeader,
         historyText
     },
+    mounted() {
+        // セッションストレージからデータを取得
+        this.loadSessionData();
+    },
     data(){
         return{
             mainHeight: '600pt',
+            sessionData: [],
+            sessionItem: null,
+        }
+    },
+    methods: {
+        loadSessionData() {
+            const storedData = sessionStorage.getItem('history');
+            // storedData が存在する場合だけ JSON.parse を呼び出す
+            if (storedData) {
+                this.sessionData = JSON.parse(storedData);
+            }
+        },
+        updateSession(value){
+            this.sessionData.push(value);
         }
     }
 }
