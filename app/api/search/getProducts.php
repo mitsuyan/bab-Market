@@ -17,8 +17,8 @@ try {
   $stmt = $pdo->prepare("
     SELECT p.*, pi.path AS productImagePath, 
            (CASE WHEN p.status_id = 261 THEN true ELSE false END) AS isSold
-    FROM product p
-    LEFT JOIN product_image pi ON p.product_id = pi.product_id AND pi.order = 1
+    FROM PRODUCT p
+    LEFT JOIN PRODUCT_IMAGE pi ON p.product_id = pi.product_id AND pi.order = 1
     WHERE p.product_name LIKE :keyword
     ORDER BY p.datetime DESC
   ");
