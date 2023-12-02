@@ -2,8 +2,9 @@
         <RefineMain
         :categoryId="categoryId"
         :items="items"
-        @change="handleMenuChange"
-        @isOpen="toggleChange"
+        :isOpen="isOpen"
+        @change2="handleMenuChange"
+        @isOpen2="toggleChange"
         >
         </RefineMain>
 </template>
@@ -37,16 +38,23 @@ export default{
                 { majorId: 1, id: 4, name: "生後３カ月", checked: false }
                 ],
         },
+        isOpen:{
+            type:Boolean,
+            default:false,
+        },
+        categoryId:{
+            type: Number,
+        },
     },
     methods: {
     handleMenuChange({ minorId, newCheckedState,majorId }) {
         //更新を親コンポーネントに通知する
-        this.$emit('change', { minorId, newCheckedState, majorId });
+        this.$emit('change3', { minorId, newCheckedState, majorId });
     },
     toggleChange({majorId,isOpen}) {
         // イベントを発火する
-        this.$emit('isOpen', { majorId, isOpen });
-        console.log("二重チェックrefine");
+        this.$emit('isOpen3', { majorId, isOpen });
+        console.log('aa');
     },
   },
 };

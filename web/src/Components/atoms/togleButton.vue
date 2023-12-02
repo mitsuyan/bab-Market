@@ -18,7 +18,8 @@
     },
     methods: {
       toggleMenu() {
-        this.$emit('isOpen',this.id,!this.open);
+        this.$emit('isToggle',this.id,!this.open);
+        console.log(this.open);
       },
     },
   };

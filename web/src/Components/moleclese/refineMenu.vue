@@ -19,15 +19,19 @@
     </div>  
 
     <div class="container" v-else-if="categoryId === 0">
-        <menuText level="level2" label="除外キーワード" />
-        <textForm text="を含まない"></textForm>
+        <formText level="textFormLabelGrayLevel2">
+            <menuText level="level2" label="除外キーワード" />
+            <textForm text="を含まない"></textForm>
+        </formText>
         <div v-for="item,index in items.majorCategory" :key="index" >
-            <toggleButton :id="item.id" @isOpen="toggleChange">
+            <toggleButton :id="item.id" @isToggle="toggleChange">
                 <div class="majorCategoryMenu" :id="item.id">
                     <menuText level="level1" :label=item.name />
                     <menuText level="level3False" label="指定しない" v-if="item.value.length === 0" />
-                    <div v-for="minorCategory,index in item.value" v-else>
-                        <menuText level="level3" :label="this.items.minorCategory.filter(item => item.id === minorCategory)[item.id-1].name " />
+                    <div class="minorCategoryItem" v-else>
+                        <div v-for="minorCategory,index in item.value">
+                            <menuText level="level3" :label="this.items.minorCategory.filter(item => item.id === minorCategory)[item.id-1].name " />
+                        </div>
                     </div>
                     
                     <Img fileName="circleNext.svg" className="circleNext" />
@@ -104,12 +108,11 @@ export default{
     methods: {
         handleCheckboxChange(minorId,newCheckedState,majorId) {
             // イベントを発火する
-            this.$emit('change', { minorId, newCheckedState,majorId });
+            this.$emit('change1', { minorId, newCheckedState,majorId });
         },
         toggleChange(majorId,isOpen) {
             // イベントを発火する
             this.$emit('isOpen', { majorId, isOpen });
-            console.log("二重チェックMenu");
         },
     },
     computed: {
@@ -121,6 +124,15 @@ export default{
 </script>
 
 <style scoped>
+.itemList{
+    height: 680px;
+    overflow-y: auto;
+}
+.minorCategoryItem{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 .minorCategoryMenu{
     display: flex;
     align-items: center;
@@ -134,7 +146,7 @@ export default{
     display: flex;
     align-items: center;
     justify-content: space-between; /* 要素を均等に配置 */
-    height: 24px;
+    min-height: 24px;
     width: 291px;
     margin-top: 35.7px;
 }

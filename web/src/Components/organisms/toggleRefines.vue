@@ -1,18 +1,21 @@
 <template>
-    <div>
+    <div class="mainMenu">
         <Refine
-            @isOpen="toggleChange"
+            @isOpen3="toggleChange"
             :categoryId=0
             :items="items"
+            :isOpen="isOpen"
         ></Refine>
     </div>
     <transition name="slide">
-        <div class="majorCategoryMenu">
+        <div class="menu">
             <Refine
                 v-if="isOpen"
                 :categoryId="categoryId"
-                @change="handleMenuChange"
+                @change3="handleMenuChange"
+                @isOpen3="toggleChange"
                 :items="items"
+                :isOpen="isOpen"
             ></Refine>
         </div>
     </transition>
@@ -88,7 +91,7 @@ methods: {
             item.isOpen = isOpen;
             this.isOpen = isOpen;
             this.categoryId = majorId;
-            console.log("二重チェック");
+            console.log(this.isOpen);
         };
     },
 },
@@ -96,6 +99,22 @@ methods: {
 </script>
 
 <style scoped>
+.slide-enter-active, .slide-leave-active {
+
+}
+.slide-enter-to, .slide-leave-from {
+  
+}
+.mainMenu{
+    position: fixed;
+    z-index:0;
+    right: 0px;
+}
+.menu{
+    position: fixed;
+    right: 0px;
+    z-index: 10;
+}
 
 </style>
 

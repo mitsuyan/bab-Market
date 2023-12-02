@@ -3,12 +3,15 @@
         <Header
         :receivedValue=1
         :title="majorCategoryName"
+        :id="categoryId"
+        :isOpen="isOpen"
+        @isOpen1="toggleChange"
         ></Header>
         <Menu
         :items="items"
         :categoryId="categoryId"
         @isOpen="toggleChange"
-        @change="handleMenuChange"
+        @change1="handleMenuChange"
         ></Menu>
     </Base>
 </template>
@@ -64,21 +67,30 @@ export default{
                 {majorId:9,id:2,name:"くろねこ",checked:false},
             ]}),
         },
+        isOpen:{
+            type:Boolean,
+            default:false,
+        }
     },
     computed: {
         majorCategoryName() {
             const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
             return majorCategory ? majorCategory.name : '';
         },
+        majorCategoryId() {
+            const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
+            return majorCategory ? majorCategory.id : '';
+        },
     },
     methods: {
         handleMenuChange({ minorId, newCheckedState,majorId }) {
             // 更新を親コンポーネントに通知する（もしくは不要な場合はコメントアウト）
-            this.$emit('change', { minorId, newCheckedState, majorId });
+            this.$emit('change2', { minorId, newCheckedState, majorId });
         },
         toggleChange({majorId,isOpen}) {
             // イベントを発火する
-            this.$emit('isOpen', { majorId, isOpen });
+            this.$emit('isOpen2', { majorId, isOpen });
+            console.log('isOpen');
         },
   },
 };

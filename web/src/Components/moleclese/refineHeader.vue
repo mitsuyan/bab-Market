@@ -1,6 +1,8 @@
 <template>
     <div class="container" v-if="receivedValue === 1">
-        <Img fileName="back.svg" className="back"  />
+        <toggleButton :id="id" @isToggle="toggleChange" :open="isOpen">
+            <Img fileName="back.svg" className="back"  />
+        </toggleButton>
         <headerText level="level2" :text="title"></headerText>
         <headerTextSub level="level2Pink" :text="'クリア'"></headerTextSub>
     </div>
@@ -17,12 +19,14 @@
 import headerText from '../atoms/headerText.vue';
 import headerTextSub from '../atoms/headerTextSub.vue';
 import Img from '../atoms/img.vue';
+import toggleButton from '../atoms/togleButton.vue'
 
 export default{
     components:{
         headerText,
         headerTextSub,
         Img,
+        toggleButton,
     },
     props:{
         receivedValue: {
@@ -31,7 +35,20 @@ export default{
         title:{
             type: String,
             default: 'ヘッダー',
-        }
+        },
+        id:{
+            type: Number,
+        },
+        isOpen:{
+            type: Boolean,
+            default:false,
+        },
+    },
+    methods:{
+        toggleChange(majorId,isOpen) {
+            // イベントを発火する
+            this.$emit('isOpen1', { majorId, isOpen });
+        },
     }
 };
 </script>
