@@ -13,10 +13,10 @@ export default{
 </script>
 <style scoped>
 .mainBase{
-    width: 344px;
-    height: 100vh;
+    width: 344pt;
+    height: 935pt;
     background-color: #FFFFFF;
-    box-shadow: -4px 0px 6px #727C8E4E;
+    box-shadow: 0 63pt 56pt #727C8E4E;
 }
 
 .grayBase{

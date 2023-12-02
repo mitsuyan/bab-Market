@@ -96,6 +96,19 @@ export default{
     font-style: normal;
     color:#515C6F;
 }
+.textFormLevel4{
+    font-size:25px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    color:#515C6F;
+}
+
+.textFormLevel5{
+    font-size:22px;
+    font-weight: 400;
+    color:#464646;
+}
 
 .amountForm{
     font-size:17px;
@@ -104,5 +117,6 @@ export default{
     font-style: Bold;
     color:#464646;
 }
+
 
 </style>

@@ -1,4 +1,6 @@
 import refineHeader from '../Components/moleclese/refineHeader.vue';
+import detailHeader from '../Component/header/detailHeader.vue';
+import mypageHeader from '../Component/header/mypageHeader.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'refine',

@@ -1,6 +1,6 @@
 <template>
     <link rel="stylesheet" href="https://use.typekit.net/oie4jfa.css">
-    <h1 :class="level">{{ text }}</h1>
+    <h1 :class="level">{{ headerText }}</h1>
 </template>
 
 <script>
@@ -10,9 +10,8 @@ export default{
             type: String,
             default: "level1",
         },
-        text:{
+        headerText:{
             type:String,
-            default:"defaultText　デフォルトテキスト"
         }
     }
 };

@@ -12,7 +12,7 @@ export default{
         },
         text:{
             type:String,
-            default:"defaultText　デフォルトテキスト"
+            required: true
         }
     }
 };
@@ -35,6 +35,11 @@ export default{
     font-weight: 400;
     font-style: normal;
     color:#444444;
+}
+
+p{
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 </style>
