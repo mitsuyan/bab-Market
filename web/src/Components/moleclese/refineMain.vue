@@ -75,11 +75,11 @@ export default{
     computed: {
         majorCategoryName() {
             const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
-            return majorCategory ? majorCategory.name : '';
+            return majorCategory ? majorCategory.name : ' ';
         },
         majorCategoryId() {
             const majorCategory = this.items.majorCategory.find(item => item.id === this.categoryId);
-            return majorCategory ? majorCategory.id : '';
+            return majorCategory ? majorCategory.id : ' ';
         },
     },
     methods: {

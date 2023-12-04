@@ -1,15 +1,9 @@
 <template>
-    <div class="container" v-if="receivedValue === 1">
+    <div class="container">
         <toggleButton :id="id" @isToggle="toggleChange" :open="isOpen">
             <Img fileName="back.svg" className="back"  />
         </toggleButton>
         <headerText level="level2" :headerText="title"></headerText>
-        <headerTextSub level="level2Pink" :text="'クリア'"></headerTextSub>
-    </div>
-
-    <div class="container" v-else-if="receivedValue === 2">
-        <Img fileName="cross.svg" className="cross" :style="{textAlign: 'left'}" />
-        <headerText level="level2" :text="title" :style="{textAlign: 'center'}"></headerText>
         <div></div>
     </div>
 
