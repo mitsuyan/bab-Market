@@ -1,8 +1,4 @@
-import Vue from 'vue';
-import App from './Pages/TopPages.vue'; // この部分を適切なファイルパスに変更
+import { createApp } from 'vue';
+import App from './Pages/TopPages.vue';
 
-Vue.config.productionTip = false;
-
-new Vue({
-    render: h => h(App),
-}).$mount('#app');
+createApp(App).mount('#app');
