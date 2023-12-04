@@ -1,7 +1,11 @@
-import footerNavigation from '../Component/navigation/footerNavigation.vue';
-import headerHome from '../Component/navigation/headerHome.vue';
-import shohinList from '../Component/shohin/shohinList.vue';
-import tabContent from '../Component/navigation/tabContent.vue';
+import footerNavigation from '../Components/moleclese/footerNavigation.vue';
+import headerHome from '../components/moleclese/headerHome.vue';
+import shohinList from '../Components/moleclese/shohin/shohinList.vue';
+import tabContent from '../Components/moleclese/tab/tabContent.vue';
+import searchHeader from '../Components/moleclese/search/searchHeader.vue';
+import historyText from '../Components/moleclese/search/historyText.vue';
+import shohinDetailfooter from '../Components/moleclese/shohinDetailfooter.vue';
+
 
 export default {
     title: 'Navigation'
@@ -25,4 +29,19 @@ export const shohinlist = () => ({
 export const Tabcontent = () => ({
     components: { tabContent },
     template: '<tabContent />'
+});
+
+export const searchheader = () => ({
+    components: { searchHeader },
+    template: '<searchHeader />'
+});
+
+export const Historytext = () => ({
+    components: { historyText },
+    template: '<historyText />'
+});
+
+export const shohindetailfooter = () => ({
+    components: { shohinDetailfooter },
+    template: '<shohinDetailfooter />'
 });

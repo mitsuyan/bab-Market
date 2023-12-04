@@ -1,18 +1,18 @@
 /* Storyにコンポーネント追加 */
-import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
-import ButtonRedIconShadow from '../ComponentButton/ButtonRedIconShadow.vue';
-import ButtonRedPicture from '../ComponentButton/ButtonRedPicture.vue';
-import ButtonRedMiddle from '../ComponentButton/ButtonRedMiddle.vue';
-import ButtonRedLong from '../ComponentButton/ButtonRedLong.vue';
-import ButtonRedShort from '../ComponentButton/ButtonRedShort.vue';
-import ButtonWhiteLong from '../ComponentButton/ButtonWhiteLong.vue';
-import ButtonWhiteMiddle from '../ComponentButton/ButtonWhiteMiddle.vue';
-import ButtonWhiteShort from '../ComponentButton/ButtonWhiteShort.vue';
-import ButtonWhiteShortBold from '../ComponentButton/ButtonWhiteShortBold.vue';
-import ButtonWhiteShortRegular from '../ComponentButton/ButtonWhiteShortRegular.vue';
-import ButtonWhiteShortLight from "../ComponentButton/ButtonWhiteShortLight.vue";
-import ButtonProfile from "../ComponentButton/ButtonProfile.vue";
-import ButtonGrayIcon from "../ComponentButton/ButtonGrayIcon.vue";
+import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import ButtonRedIconShadow from '../Components/atoms/ComponentButton/ButtonRedIconShadow.vue';
+import ButtonRedPicture from '../Components/atoms/ComponentButton/ButtonRedPicture.vue';
+import ButtonRedMiddle from '../Components/atoms/ComponentButton/ButtonRedMiddle.vue';
+import ButtonRedLong from '../Components/atoms/ComponentButton/ButtonRedLong.vue';
+import ButtonRedShort from '../Components/atoms/ComponentButton/ButtonRedShort.vue';
+import ButtonWhiteLong from '../Components/atoms/ComponentButton/ButtonWhiteLong.vue';
+import ButtonWhiteMiddle from '../Components/atoms/ComponentButton/ButtonWhiteMiddle.vue';
+import ButtonWhiteShort from '../Components/atoms/ComponentButton/ButtonWhiteShort.vue';
+import ButtonWhiteShortBold from '../Components/atoms/ComponentButton/ButtonWhiteShortBold.vue';
+import ButtonWhiteShortRegular from '../Components/atoms/ComponentButton/ButtonWhiteShortRegular.vue';
+import ButtonWhiteShortLight from "../Components/atoms/ComponentButton/ButtonWhiteShortLight.vue";
+import ButtonProfile from "../Components/atoms/ComponentButton/ButtonProfile.vue";
+import ButtonGrayIcon from "../Components/atoms/ComponentButton/ButtonGrayIcon.vue";
 
 /* コンポーネントの設定 */
 export default {

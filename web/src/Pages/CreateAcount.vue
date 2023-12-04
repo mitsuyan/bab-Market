@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import Rectangle33Radius from '../ComponentText/Rectangle33Radius.vue';
-import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import Rectangle33Radius from '../Components/atoms/ComponentText/Rectangle33Radius.vue';
+import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 import formText from '../Components/atoms/formText.vue';
-import mainBase from '../Component/mainBase.vue';
+import mainBase from '../Components/mainBase.vue';
 import headerIcon from '../Components/headerIcon.vue';
 
 export default {

@@ -1,8 +1,8 @@
-import shohinDisplay from '../Component/shohin/shohinDisplay.vue';
-import shohinInformation from '../Component/shohin/shohinInformation.vue';
-import shohinExplanation from '../Component/shohin/shohinExplanation.vue';
-import shohinSellorTest from '../Component/shohin/shohinSellorTest.vue';
-import shohinName from '../Component/shohin/shohinName.vue';
+import shohinDisplay from '../Components/moleclese/shohin/shohinDisplay.vue';
+import shohinInformation from '../Components/moleclese/shohin/shohinInformation.vue';
+import shohinExplanation from '../Components/moleclese/shohin/shohinExplanation.vue';
+import shohinSellorTest from '../Components/moleclese/shohin/shohinSellorTest.vue';
+import shohinName from '../Components/moleclese/shohin/shohinName.vue';
 export default {
     title: 'shohin'
 };
