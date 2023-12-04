@@ -1,37 +1,20 @@
 <template>
     <div class="productList">
         <div class="product" v-for="product in products" :key="product.id" @click="goToProductDetail(product.id)">
-            <img :src="product.image" alt="Product Image">
-            <div class="product-name">{{ product.name }}</div>
+            <img :src="product.imagePath" alt="Product Image">
+            <div class="product-name">{{ product.productName }}</div>
             <div class="product-price">{{ formatCurrency(product.price) }}</div>
         </div>
     </div>
     </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
-            products: [
-                { id: 1, name: '商品1', price: 1000, image: '/img/logo.png' },
-                { id: 2, name: '商品2', price: 1500, image: '/img/logo.png' },
-                { id: 3, name: '商品3', price: 2000, image: '/img/logo.png' },
-                { id: 4, name: '商品4', price: 3000, image: '/img/logo.png' },
-                { id: 5, name: '商品5', price: 2500, image: '/img/logo.png' },
-                { id: 6, name: '商品6', price: 5000, image: '/img/logo.png' },
-                { id: 1, name: '商品1', price: 1000, image: '/img/logo.png' },
-                { id: 2, name: '商品2', price: 1500, image: '/img/logo.png' },
-                { id: 3, name: '商品3', price: 2000, image: '/img/logo.png' },
-                { id: 4, name: '商品4', price: 3000, image: '/img/logo.png' },
-                { id: 5, name: '商品5', price: 2500, image: '/img/logo.png' },
-                { id: 6, name: '商品6', price: 5000, image: '/img/logo.png' },
-                { id: 1, name: '商品1', price: 1000, image: '/img/logo.png' },
-                { id: 2, name: '商品2', price: 1500, image: '/img/logo.png' },
-                { id: 3, name: '商品3', price: 2000, image: '/img/logo.png' },
-                { id: 4, name: '商品4', price: 3000, image: '/img/logo.png' },
-                { id: 5, name: '商品5', price: 2500, image: '/img/logo.png' },
-                { id: 6, name: '商品6', price: 5000, image: '/img/logo.png' }
-            ]
+            products: [],
         };
     },
     methods: {
@@ -41,7 +24,21 @@ export default {
         goToProductDetail(productId) {
             this.$router.push({ path: `/product/${productId}` })
         }
-    }
+    },
+    mounted() {
+        // APIエンドポイントのURLを設定
+        const apiUrl = 'https://aso-2201402.main.jp/app/api/search/';
+
+        // Axiosを使用してAPIにリクエストを送信
+        axios.get(apiUrl)
+            .then(response => {
+                // レスポンスデータをコンポーネントのデータにセット
+                this.products = response.data;
+            })
+            .catch(error => {
+                console.error('APIリクエストエラー:', error);
+            });
+    },
 };
 </script>
 
