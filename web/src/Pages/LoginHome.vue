@@ -19,12 +19,12 @@
 </template>
 
 <script>
-import LoginText from '../ComponentText/LoginText.vue';
-import ButtonRedSemicircleIconLongShadow from '../ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
+import LoginText from '../Components/atoms/ComponentText/LoginText.vue';
+import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
 import apiServices from '/services/apiService.js';
-import mainBase from '../Component/mainBase.vue';
+import mainBase from '../Components/mainBase.vue';
 
 export default {
     name: 'LoginMain',

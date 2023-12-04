@@ -1,4 +1,4 @@
-import mainBase from '../Component/mainBase.vue';
+import mainBase from '../Components/mainBase.vue';
 
 export default {
     title: "baseVariation",

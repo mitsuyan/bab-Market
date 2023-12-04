@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import mypageHeader from '../Component/header/mypageHeader.vue';
-import mainBase from '../Component/mainBase.vue';
-import shohinDisplay from '../Component/shohin/shohinDisplay.vue';
-import myAcount from '../Component/mypage/myAcount.vue';
-import comentText from '../Component/mypage/comentText.vue';
+import mypageHeader from '../Components/moleclese/mypageHeader.vue';
+import mainBase from '../Components/mainBase.vue';
+import shohinDisplay from '../Components/moleclese/shohin/shohinDisplay.vue';
+import myAcount from '../Components/moleclese/myAcount.vue';
+import comentText from '../Components/moleclese/comentText.vue';
 
 export default {
     components: {
@@ -24,7 +24,7 @@ export default {
     },
     data() {
         return {
-            mainHeight: '415pt',
+            mainHeight: '590pt',
         };
     }
 };

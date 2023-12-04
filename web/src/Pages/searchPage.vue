@@ -1,11 +1,17 @@
 <template>
     <mainBase :height="mainHeight">
-        <searchHeader @updateSessionData="updateSession" />
+        <searchHeader @updateSessionData="updateSession" @clickButtonAction="actionClick" />
     <div class="historyComp">
         <historyText />
     </div>
-    <!-- 検索履歴を表示 -->
+    <!-- 検索結果商品画面表示 -->
     <div v-if="screenDisplay">
+        <div>
+            <shohinDisplay />
+        </div>
+    </div>
+    <!-- 検索履歴を表示 -->
+    <div v-else-if="serchHistory">
         <div v-for="(sessionItem, index) in sessionData.slice().reverse()" :key="index" class="historyList">
             <div class="historyBase">
                 <div class="historyText">
@@ -20,22 +26,23 @@
             </div>
         </div>
     </div>
-    <!-- 検索結果商品画面表示 -->
     </mainBase>
 </template>
 
 <script>
-import mainBase from '../Component/mainBase.vue';
-import searchHeader from '../Component/search/searchHeader.vue';
-import historyText from '../Component/search/historyText.vue';
+import mainBase from '../Components/mainBase.vue';
+import searchHeader from '../Components/moleclese/search/searchHeader.vue';
+import historyText from '../Components/moleclese/search/historyText.vue';
 import formText from '../Components/atoms/formText.vue';
+import shohinDisplay from '../Components/moleclese/shohin/shohinDisplay.vue';
 
 export default {
     components: {
         mainBase,
         searchHeader,
         historyText,
-        formText
+        formText,
+        shohinDisplay
     },
     mounted() {
         // セッションストレージからデータを取得
@@ -47,7 +54,7 @@ export default {
             sessionData: [],
             sessionItem: null,
             level5: 'level5',
-            screen: true
+            searchValue: null
         }
     },
     methods: {
@@ -60,11 +67,18 @@ export default {
         },
         updateSession(value){
             this.sessionData.push(value);
+            return this.searchValue = this.sessionData.slice(-1)[0];
         },
+        actionClick(){
+            this.searchValue = null;
+        }
     },
     computed:{
         screenDisplay(){
-            return this.screen == true;
+            return this.searchValue != null;
+        },
+        serchHistory(){
+            return this.searchValue == null;
         }
     }
 }

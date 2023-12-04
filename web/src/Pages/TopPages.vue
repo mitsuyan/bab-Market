@@ -26,10 +26,10 @@
 </template>
 
 <script>
-import headerHome from '../Component/navigation/headerHome.vue';
-import footerNavigation from '../Component/navigation/footerNavigation.vue';
-import mainBase from '../Component/mainBase.vue';
-import tabContent from '../Component/navigation/tabContent.vue';
+import headerHome from '../Components/moleclese/headerHome.vue';
+import footerNavigation from '../Components/moleclese/footerNavigation.vue';
+import mainBase from '../Components/mainBase.vue';
+import tabContent from '../Components/moleclese/tab/tabContent.vue';
 import mypage from './mypage.vue';
 
 export default {

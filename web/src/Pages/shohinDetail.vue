@@ -12,13 +12,13 @@
     </mainBase>
 </template>
 <script>
-import detailHeader from '../Component/header/detailHeader.vue';
-import shohinName from '../Component/shohin/shohinName.vue';
-import shohinExplanation from '../Component/shohin/shohinExplanation.vue';
-import ShohinInformation from '../Component/shohin/shohinInformation.vue';
-import ShohinSellorTest from '../Component/shohin/shohinSellorTest.vue';
-import mainBase from '../Component/mainBase.vue';
-import shohinDetailfooter from '../Component/footer/shohinDetailfooter.vue';
+import detailHeader from '../Components/moleclese/detailHeader.vue';
+import shohinName from '../Components/moleclese/shohin/shohinName.vue';
+import shohinExplanation from '../Components/moleclese/shohin/shohinExplanation.vue';
+import ShohinInformation from '../Components/moleclese/shohin/shohinInformation.vue';
+import ShohinSellorTest from '../Components/moleclese/shohin/shohinSellorTest.vue';
+import mainBase from '../Components/mainBase.vue';
+import shohinDetailfooter from '../Components/moleclese/shohinDetailfooter.vue';
 
 export default {
     components: {
