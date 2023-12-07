@@ -6,7 +6,7 @@
     <!-- 検索結果商品画面表示 -->
         <div v-if="screenDisplay">
             <div>
-                <shohinDisplay searchData="searchData"/>
+                <shohinDisplay :searchData="searchData" />
             </div>
         </div>
         <!-- 検索履歴を表示 -->
@@ -52,7 +52,7 @@ export default {
             sessionItem: null,
             level5: 'level5',
             searchValue: null,
-            searchData: null
+            searchData: ''
         }
     },
     methods: {
@@ -64,8 +64,8 @@ export default {
             }
         },
         updateSession(value){
-            this.searchData = value;
             this.sessionData.push(value);
+            this.searchData = value;
             return this.searchValue = this.sessionData.slice(-1)[0];
         },
         actionClick(){
@@ -87,6 +87,7 @@ export default {
 .head{
     position: fixed;
     z-index:10000;
+    width:430px;
 }
 .shohin{
     position: fixed;

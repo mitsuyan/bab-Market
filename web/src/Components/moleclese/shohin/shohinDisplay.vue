@@ -15,7 +15,6 @@ export default {
     data() {
         return {
             datas: [],
-            keyword: '商品'
         };
     },
     props: {
@@ -39,7 +38,7 @@ export default {
         // Axiosを使用してAPIにリクエストを送信
         axios.get(apiUrl, {
             params:{
-                keyword: this.keyword
+                keyword: this.searchData
             }
         })
             .then(response => {

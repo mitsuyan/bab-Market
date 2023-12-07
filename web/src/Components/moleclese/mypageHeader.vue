@@ -49,11 +49,10 @@ export default {
     display: flex;
     align-items: center;
     width: 322.5pt;
-    height: 42.75pt;
-    margin-bottom: 13px;
+    height: 68pt;
 }
 .detailSvgMb {
-    padding-left: 38%;
+    padding-left: 37%;
 }
 .svgBell{
     padding-left: 24%;

@@ -3,7 +3,7 @@
         <mypageHeader />
         <myAcount />
         <comentText />
-        <shohinDisplay class="shohinList" />
+        <shohinDisplay class="shohinList" :searchData="searchData" />
     </mainBase>
 </template>
 
@@ -24,7 +24,8 @@ export default {
     },
     data() {
         return {
-            mainHeight: '590pt',
+            mainHeight: '600pt',
+            searchData: '商品'
         };
     }
 };

@@ -28,11 +28,11 @@
 <style scoped>
 .headerHome{
     display: flex;
+    position: relative;
     width: 323pt;
-    height: 43pt;
+    height: 68pt;
     align-items: center;
     background-color: #ffffff;
-    top: 2px;
 }
 .svgMb{
     padding-left: 42%;

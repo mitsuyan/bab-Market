@@ -4,7 +4,7 @@
             <template v-slot:1>
                 <!-- 1番目のタブのコンテンツ -->
                 <div>
-                    <footerNavigation />
+                    <tabNavigation />
                 </div>
             </template>
             <template v-slot:2>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import footerNavigation from '../Components/moleclese/footerNavigation.vue';
+import tabNavigation from '../Components/moleclese/tab/tabNavigation.vue';
 import mainBase from '../Components/mainBase.vue';
 import tabContent from '../Components/moleclese/tab/tabContent.vue';
 import myPage from './myPage.vue';
@@ -36,7 +36,7 @@ import searchPage from './searchPage.vue';
 
 export default {
     components: {
-        footerNavigation,
+        tabNavigation,
         mainBase,
         tabContent,
         myPage,

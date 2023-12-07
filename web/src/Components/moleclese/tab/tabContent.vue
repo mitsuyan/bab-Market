@@ -49,9 +49,7 @@ export default {
     },
     methods: {
         select(tabId) {
-            console.log("Before: ", this.show);
             this.show = tabId;
-            console.log("After: ", this.show);
             this.tabs.forEach((tab) => {
                 if (tab.id === tabId) {
                     tab.fill = '#FF6969';

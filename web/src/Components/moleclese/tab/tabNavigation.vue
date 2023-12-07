@@ -1,4 +1,7 @@
 <template>
+    <div class="header">
+        <headerHome />
+    </div>
     <div class="homeTab">
         <div class="tabContainerContainer">
             <ul class="homeTabNav">
@@ -15,7 +18,7 @@
         </div>
         <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
-                <shohinDisplay />
+                <shohinDisplay :searchData="searchData" />
             </div>
         </div>
         <div v-if="show === '2'">タブ2のコンテンツ</div>
@@ -24,12 +27,14 @@
 </template>
 
 <script>
+import headerHome from '../headerHome.vue';
 import headerText from '../../atoms/headerText.vue';
 import shohinDisplay from '../shohin/shohinDisplay.vue';
 export default {
         components: {
             headerText,
-            shohinDisplay
+            shohinDisplay,
+            headerHome
         },
         data() {
             return {
@@ -39,7 +44,8 @@ export default {
                 headerText3: "おもちゃ",
                 level1: 'level4',
                 level2: 'level4',
-                level3: 'level4'
+                level3: 'level4',
+                searchData: '商品'
             }
         },
         methods: {
