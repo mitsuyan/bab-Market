@@ -36,9 +36,6 @@ export default {
         tabBuyNav,
         tabMypageNav
     },
-    props: {
-        show: String
-    },
     data() {
         return {
             tabs: [

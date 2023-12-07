@@ -1,6 +1,6 @@
 <template>
     <mainBase :height="mainHeight">
-        <tabContent :show="show">
+        <tabContent>
             <template v-slot:1>
                 <!-- 1番目のタブのコンテンツ -->
                 <div>
@@ -26,31 +26,22 @@
 </template>
 
 <script>
-import headerHome from '../Components/moleclese/headerHome.vue';
 import footerNavigation from '../Components/moleclese/footerNavigation.vue';
 import mainBase from '../Components/mainBase.vue';
 import tabContent from '../Components/moleclese/tab/tabContent.vue';
 import myPage from './myPage.vue';
 
 export default {
-    name: 'MyPage',
     components: {
-        headerHome,
         footerNavigation,
         mainBase,
         tabContent,
-        mypage
+        myPage
     },
     data() {
         return {
             mainHeight: '430pt',
-            show: '1'
         };
-    },
-    methods: {
-        selectTab(tabId) {
-            this.show = tabId;
-        }
     }
 };
 </script>

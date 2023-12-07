@@ -15,10 +15,14 @@ export default {
     data() {
         return {
             products: [],
+            keyword: 1
         };
     },
     methods: {
         formatCurrency(price) {
+            if (price == null) {
+                return '';
+            }
             return `¥${price.toLocaleString()}`;
         },
         goToProductDetail(productId) {
@@ -27,13 +31,16 @@ export default {
     },
     mounted() {
         // APIエンドポイントのURLを設定
-        const apiUrl = 'https://aso-2201402.main.jp/app/api/search/';
+        const apiUrl = '/api/search/getProducts.php';
 
         // Axiosを使用してAPIにリクエストを送信
-        axios.get(apiUrl)
+        axios.get(apiUrl, {
+            keyword: this.keyword
+        })
             .then(response => {
                 // レスポンスデータをコンポーネントのデータにセット
                 this.products = response.data;
+                console.log(this.products);
             })
             .catch(error => {
                 console.error('APIリクエストエラー:', error);
