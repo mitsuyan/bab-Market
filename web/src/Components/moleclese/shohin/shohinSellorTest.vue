@@ -25,12 +25,10 @@
 
 <script>
 import buttonText from '../../atoms/buttonText.vue';
-import formText from '../../atoms/formText.vue';
 
 export default {
     components: {
         buttonText,
-        formText
     },
     data() {
         return {
