@@ -1,5 +1,5 @@
 /button
 /webpack-simple
-node_modules/
+/web/node_modules/.cache/
 .DS_Store
 ._*
