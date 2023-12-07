@@ -33,7 +33,7 @@ export default {
     },
     mounted() {
         // APIエンドポイントのURLを設定
-        const apiUrl = '/api/search/getProducts.php';
+        const apiUrl = '/api/search/';
 
         // Axiosを使用してAPIにリクエストを送信
         axios.get(apiUrl, {
