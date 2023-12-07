@@ -9,7 +9,9 @@
             </template>
             <template v-slot:2>
                 <!-- 2番目のタブのコンテンツ -->
-                <div>Content for Tab 2</div>
+                <div>
+                    <searchPage />
+                </div>
             </template>
             <template v-slot:3>
                 <!-- 3番目のタブのコンテンツ -->
@@ -30,18 +32,29 @@ import footerNavigation from '../Components/moleclese/footerNavigation.vue';
 import mainBase from '../Components/mainBase.vue';
 import tabContent from '../Components/moleclese/tab/tabContent.vue';
 import myPage from './myPage.vue';
+import searchPage from './searchPage.vue';
 
 export default {
     components: {
         footerNavigation,
         mainBase,
         tabContent,
-        myPage
+        myPage,
+        searchPage,
     },
     data() {
         return {
-            mainHeight: '430pt',
+            mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
         };
+    },
+    mounted() {
+        // ウィンドウのリサイズ時に高さを更新
+        window.addEventListener('resize', this.updateHeight);
+    },
+    methods: {
+        updateHeight() {
+            this.mainHeight = window.innerHeight + 'px';
+        },
     }
 };
 </script>

@@ -17,7 +17,6 @@ export default {
     },
     methods:{
         addInputText(){
-            const page = 
             this.$emit('inText',this.inputText);
         },
         buttonClicked(){

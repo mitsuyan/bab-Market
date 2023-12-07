@@ -1,9 +1,9 @@
 <template>
     <div class="productList">
-        <div class="product" v-for="product in products" :key="product.id" @click="goToProductDetail(product.id)">
-            <img :src="product.imagePath" alt="Product Image">
-            <div class="product-name">{{ product.productName }}</div>
-            <div class="product-price">{{ formatCurrency(product.price) }}</div>
+        <div class="product" v-for="data in datas" :key="data.id" @click="goToProductDetail(product.id)">
+            <img :src="data.product.path">
+            <div class="product-name">{{ data.product.productName }}</div>
+            <div class="product-price">{{ formatCurrency(data.product.price) }}</div>
         </div>
     </div>
     </template>
@@ -14,9 +14,12 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            products: [],
-            keyword: 1
+            datas: [],
+            keyword: '商品'
         };
+    },
+    props: {
+        searchData: String
     },
     methods: {
         formatCurrency(price) {
@@ -35,12 +38,14 @@ export default {
 
         // Axiosを使用してAPIにリクエストを送信
         axios.get(apiUrl, {
-            keyword: this.keyword
+            params:{
+                keyword: this.keyword
+            }
         })
             .then(response => {
                 // レスポンスデータをコンポーネントのデータにセット
-                this.products = response.data;
-                console.log(this.products);
+                this.datas = response.data;
+                console.log(this.datas);
             })
             .catch(error => {
                 console.error('APIリクエストエラー:', error);
