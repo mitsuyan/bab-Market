@@ -30,7 +30,7 @@ import headerHome from '../Components/moleclese/headerHome.vue';
 import footerNavigation from '../Components/moleclese/footerNavigation.vue';
 import mainBase from '../Components/mainBase.vue';
 import tabContent from '../Components/moleclese/tab/tabContent.vue';
-import mypage from './mypage.vue';
+import mypage from './myPage.vue';
 
 export default {
     name: 'MyPage',
