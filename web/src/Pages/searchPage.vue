@@ -15,7 +15,7 @@
             <div v-for="(sessionItem, index) in sessionData.slice().reverse()" :key="index" class="historyList">
                 <div class="historyBase">
                     <div class="historyText">
-                        <formText :level="level5">{{ sessionItem }}</formText>
+                        <a href=""><formText :level="level5">{{ sessionItem }}</formText></a>
                     </div>
                     <div class="iconRight">></div>
                 </div>

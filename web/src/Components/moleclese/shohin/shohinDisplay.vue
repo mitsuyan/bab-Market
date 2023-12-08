@@ -1,12 +1,14 @@
 <template>
     <div class="productList">
-        <div class="product" v-for="data in datas" :key="data.id" @click="goToProductDetail(product.id)">
-            <img :src="data.product.path">
+        <router-link to="/shohindetail" v-for="data in datas" :key="data.id" @click="tapAction">
+        <div class="product">
+            <img :src="data.product.path" alt="商品画像">
             <div class="product-name">{{ data.product.productName }}</div>
             <div class="product-price">{{ formatCurrency(data.product.price) }}</div>
         </div>
+        </router-link>
     </div>
-    </template>
+</template>
 
 <script>
 import axios from 'axios';
@@ -18,7 +20,7 @@ export default {
         };
     },
     props: {
-        searchData: String
+        searchData: String,
     },
     methods: {
         formatCurrency(price) {
@@ -27,8 +29,8 @@ export default {
             }
             return `¥${price.toLocaleString()}`;
         },
-        goToProductDetail(productId) {
-            this.$router.push({ path: `/product/${productId}` })
+        tapAction(){
+            this.$emit('pushAction');
         }
     },
     mounted() {
@@ -36,22 +38,24 @@ export default {
         const apiUrl = '/api/search/';
 
         // Axiosを使用してAPIにリクエストを送信
-        axios.get(apiUrl, {
-            params:{
-                keyword: this.searchData
-            }
-        })
-            .then(response => {
+        axios
+            .get(apiUrl, {
+                params: {
+                    keyword: this.searchData,
+                },
+            })
+            .then((response) => {
                 // レスポンスデータをコンポーネントのデータにセット
                 this.datas = response.data;
                 console.log(this.datas);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error('APIリクエストエラー:', error);
             });
     },
 };
 </script>
+
 
 <style scoped>
 .productList {

@@ -18,7 +18,7 @@
         </div>
         <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
-                <shohinDisplay :searchData="searchData" />
+                <shohinDisplay :searchData="searchData" @pushAction="tapNavi"/>
             </div>
         </div>
         <div v-if="show === '2'">タブ2のコンテンツ</div>
@@ -67,6 +67,9 @@ export default {
                     this.level1 = 'level4';
                     this.level4 = 'level4';
                 }
+            },
+            tapNavi(){
+                this.$emit('tapTop')
             }
         }
     }
