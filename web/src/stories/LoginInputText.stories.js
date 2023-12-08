@@ -1,11 +1,11 @@
 // LoginText.stories.js
-import LoginText from '../ComponentText/LoginText.vue';
-import Rectangle18GrayRadius from '../ComponentText/Rectangle18GrayRadius.vue';
-import Rectangle56Radius from '../ComponentText/Rectangle56Radius.vue';
-import Rectangle33Radius from '../ComponentText/Rectangle33Radius.vue';
-import Rectangle47Radius from '../ComponentText/Rectangle47Radius.vue';
-import RectangleNotIncludedRadius from '../ComponentText/RectangleNotIncludedRadius.vue';
-import InputPrice from '../ComponentText/InputPrice.vue';
+import LoginText from '../Components/atoms/ComponentText/LoginText.vue';
+import Rectangle18GrayRadius from '../Components/atoms/ComponentText/Rectangle18GrayRadius.vue';
+import Rectangle56Radius from '../Components/atoms/ComponentText/Rectangle56Radius.vue';
+import Rectangle33Radius from '../Components/atoms/ComponentText/Rectangle33Radius.vue';
+import Rectangle47Radius from '../Components/atoms/ComponentText/Rectangle47Radius.vue';
+import RectangleNotIncludedRadius from '../Components/atoms/ComponentText/RectangleNotIncludedRadius.vue';
+import InputPrice from '../Components/atoms/ComponentText/InputPrice.vue';
 
 //コンポーネントの設定
 export default {

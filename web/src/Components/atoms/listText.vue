@@ -61,7 +61,13 @@ export default{
     font-style: normal;
     color:#656565;
 }
-
+.level5{
+    font-size:14px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#444444;
+}
 </style>
 
 

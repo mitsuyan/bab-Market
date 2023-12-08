@@ -3,18 +3,19 @@
         <mypageHeader />
         <myAcount />
         <comentText />
-        <shohinDisplay class="shohinList" />
+        <shohinDisplay class="shohinList" :searchData="searchData" />
     </mainBase>
 </template>
 
 <script>
-import mypageHeader from '../Component/header/mypageHeader.vue';
-import mainBase from '../Component/mainBase.vue';
-import shohinDisplay from '../Component/shohin/shohinDisplay.vue';
-import myAcount from '../Component/mypage/myAcount.vue';
-import comentText from '../Component/mypage/comentText.vue';
+import mypageHeader from '../Components/moleclese/mypageHeader.vue';
+import mainBase from '../Components/mainBase.vue';
+import shohinDisplay from '../Components/moleclese/shohin/shohinDisplay.vue';
+import myAcount from '../Components/moleclese/myAcount.vue';
+import comentText from '../Components/moleclese/comentText.vue';
 
 export default {
+    name: 'my-page',
     components: {
         mypageHeader,
         mainBase,
@@ -25,6 +26,7 @@ export default {
     data() {
         return {
             mainHeight: '600pt',
+            searchData: '商品'
         };
     }
 };
@@ -33,7 +35,6 @@ export default {
 <style>
 .shohinList{
     padding-top: 20pt;
-    padding-bottom: 10pt;
 }
 .scrollable-container {
     overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */

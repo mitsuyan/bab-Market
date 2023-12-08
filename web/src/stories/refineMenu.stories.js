@@ -1,6 +1,6 @@
 import refineMenu from '../Components/moleclese/refineMenu.vue';
-import myAcount from '../Component/mypage/myAcount.vue';
-import comentText from '../Component/mypage/comentText.vue';
+import myAcount from '../Components/moleclese/myAcount.vue';
+import comentText from '../Components/moleclese/comentText.vue';
 /* コンポーネントの設定 */
 export default {
     title: 'refine',

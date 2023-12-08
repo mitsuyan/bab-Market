@@ -36,7 +36,6 @@ export default{
     font-style: normal;
     color:#444444;
 }
-
 p{
     margin-block-start: 0;
     margin-block-end: 0;

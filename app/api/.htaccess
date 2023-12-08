@@ -1,3 +1,9 @@
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "http://localhost:6006"
+    Header set Access-Control-Allow-Methods "GET, POST, PATCH, PUT, DELETE, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+</IfModule>
+
 RewriteEngine On
 
 # /api/search へのリクエストを search/getProducts.php にルーティング

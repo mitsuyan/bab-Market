@@ -390,6 +390,16 @@ paths:
           $ref: '#/components/responses/BadRequestError'
 
   /api/transactions/{transactionId}:
+    get:
+        summary: 取引の状況を取得する。
+        parameters:
+          - $ref: '#/components/parameters/TransactionIdInPath'
+          - $ref: '#/components/parameters/SessionIdInHeader'
+        responses:
+          '200':
+            $ref: '#/components/responses/TransactionResponse'
+          '400':
+            $ref: '#/components/responses/BadRequestError'
     patch:
       summary: 取引の状況を更新する。
       parameters:
@@ -865,6 +875,13 @@ components:
           schema:
             $ref: '#/components/schemas/searchHistories'
 
+    TransactionResponse:
+      description: 商品の取引情報
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/transactionDisplay'
+
     TransactionsResponse:
       description: ユーザーの取引履歴情報
       content:
@@ -914,6 +931,9 @@ components:
     
     NotFoundError:
       description: リソースが見つからない(404)
+
+    InternalServerError:
+      description: サーバー内部エラー(500)
 
     # 他のスキーマも同様に定義...
 
@@ -1221,6 +1241,19 @@ components:
       items:
         $ref: '#/components/schemas/productWithId'
 
+    productInfo:
+      type: object
+      properties:
+        productId:
+          $ref: '#/components/schemas/productId'
+        productName:
+          productName:
+          $ref: '#/components/schemas/productName'
+          description: 商品名
+        productImagePath:
+          $ref: '#/components/schemas/imagePath'
+          description: 商品画像パス
+
     image:
      type: object
      properties:
@@ -1329,8 +1362,28 @@ components:
           $ref: '#/components/schemas/nickname'
         profileImagePath:
           $ref: '#/components/schemas/imagePath'
+
+    sellerInfoWithRating:
+      type: object
+      properties:
+        userId:
+          $ref: '#/components/schemas/userId'
+        nickname:
+          $ref: '#/components/schemas/nickname'
+        profileImagePath:
+          $ref: '#/components/schemas/imagePath'
         averageRating:
           $ref: '#/components/schemas/averageRating'
+
+    buyerInfo:
+      type: object
+      properties:
+        name:
+          type: string
+          description: 氏名
+        address:
+          type: string
+          description: 住所
 
     reviewResponse:
       type: object
@@ -1400,12 +1453,12 @@ components:
           $ref: '#/components/schemas/isFlag'
           description: 購入者かどうか
         seller:
-          $ref: '#/components/schemas/sellerInfo'
-          nullrable: true
+          $ref: '#/components/schemas/sellerInfoWithRating'
+          nullable: true
           description: 出品者情報
         reviews:
           $ref: '#/components/schemas/reviews'
-          nullrable: true
+          nullable: true
           description: レビューリスト
 
     productDetailsRequestInfo:
@@ -1458,7 +1511,46 @@ components:
           type: string
           enum: [shipping, receipt]
 
-    transaction:
+    transactionDisplay:
+      type: object
+      properties:
+        transactionStatusId:
+          $ref: '#/components/schemas/codeMasterId'
+          description: 取引ステータスID
+        sellerInfo:
+          $ref: '#/components/schemas/sellerInfo'
+          description: 出品者情報
+        productInfo:
+          $ref: '#/components/schemas/productInfo'
+          description: 商品情報
+        transactionInfo:
+          $ref: '#/components/schemas/transactionInfo'
+          description: 取引情報
+        buyerInfo:
+          $ref: '#/components/schemas/buyerInfo'
+          description: 購入者情報
+          nullable: true
+        evaluationInfo:
+          $ref: '#/components/schemas/evaluationInfo'
+          description: 評価情報
+          nullable: true
+
+    transactionInfo:
+      type: object
+      properties:
+        amount:
+          $ref: '#/components/schemas/price'
+        shippingFeeResponsibility:
+          $ref: '#/components/schemas/codeMasterName'
+          description: 配送料の負担
+        date:
+          $ref: '#/components/schemas/date-time'
+          description: 取引日時
+        productId:
+          $ref: '#/components/schemas/productId'
+          description: 商品ID
+
+    transactionHistoryInfo:
       type: object
       properties:
         transactionId:
@@ -1471,7 +1563,19 @@ components:
     transactions:
       type: array
       items:
-        $ref: '#/components/schemas/transaction'
+        $ref: '#/components/schemas/transactionHistoryInfo'
+
+    evaluationInfo:
+      type: object
+      properties:
+        nickname:
+          $ref: '#/components/schemas/nickname'
+        comment:
+          $ref: '#/components/schemas/comment'
+          description: 取引コメント
+        score:
+         $ref: '#/components/schemas/score'
+         description: 評価値
 
     evaluationRequestInfo:
       type: object
