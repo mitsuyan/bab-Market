@@ -3,7 +3,7 @@
         <mypageHeader />
         <myAcount />
         <comentText />
-        <shohinDisplay class="shohinList" />
+        <shohinDisplay class="shohinList" :searchData="searchData" />
     </mainBase>
 </template>
 
@@ -15,6 +15,7 @@ import myAcount from '../Components/moleclese/myAcount.vue';
 import comentText from '../Components/moleclese/comentText.vue';
 
 export default {
+    name: 'my-page',
     components: {
         mypageHeader,
         mainBase,
@@ -24,34 +25,43 @@ export default {
     },
     data() {
         return {
-            mainHeight: '590pt',
+            mainHeight: '600pt',
+            searchData: '商品'
         };
     }
 };
 </script>
 
 <style>
-.shohinList{
+.shohinList {
     padding-top: 20pt;
 }
+
 .scrollable-container {
-    overflow-y: auto; /* コンテンツがはみ出た場合にスクロールバーを表示 */
-    scrollbar-width: thin; /* Firefox 対応 */
-    -webkit-scrollbar-width: thin; /* Chrome, Safari 対応 */
-    scrollbar-color: transparent transparent; /* Firefox 対応 */
-    -webkit-scrollbar: thin; /* Chrome, Safari 対応 */
+    overflow-y: auto;
+    /* コンテンツがはみ出た場合にスクロールバーを表示 */
+    scrollbar-width: thin;
+    /* Firefox 対応 */
+    -webkit-scrollbar-width: thin;
+    /* Chrome, Safari 対応 */
+    scrollbar-color: transparent transparent;
+    /* Firefox 対応 */
+    -webkit-scrollbar: thin;
+    /* Chrome, Safari 対応 */
 }
 
 /* コンテンツがはみ出た場合のスクロールバーのスタイル */
 .scrollable-container::-webkit-scrollbar {
-    width: 6px; /* スクロールバーの幅 */
+    width: 6px;
+    /* スクロールバーの幅 */
 }
 
 .scrollable-container::-webkit-scrollbar-thumb {
-    background-color: transparent; /* スクロールバーの中央の色 */
+    background-color: transparent;
+    /* スクロールバーの中央の色 */
 }
 
 .scrollable-container::-webkit-scrollbar-track {
-    background-color: transparent; /* スクロールバーのトラックの色 */
-}
-</style>
+    background-color: transparent;
+    /* スクロールバーのトラックの色 */
+}</style>

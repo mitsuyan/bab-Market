@@ -6,11 +6,8 @@ module.exports = {
   devServer: {
     proxy: {
       '/app/api': {
-        target: 'https://aso-2201402.main.jp',
+        target: 'https://aso-2201402.main.jp/backend',
         changeOrigin: true,
-        pathRewrite: {
-          '^/app/api': '/app/api'
-        }
       }
     }
   }
