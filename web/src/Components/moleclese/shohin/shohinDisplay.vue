@@ -1,10 +1,12 @@
 <template>
     <div class="productList">
-        <div class="product" v-for="data in datas" :key="data.id" @click="goToProductDetail(data.product.id)">
+        <router-link to="/shohindetail" v-for="data in datas" :key="data.id" @click="tapAction">
+        <div class="product">
             <img :src="data.product.path" alt="商品画像">
             <div class="product-name">{{ data.product.productName }}</div>
             <div class="product-price">{{ formatCurrency(data.product.price) }}</div>
         </div>
+        </router-link>
     </div>
 </template>
 
@@ -27,9 +29,9 @@ export default {
             }
             return `¥${price.toLocaleString()}`;
         },
-        goToProductDetail(productId) {
-            this.$router.push({ name: 'shohinDetail', params: { id: productId } });
-        },
+        tapAction(){
+            this.$emit('pushAction');
+        }
     },
     mounted() {
         // APIエンドポイントのURLを設定

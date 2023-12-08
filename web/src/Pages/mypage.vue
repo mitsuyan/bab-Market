@@ -15,6 +15,7 @@ import myAcount from '../Components/moleclese/myAcount.vue';
 import comentText from '../Components/moleclese/comentText.vue';
 
 export default {
+    name: 'my-page',
     components: {
         mypageHeader,
         mainBase,

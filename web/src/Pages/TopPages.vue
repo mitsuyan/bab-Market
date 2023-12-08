@@ -1,11 +1,10 @@
 <template>
     <mainBase :height="mainHeight">
+        <div v-if="tapDetail">
         <tabContent>
             <template v-slot:1>
                 <!-- 1番目のタブのコンテンツ -->
-                <div>
-                    <tabNavigation />
-                </div>
+                    <tabNavigation @tapTop="tapJudg"/>
             </template>
             <template v-slot:2>
                 <!-- 2番目のタブのコンテンツ -->
@@ -24,6 +23,10 @@
                 </div>
             </template>
         </tabContent>
+        </div>
+        <div v-else>
+            <router-view></router-view>
+        </div>
     </mainBase>
 </template>
 
@@ -44,6 +47,7 @@ export default {
     },
     data() {
         return {
+            tabJudg: true,
             mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
         };
     },
@@ -55,6 +59,14 @@ export default {
         updateHeight() {
             this.mainHeight = window.innerHeight + 'px';
         },
+        tapJudg(){
+            return this.tabJudg = false;
+        }
+    },
+    computed: {
+        tapDetail(){
+            return this.tabJudg == true;
+        }
     }
 };
 </script>

@@ -21,7 +21,7 @@ import mainBase from '../Components/mainBase.vue';
 import shohinDetailfooter from '../Components/moleclese/shohinDetailfooter.vue';
 
 export default {
-    name: 'ShohinDetail',
+    name: 'shohinDetail',
     components: {
         shohinExplanation,
         ShohinInformation,
