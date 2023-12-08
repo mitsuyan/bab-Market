@@ -3,20 +3,25 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import TopPages from '../Pages/TopPages.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
+import myPage from '../Pages/myPage.vue';
 
 const routes = [
     // ルートの定義はここに
     {
-        path: '/TopPages.vue',
+        path: '/',
+        name: 'top',
         component: TopPages,
-        children: [
-            {
-                path: '/shohinDetail.vue',
-                component: shohinDetail,
-                name: 'shohinDetail',
-            },
-        ],
     },
+    {
+        path: '/shohindetail',
+        name: 'shohinDetail',
+        component: shohinDetail,
+    },
+    {
+        path: '/myPage',
+        name: 'my-page',
+        component: myPage,
+    }
 ];
 
 const router = createRouter({
