@@ -6,7 +6,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'https://aso-2201402.main.jp/baby-motsu',
+        target: 'https://aso-2201402.main.jp/backend',
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/app/api'
