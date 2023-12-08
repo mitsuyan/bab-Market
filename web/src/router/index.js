@@ -3,7 +3,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import TopPages from '../Pages/TopPages.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
-import myPage from '../Pages/myPage.vue';
+import myPage from '../Pages/mypage.vue';
 
 const routes = [
     // ルートの定義はここに

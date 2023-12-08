@@ -23,7 +23,6 @@ import LoginText from '../Components/atoms/ComponentText/LoginText.vue';
 import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
-import apiServices from '/services/apiService.js';
 import mainBase from '../Components/mainBase.vue';
 
 export default {
