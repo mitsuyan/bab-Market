@@ -1,12 +1,14 @@
 <template>
     <div class="productList">
-        <div class="product" v-for="product in products" :key="product.id" @click="goToProductDetail(product.id)">
-            <img :src="product.imagePath" alt="Product Image">
-            <div class="product-name">{{ product.productName }}</div>
-            <div class="product-price">{{ formatCurrency(product.price) }}</div>
-        </div>
+        <router-link to="/shohindetail" v-for="data in datas" :key="data.id" @click="tapAction">
+            <div class="product">
+                <img :src="data.product.path" alt="商品画像">
+                <div class="product-name">{{ data.product.productName }}</div>
+                <div class="product-price">{{ formatCurrency(data.product.price) }}</div>
+            </div>
+        </router-link>
     </div>
-    </template>
+</template>
 
 <script>
 import axios from 'axios';
@@ -14,9 +16,11 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            products: [],
-            keyword: 1
+            datas: [],
         };
+    },
+    props: {
+        searchData: String,
     },
     methods: {
         formatCurrency(price) {
@@ -25,29 +29,33 @@ export default {
             }
             return `¥${price.toLocaleString()}`;
         },
-        goToProductDetail(productId) {
-            this.$router.push({ path: `/product/${productId}` })
+        tapAction() {
+            this.$emit('pushAction');
         }
     },
     mounted() {
         // APIエンドポイントのURLを設定
-        const apiUrl = '/api/search/getProducts.php';
+        const apiUrl = '/api/search/';
 
         // Axiosを使用してAPIにリクエストを送信
-        axios.get(apiUrl, {
-            keyword: this.keyword
-        })
-            .then(response => {
-                // レスポンスデータをコンポーネントのデータにセット
-                this.products = response.data;
-                console.log(this.products);
+        axios
+            .get(apiUrl, {
+                params: {
+                    keyword: this.searchData,
+                },
             })
-            .catch(error => {
+            .then((response) => {
+                // レスポンスデータをコンポーネントのデータにセット
+                this.datas = response.data;
+                console.log(this.datas);
+            })
+            .catch((error) => {
                 console.error('APIリクエストエラー:', error);
             });
     },
 };
 </script>
+
 
 <style scoped>
 .productList {
@@ -56,13 +64,15 @@ export default {
     height: 400px;
     flex-flow: row wrap;
 }
+
 .product {
     margin: 5pt;
     width: 97pt;
     height: 142pt;
     box-shadow: 0 8pt 15pt #E7EAF0;
 }
-img{
+
+img {
     width: 98pt;
     height: 98pt;
 }
