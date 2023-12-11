@@ -19,7 +19,7 @@
                 <template v-slot:4>
                     <!-- 4番目のタブのコンテンツ -->
                     <div>
-                        <myPage />
+                        <myPage :nowScreen="judg"/>
                     </div>
                 </template>
             </tabContent>
@@ -49,6 +49,7 @@ export default {
         return {
             tabJudg: true,
             mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
+            judg: 'mypage'
         };
     },
     mounted() {

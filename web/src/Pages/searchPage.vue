@@ -14,10 +14,8 @@
             <historyText />
             <div v-for="(sessionItem, index) in sessionData.slice().reverse()" :key="index" class="historyList">
                 <div class="historyBase">
-                    <div class="historyText">
-                        <a href="">
-                            <formText :level="level5">{{ sessionItem }}</formText>
-                        </a>
+                    <div class="historyText" @click="reSearch(sessionItem)">
+                        <formText :level="level5">{{ sessionItem }}</formText>
                     </div>
                     <div class="iconRight">></div>
                 </div>
@@ -73,6 +71,9 @@ export default {
         },
         actionClick() {
             this.searchValue = null;
+        },
+        reSearch(sessionItem) {
+            this.updateSession(sessionItem);
         }
     },
     computed: {

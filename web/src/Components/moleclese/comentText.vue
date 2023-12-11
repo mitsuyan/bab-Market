@@ -2,7 +2,7 @@
     <div class="comentTextBase">
         <div class="shohinNumText">
             <!-- {{   }} この部分に出品商品数を表示-->
-            <formText :level="textFormLevel3">4</formText>
+            <formText :level="textFormLevel3">{{ shohinLength }}</formText>
             <footerText :level="level1" :text="text" />
         </div>
             <formText :level="textFormLevel3">たくさん商品を出品します！</formText>
@@ -26,6 +26,9 @@ export default {
         return {
             text: '商品'
         }
+    },
+    props: {
+        shohinLength: String
     }
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="sellBase">
         <div class="sellorMain">
-            <img src="/img/gorira.png" class="selimg" />
+            <img src="../../assets/gorira.png" class="selimg" />
             <div class="sellorSubMain">
                 <div class="imageText">
                     <formText :level="textFormLevel4">中野光寿</formText>

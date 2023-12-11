@@ -2,7 +2,7 @@
     <div class="sellBase">
         <buttonText :level="level2Pink" :propText="text" />
         <div class="sellorMain">
-            <img src="/img/logo.png" class="selimg" />
+            <img src="../../../assets/logo.png" class="selimg" />
             <div class="sellorSubMain">
                 <div class="imageText">mitsukun</div>
                 <div class="sellorEvaluation">
@@ -25,12 +25,10 @@
 
 <script>
 import buttonText from '../../atoms/buttonText.vue';
-import formText from '../../atoms/formText.vue';
 
 export default {
     components: {
-        buttonText,
-        formText
+        buttonText
     },
     data() {
         return {

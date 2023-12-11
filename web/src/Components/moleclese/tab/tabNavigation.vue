@@ -105,7 +105,7 @@ export default {
     /* Firefox 対応 */
     -webkit-scrollbar: thin;
     /* Chrome, Safari 対応 */
-    height: 680px;
+    height: 695px;
 }
 
 /* コンテンツがはみ出た場合のスクロールバーのスタイル */

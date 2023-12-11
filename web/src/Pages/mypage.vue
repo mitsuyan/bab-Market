@@ -2,8 +2,8 @@
     <mainBase :height="mainHeight" class="scrollable-container">
         <mypageHeader />
         <myAcount />
-        <comentText />
-        <shohinDisplay class="shohinList" :searchData="searchData" />
+        <comentText :shohinLength="shohin" />
+        <shohinDisplay class="shohinList" :searchData="searchData" @Action="shohinLength" :nowMypage="nowScreen"/>
     </mainBase>
 </template>
 
@@ -26,8 +26,17 @@ export default {
     data() {
         return {
             mainHeight: '600pt',
-            searchData: '商品'
+            searchData: '商品',
+            shohin: 0
         };
+    },
+    props:{
+        nowScreen: String
+    },
+    methods: {
+        shohinLength(value){
+            this.shohin = value;
+        }
     }
 };
 </script>

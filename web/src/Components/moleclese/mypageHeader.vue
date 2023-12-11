@@ -1,8 +1,5 @@
 <template>
     <div class="container">
-        <button class="backButton" @click="backPage">
-            <img src="../../assets/back.svg" alt="a">
-        </button>
         <div class="detailSvgMb">
             <svg data-name="コンポーネント 128 – 14" xmlns="http://www.w3.org/2000/svg"
             width="69" height="84" viewBox="0 0 83 84">
@@ -33,16 +30,6 @@
     </div>
 </template>
 
-<script>
-export default {
-    methods: {
-        backPage() {
-            this.$router.go(-1); // ブラウザの履歴を1つ戻る
-        }
-    }
-};
-</script>
-
 
 <style scoped>
 .container {
@@ -53,7 +40,7 @@ export default {
     margin-bottom: 13px;
 }
 .detailSvgMb {
-    padding-left: 38%;
+    padding-left: 40%;
 }
 .svgBell{
     padding-left: 24%;
@@ -61,11 +48,6 @@ export default {
 .svgMessage{
     padding-left: 8pt;
     padding-right: 10pt;
-}
-.backButton{
-    background-color: white;
-    border: none;
-    outline: none;
 }
 </style>
 
