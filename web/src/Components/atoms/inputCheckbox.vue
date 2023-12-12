@@ -1,6 +1,6 @@
 <template>
   <div :class="containerLevel" @click="handleChange" :id="id">
-    <input type="checkbox" :checked="checked" />
+    <input type="checkbox" :value="value" :checked="isChecked" />
     <div :class="checkBoxLevel">
       <Img fileName="checked.svg" altName="checked" />
     </div>
@@ -20,24 +20,19 @@ export default {
       type: String,
       default: "",
     },
-    majorId: {
+    value: {
       type: Number,
     },
-    id: {
-      type: Number,
-    },
-    containerLevel: {
-      type: String,
-      default: "defaultClass",
-    },
-    checked: {
-      type: Boolean,
-      default: false,
-    },
+  },
+  data() {
+    return {
+      isChecked: this.checked, // チェックボックスの状態を管理するデータ
+    };
   },
   methods: {
     handleChange() {
-      this.$emit('change', this.id, !this.checked, this.majorId);
+      this.isChecked = !this.isChecked;
+      this.$emit('change', this.value);
     },
   },
 };

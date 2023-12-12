@@ -16,7 +16,10 @@
                 </li>
             </ul>
         </div>
-        <div class="productContainer">
+            <div>
+                <toggleRefines />
+            </div>
+            <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
                 <shohinDisplay :searchData="searchData" @pushAction="tapNavi" />
             </div>
@@ -30,11 +33,14 @@
 import headerHome from '../headerHome.vue';
 import headerText from '../../atoms/headerText.vue';
 import shohinDisplay from '../shohin/shohinDisplay.vue';
+import toggleRefines from '../../organisms/toggleRefines.vue';
+
 export default {
     components: {
         headerText,
         shohinDisplay,
-        headerHome
+        headerHome,
+        toggleRefines
     },
     data() {
         return {
@@ -45,7 +51,7 @@ export default {
             level1: 'level4',
             level2: 'level4',
             level3: 'level4',
-            searchData: '商品'
+            searchData: '商品',
         }
     },
     methods: {
@@ -69,9 +75,12 @@ export default {
             }
         },
         tapNavi() {
-            this.$emit('tapTop')
+            this.$emit('tapTop');
+        },
+        toggleClick(){
+            this.toggleJuge = false;
         }
-    }
+    },
 }
 </script>
 
@@ -140,4 +149,5 @@ export default {
     width: 50%;
     background: #ffffff;
     text-align: center;
-}</style>
+}
+</style>
