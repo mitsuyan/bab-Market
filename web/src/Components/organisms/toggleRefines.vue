@@ -1,6 +1,6 @@
 <template>
   <toggleButton :id="0" :open="items.mainCategory.isOpen" @isToggle="toggleChange">
-    <ImgMainRefineToggle fileName="refine.svg"></ImgMainRefineToggle>
+    <ImgMainRefineToggle fileName="refine.svg" :text="text"></ImgMainRefineToggle>
   </toggleButton>
   <div class="mainMenu">
     <Refine v-if="items.mainCategory.isOpen" @isOpen3="toggleChange" :categoryId=0 :items="items"
@@ -77,11 +77,12 @@ export default {
           { minorId: 3, id: 1, name: "100cm", checked: false },
           { minorId: 3, id: 2, name: "120cm", checked: false },
           { minorId: 4, id: 1, name: "あ", checked: false },
-        ]
+        ],
       },
       categoryId: null,
       isOpen: false,
       subCategoryIsOpen: false,
+      text:'絞り込み'
     }
   },
   methods: {

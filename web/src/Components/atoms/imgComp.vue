@@ -1,5 +1,6 @@
 <template>
-    <img :src="`/image/${fileName}`" :alt="altName" :class="className">
+    <img :src="`/dist/image/${fileName}`" :alt="altName" :class="className">
+    {{ text }}
 </template>
 
 <script>
@@ -17,7 +18,8 @@ export default{
         className:{
             type:String,
             default:"back",
-        }
+        },
+        text:String,
     },
 };
 </script>

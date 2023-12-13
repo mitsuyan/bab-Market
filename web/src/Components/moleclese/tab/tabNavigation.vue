@@ -21,7 +21,7 @@
             </div>
             <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
-                <shohinDisplay :searchData="searchData" @pushAction="tapNavi" />
+                <shohinDisplay @pushAction="tapNavi" :nowMypage="nowScreen" />
             </div>
         </div>
         <div v-if="show === '2'">タブ2のコンテンツ</div>
@@ -51,8 +51,10 @@ export default {
             level1: 'level4',
             level2: 'level4',
             level3: 'level4',
-            searchData: '商品',
         }
+    },
+    props: {
+        nowScreen: String
     },
     methods: {
         select: function (num, level) {

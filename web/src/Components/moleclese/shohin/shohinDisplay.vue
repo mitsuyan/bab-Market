@@ -36,26 +36,41 @@ export default {
         }
     },
     mounted() {
-        if(this.nowMypage != 'mypage'){
-        // APIエンドポイントのURLを設定
-        const apiUrl = 'https://aso-2201402.main.jp/backend/api/search';
-        // Axiosを使用してAPIにリクエストを送信
-        axios
-            .get(apiUrl, {
-                params: {
-                    keyword: this.searchData,
-                },
-            })
-            .then((response) => {
-                // レスポンスデータをコンポーネントのデータにセット
-                this.datas = response.data;
-                this.shohinLen = this.datas.length
-                this.$emit('Action', this.shohinLen);
-                console.log(this.datas);
-            })
-            .catch((error) => {
-                console.error('APIリクエストエラー:', error);
-            });
+        if (this.nowMypage == 'search') {
+            // APIエンドポイントのURLを設定
+            const apiUrl = 'https://aso-2201402.main.jp/backend/api/search';
+            // Axiosを使用してAPIにリクエストを送信
+            axios
+                .get(apiUrl, {
+                    params: {
+                        keyword: this.searchData,
+                    },
+                })
+                .then((response) => {
+                    // レスポンスデータをコンポーネントのデータにセット
+                    this.datas = response.data;
+                    this.shohinLen = this.datas.length
+                    this.$emit('Action', this.shohinLen);
+                    console.log(this.datas);
+                })
+                .catch((error) => {
+                    console.error('APIリクエストエラー:', error);
+                });
+        } else if (this.nowMypage == 'home') {
+            const apiUrl = 'https://aso-2201402.main.jp/backend/api/products';
+            // Axiosを使用してAPIにリクエストを送信
+            axios
+                .get(apiUrl)
+                .then((response) => {
+                    // レスポンスデータをコンポーネントのデータにセット
+                    this.datas = response.data;
+                    this.shohinLen = this.datas.length
+                    this.$emit('Action', this.shohinLen);
+                    console.log(this.datas);
+                })
+                .catch((error) => {
+                    console.error('APIリクエストエラー:', error);
+                });
         }
     },
 };
@@ -82,7 +97,7 @@ img {
     height: 98pt;
 }
 
-.link{
+.link {
     text-decoration: none;
     color: #000000;
 }

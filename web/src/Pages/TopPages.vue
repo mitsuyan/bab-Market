@@ -1,15 +1,15 @@
 <template>
-    <mainBase :height="mainHeight">
+    <mainBase :height="mainHeight" class="mBase">
         <div v-if="tapDetail">
             <tabContent>
                 <template v-slot:1>
                     <!-- 1番目のタブのコンテンツ -->
-                    <tabNavigation @tapTop="tapJudg" />
+                    <tabNavigation @tapTop="tapJudg" :nowScreen="homeJudg" />
                 </template>
                 <template v-slot:2>
                     <!-- 2番目のタブのコンテンツ -->
                     <div>
-                        <searchPage />
+                        <searchPage :nowScreen="searchpageJudg" />
                     </div>
                 </template>
                 <template v-slot:3>
@@ -19,7 +19,7 @@
                 <template v-slot:4>
                     <!-- 4番目のタブのコンテンツ -->
                     <div>
-                        <myPage :nowScreen="judg"/>
+                        <myPage :nowScreen="mypageJudg"/>
                     </div>
                 </template>
             </tabContent>
@@ -49,7 +49,9 @@ export default {
         return {
             tabJudg: true,
             mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
-            judg: 'mypage'
+            mypageJudg: 'mypage',
+            homeJudg: 'home',
+            searchpageJudg: 'search'
         };
     },
     mounted() {
@@ -72,3 +74,9 @@ export default {
 };
 </script>
 
+<style>
+.mBase{
+    position: fixed;
+    left: 500px;
+}
+</style>

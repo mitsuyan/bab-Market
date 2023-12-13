@@ -6,7 +6,7 @@
         <!-- 検索結果商品画面表示 -->
         <div v-if="screenDisplay">
             <div>
-                <shohinDisplay :searchData="searchData" />
+                <shohinDisplay :searchData="searchData" :nowMypage="nowScreen" />
             </div>
         </div>
         <!-- 検索履歴を表示 -->
@@ -55,6 +55,9 @@ export default {
             searchValue: null,
             searchData: ''
         }
+    },
+    props: {
+        nowScreen: String
     },
     methods: {
         loadSessionData() {

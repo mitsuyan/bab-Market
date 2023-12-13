@@ -2,18 +2,18 @@
   <div :class="containerLevel" @click="handleChange" :id="id">
     <input type="checkbox" :checked="checked" />
     <div :class="checkBoxLevel">
-      <Img fileName="checked.svg" altName="checked" />
+      <imgComp fileName="checked.svg" altName="checked" v-if="boxChecked" />
     </div>
     <slot></slot>
   </div>
 </template>
 
 <script>
-import Img from '../atoms/imgComp.vue';
+import imgComp from '../atoms/imgComp.vue';
 
 export default {
   components: {
-    Img,
+    imgComp,
   },
   props: {
     checkBoxLevel: {
@@ -40,6 +40,11 @@ export default {
       this.$emit('change', this.id, !this.checked, this.majorId);
     },
   },
+  computed: {
+    boxChecked() {
+      return this.checked == true;
+    }
+  }
 };
 </script>
 

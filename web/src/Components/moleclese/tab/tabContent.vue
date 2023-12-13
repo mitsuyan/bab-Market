@@ -73,7 +73,10 @@ export default {
     z-index: 10000;
     bottom: 1px;
 }
-
+.tabContent{
+    position: fixed;
+    left: 500px
+}
 .tabnav {
     display: flex;
     list-style-type: none;
