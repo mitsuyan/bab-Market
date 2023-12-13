@@ -1,7 +1,7 @@
 // router.js
 
 import { createRouter, createWebHistory } from 'vue-router';
-import TopPages from '../Pages/TopPages.vue';
+import LoginHome from '../Pages/LoginHome.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
 import myPage from '../Pages/myPage.vue';
 import tradingSeller from '../Components/organisms/tradingSeller.vue';
@@ -11,7 +11,7 @@ const routes = [
     {
         path: '/dist/',
         name: 'top',
-        component: TopPages,
+        component: LoginHome,
     },
     {
         path: '/shohindetail',
