@@ -16,9 +16,6 @@
                 </li>
             </ul>
         </div>
-            <div>
-                <toggleRefines />
-            </div>
             <div class="productContainer">
             <div v-if="show === '1'" class="scrollableContent">
                 <shohinDisplay @pushAction="tapNavi" :nowMypage="nowScreen" />
@@ -33,14 +30,12 @@
 import headerHome from '../headerHome.vue';
 import headerText from '../../atoms/headerText.vue';
 import shohinDisplay from '../shohin/shohinDisplay.vue';
-import toggleRefines from '../../organisms/toggleRefines.vue';
 
 export default {
     components: {
         headerText,
         shohinDisplay,
         headerHome,
-        toggleRefines
     },
     data() {
         return {

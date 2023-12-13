@@ -2,32 +2,33 @@
   <toggleButton :id="0" :open="items.mainCategory.isOpen" @isToggle="toggleChange">
     <ImgMainRefineToggle fileName="refine.svg" :text="text"></ImgMainRefineToggle>
   </toggleButton>
-  <div class="mainMenu">
-    <Refine v-if="items.mainCategory.isOpen" @isOpen3="toggleChange" :categoryId=0 :items="items"
-      :isOpen="items.mainCategory.isOpen"></Refine>
-  </div>
-  <transition name="slide">
-    <div class="menu">
-      <Refine v-if="isOpen" :categoryId="categoryId" @change3="handleMenuChange" @isOpen3="toggleChange" :items="items"
-        :isOpen="isOpen"></Refine>
+  <MainBase class="toggleBase">
+    <div class="mainMenu">
+      <Refine v-if="items.mainCategory.isOpen" @isOpen3="toggleChange" :categoryId=0 :items="items"
+        :isOpen="items.mainCategory.isOpen"></Refine>
     </div>
-  </transition>
-  <div class="menu">
-    <Refine v-if="subCategoryIsOpen" :categoryId="categoryId" @change3="handleMenuChange"
-      @isOpen3="toggleChangeSubCategory" :items="items" :isOpen="isOpen"></Refine>
-  </div>
+    <transition name="slide">
+      <div class="menu">
+        <Refine v-if="isOpen" :categoryId="categoryId" @change3="handleMenuChange" @isOpen3="toggleChange" :items="items"
+        :isOpen="isOpen"></Refine>
+      </div>
+    </transition>
+    
+  </MainBase>
 </template>
 
 <script>
 import Refine from '../moleclese/refineComp.vue';
 import ImgMainRefineToggle from '../atoms/imgComp.vue';
 import toggleButton from '../atoms/togleButton.vue';
+import MainBase from '../mainBase.vue';
 
 export default {
   components: {
     Refine,
     ImgMainRefineToggle,
-    toggleButton
+    toggleButton,
+    MainBase
   },
   data() {
     return {
@@ -127,13 +128,21 @@ export default {
 
 .mainMenu {
   position: fixed;
-  z-index: 0;
-  right: 0px;
+  z-index: 10001;
+  left: 500px;
+  bottom: 0px;
+  background-color: rgba(20, 20, 20, 0.1);
+  width: 431px;
 }
 
 .menu {
   position: fixed;
-  right: 0px;
-  z-index: 10;
+  z-index: 10002;
+  left: 587px;
+  bottom: 0px;
+}
+
+.toggleBase{
+  background-color: rgba(00, 00, 00, 0.5);
 }
 </style>

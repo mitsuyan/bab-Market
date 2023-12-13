@@ -70,7 +70,7 @@ export default {
 <style scoped>
 .tabGroup {
     position: fixed;
-    z-index: 10000;
+    z-index: 1000;
     bottom: 1px;
 }
 .tabContent{

@@ -38,7 +38,7 @@ export default {
         return {
             textFormLevel4: 'textFormLevel4',
             textFormLevel5: 'textFormLevel5',
-            rating: 3, // アカウントの評価値（仮の値）
+            rating: 2.5, // アカウントの評価値（仮の値）
             width: '200px',
             text: 'プロフィールを編集する'
         };

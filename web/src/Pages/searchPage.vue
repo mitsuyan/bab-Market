@@ -6,6 +6,9 @@
         <!-- 検索結果商品画面表示 -->
         <div v-if="screenDisplay">
             <div>
+                <toggleRefines />
+            </div>
+            <div>
                 <shohinDisplay :searchData="searchData" :nowMypage="nowScreen" />
             </div>
         </div>
@@ -35,13 +38,15 @@ import searchHeader from '../Components/moleclese/search/searchHeader.vue';
 import historyText from '../Components/moleclese/search/historyText.vue';
 import formText from '../Components/atoms/formText.vue';
 import shohinDisplay from '../Components/moleclese/shohin/shohinDisplay.vue';
+import toggleRefines from '../Components/organisms/toggleRefines.vue';
 
 export default {
     components: {
         searchHeader,
         historyText,
         formText,
-        shohinDisplay
+        shohinDisplay,
+        toggleRefines
     },
     mounted() {
         // セッションストレージからデータを取得

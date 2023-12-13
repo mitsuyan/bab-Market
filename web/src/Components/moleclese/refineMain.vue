@@ -1,5 +1,5 @@
 <template>
-    <Base>
+    <Base class="refineMainBase">
     <Header :receivedValue=1 :title="majorCategoryName" :id="categoryId" :isOpen="isOpen" @isOpen1="toggleChange"></Header>
     <Menu :items="items" :categoryId="categoryId" @isOpen="toggleChange" @change1="handleMenuChange"
         @isOpenSub1="toggleChangeSubCategory"></Menu>
@@ -91,4 +91,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.refineMainBase{
+    position: sticky;
+    left: 587px;
+}
+</style>
