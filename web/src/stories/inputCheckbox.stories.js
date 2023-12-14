@@ -8,5 +8,5 @@ export default {
 /* story記述 */
 export const check = () => ({
     components: { checkInput },
-    template: '<checkInput />'
+    template: '<checkInput checkBoxLevel="checkBoxGray" />'
 });

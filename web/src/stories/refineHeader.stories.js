@@ -8,17 +8,12 @@ export default {
 };
 
 /* story記述 */
+export const refineMajorHead = () => ({
+    components: { refineHeader },
+    template: '<refineHeader :receivedValue=1 />'
+});
+
 export const refineHead = () => ({
     components: { refineHeader },
-    template: '<refineHeader />'
-});
-
-export const detailheader = () => ({
-    components: { detailHeader },
-    template: '<detailHeader />'
-});
-
-export const mypageheader = () => ({
-    components: { mypageHeader },
-    template: '<mypageHeader />'
+    template: '<refineHeader :receivedValue=2 />'
 });

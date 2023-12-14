@@ -34,7 +34,7 @@
 import tabNavigation from '../Components/moleclese/tab/tabNavigation.vue';
 import mainBase from '../Components/mainBase.vue';
 import tabContent from '../Components/moleclese/tab/tabContent.vue';
-import myPage from './myPage.vue';
+import myPage from './mypage.vue';
 import searchPage from './searchPage.vue';
 
 export default {
