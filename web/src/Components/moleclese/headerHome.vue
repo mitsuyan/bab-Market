@@ -35,18 +35,23 @@ export default {
     data(){
         return{
             level6:'level6',
-            loginNow: false
+            loginNow: false,
+            storege: [],
         }
     },
     computed:{
         loginJuge(){
-            return this.loginNow != true;
+            return this.storege == null && this.loginNow != true;
         }
     },
     methods: {
         loginTap(){
             this.$emit('pushAction');
         }
+    },
+    mounted() {
+        this.storege = sessionStorage.getItem('loginUserData');
+        console.log(this.storege);
     }
 }
 </script>

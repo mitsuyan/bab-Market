@@ -7,6 +7,7 @@ import myPage from '../Pages/myPage.vue';
 import tradingSeller from '../Components/organisms/tradingSeller.vue';
 import LoginHome from '../Pages/LoginHome.vue';
 import CreateAcount from '../Pages/CreateAcount.vue';
+import tradingManagement from '../Pages/TradingManagement.vue';
 
 const routes = [
     // ルートの定義はここに
@@ -37,7 +38,11 @@ const routes = [
     {
         path: '/CreateAcount',
         component: CreateAcount
-    }
+    },
+    {
+        path: '/tradingManagement',
+        component: tradingManagement,
+    },
 ];
 
 const router = createRouter({

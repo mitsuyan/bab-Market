@@ -2,12 +2,12 @@
     <div class="sellBase">
         <buttonText :level="level2Pink" :propText="text" />
         <div class="sellorMain">
-            <img src="../../../assets/logo.png" class="selimg" />
+            <img :src="logoSrc" class="selimg" />
             <div class="sellorSubMain">
-                <div class="imageText"></div>
+                <div class="imageText">{{ this.datas.profile.nickname }}</div>
                 <div class="sellorEvaluation">
                     <div class="sellorImg">
-                        <div class="sellorAverage"></div>
+                        <div class="sellorAverage">{{ this.datas.profile.average_rating }}</div>
                         <svg id="rating" xmlns="http://www.w3.org/2000/svg" width="28.583" height="13.944"
                             viewBox="0 0 28.583 13.944">
                             <rect id="長方形_12" data-name="長方形 12" width="28.583" height="13.944" rx="6.972"
@@ -37,7 +37,8 @@ export default {
             level2Pink: 'level2Pink',
             textFormLevel2: 'textFormLevel2',
             text: "出品者",
-            datas: [],
+            datas: {profile:{}},
+            logoSrc: ''
         }
     },
     mounted() {
@@ -49,6 +50,7 @@ export default {
             .then((response) => {
                 // レスポンスデータをコンポーネントのデータにセット
                 this.datas = response.data;
+                this.logoSrc = this.datas.profile.profile_image_path;
                 console.log(this.datas.profile);
             })
             .catch((error) => {

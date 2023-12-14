@@ -1,7 +1,7 @@
 <template>
     <div class="sellBase">
         <div class="sellorMain">
-            <img src="../../assets/gorira.png" class="selimg" />
+            <imgComp :className="circleLarge" :fileName="`../img/${imgName}`"></imgComp>
             <div class="sellorSubMain">
                 <div class="imageText">
                     <formText :level="textFormLevel4">{{ this.datas.profile.nickname }}</formText>
@@ -40,12 +40,14 @@
 <script>
 import formText from '../atoms/formText.vue';
 import ButtonWhiteShortBold from "../atoms/ComponentButton/ButtonWhiteShortBold.vue";
+import imgComp from '../atoms/imgComp.vue';
 import axios from 'axios';
 
 export default {
     components: {
         formText,
-        ButtonWhiteShortBold
+        ButtonWhiteShortBold,
+        imgComp
     },
     data() {
         return {
@@ -54,6 +56,8 @@ export default {
             width: '200px',
             text: 'プロフィールを編集する',
             datas: { profile:{ } },
+            imgName: 'gorira.png',
+            circleLarge: 'circleLarge'
         }
     },
     mounted() {
@@ -89,12 +93,6 @@ export default {
 }
 .buttonWhiteLight{
     padding-top: 20px;
-}
-img.selimg {
-    width: 95pt;
-    height: 95pt;
-    overflow: hidden;
-    border-radius: 50%;
 }
 
 .rating {
