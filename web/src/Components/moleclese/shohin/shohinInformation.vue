@@ -92,7 +92,8 @@ export default {
             text: "商品の情報",
             color: 'green'
         }
-    }
+    },
+    
 }
 </script>
 

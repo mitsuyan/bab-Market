@@ -71,11 +71,7 @@ export default {
 .tabGroup {
     position: fixed;
     z-index: 1000;
-    bottom: 1px;
-}
-.tabContent{
-    position: fixed;
-    left: 500px
+    bottom: 0;
 }
 .tabnav {
     display: flex;
@@ -98,5 +94,8 @@ ul {
     padding-inline-start: 0;
     margin-block-start: 0;
     margin-block-end: 0;
+}
+.tabContent {
+    position: fixed;
 }
 </style>

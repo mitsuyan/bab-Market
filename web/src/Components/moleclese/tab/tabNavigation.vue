@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <headerHome />
+        <headerHome @pushAction="tapNavi" />
     </div>
     <div class="homeTab">
         <div class="tabContainerContainer">

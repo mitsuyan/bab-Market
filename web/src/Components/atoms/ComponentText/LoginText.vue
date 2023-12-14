@@ -15,7 +15,7 @@
             </svg>
         </div>
             <div class="formControlLabel">EMAIL
-			    <input type="text" class="inputUser" v-model="inputEmail" />
+			<input type="text" class="inputUser" v-model="inputEmail" />
 			</div>
         </div>
         <div class="inputGroup">

@@ -5,6 +5,8 @@ import TopPages from '../Pages/TopPages.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
 import myPage from '../Pages/myPage.vue';
 import tradingSeller from '../Components/organisms/tradingSeller.vue';
+import LoginHome from '../Pages/LoginHome.vue';
+import CreateAcount from '../Pages/CreateAcount.vue';
 
 const routes = [
     // ルートの定義はここに
@@ -28,6 +30,14 @@ const routes = [
         name: 'tradingSeller',
         component: tradingSeller,
     },
+    {
+        path: '/LoginHome',
+        component: LoginHome
+    },
+    {
+        path: '/CreateAcount',
+        component: CreateAcount
+    }
 ];
 
 const router = createRouter({

@@ -1,11 +1,21 @@
 <template>
-    <img :src="`/dist/image/${fileName}`" :alt="altName" :class="className">
-    {{ text }}
+    <div class="imgCom">
+        <img :src="`/dist/image/${fileName}`" :alt="altName" :class="className">
+        <div><formText :level="level6">{{ text }}</formText></div>
+    </div>
 </template>
 
 <script>
-
+import formText from './formText.vue';
 export default{
+    data(){
+        return{
+            level6: 'level6'
+        }
+    },
+    components: {
+        formText
+    },
     props: {
         fileName: {
             type: String,
@@ -25,9 +35,7 @@ export default{
 </script>
 
 <style scoped>
-.back{
-    width: 10.29px;
-}
+
 .next{
     width: 10.29px;
  }
@@ -68,5 +76,11 @@ export default{
 
  .evaluationStarLevel2{
     height:15px;
+ }
+
+ .imgCom{
+    display: flex;
+    justify-content: end;
+    padding-right: 20px;
  }
 </style>

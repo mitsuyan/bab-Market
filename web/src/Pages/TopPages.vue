@@ -74,9 +74,3 @@ export default {
 };
 </script>
 
-<style>
-.mBase{
-    position: fixed;
-    left: 500px;
-}
-</style>

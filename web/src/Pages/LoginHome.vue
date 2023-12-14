@@ -23,7 +23,6 @@ import LoginText from '../Components/atoms/ComponentText/LoginText.vue';
 import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButton/ButtonRedSemicircleIconLongShadow.vue';
 import headerIcon from '../Components/headerIcon.vue';
 import accountLink from '../Components/accountLink.vue';
-import apiServices from '/services/apiService.js';
 import mainBase from '../Components/mainBase.vue';
 
 export default {
@@ -44,29 +43,6 @@ export default {
             userPass: 'pass',
             mainHeight: '699pt'
         };
-    },
-    methods: {
-        handleButtonClick() {
-            // ボタンがクリックされたときの処理をここに記述
-            this.handleLogin();
-        },
-        async handleLogin() {
-            try {
-                const response = await apiServices.login({
-                    email: this.userMail,
-                    password: this.userPass,
-                });
-                if (response.status === 200) {
-                    // ログイン成功時の処理
-                    console.log('ログイン成功');
-                } else if (response.status === 401) {
-                    // ログイン失敗時の処理
-                    console.log('メールアドレスもしくはパスワードが間違っています');
-                }
-            } catch (error) {
-                console.error(error.message);
-            }
-        }, 
     },
 }
 </script>

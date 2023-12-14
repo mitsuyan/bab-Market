@@ -28,7 +28,7 @@ export default {
         }
     },
     props: {
-        shohinLength: String
+        shohinLength: Number
     }
 }
 </script>
