@@ -119,8 +119,10 @@ export default {
             propText: "評価を更新する",
         };
     },
-    methods: {
-
+props:{
+    tradingId:{
+        type:Number,
+        default:4,
     },
     props: {
         tradingId: {
@@ -143,13 +145,19 @@ export default {
 
 }
 
-.tradingBuyerContainer {
+.tradingBuyerContainer{
     margin-top: 40px;
 }
 
-.tradingInformation {
+.tradingInformation{
     margin-top: 30px;
 }
+
+.tradingBuyerReviewCOntainer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+</style>
 
 .tradingBuyerReviewCOntainer {
     margin-top: 30px;
