@@ -1,6 +1,6 @@
 <template>
     <div class="refineHeadercontainer">
-            <img src="../../assets/back.svg" alt="a">
+        <img src="../../assets/back.svg" alt="a">
         <div>
             <headerText level="level2" :headerText="title"></headerText>
         </div>

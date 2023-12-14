@@ -5,6 +5,7 @@ import LoginHome from '../Pages/LoginHome.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
 import myPage from '../Pages/myPage.vue';
 import tradingSeller from '../Components/organisms/tradingSeller.vue';
+import CreateAcount from '../Pages/CreateAcount.vue';
 import tradingManagement from '../Pages/TradingManagement.vue';
 
 const routes = [
@@ -30,8 +31,15 @@ const routes = [
         component: tradingSeller,
     },
     {
+        path: '/LoginHome',
+        component: LoginHome
+    },
+    {
+        path: '/CreateAcount',
+        component: CreateAcount
+    },
+    {
         path: '/tradingManagement',
-        name: 'tradingManagement',
         component: tradingManagement,
     },
 ];

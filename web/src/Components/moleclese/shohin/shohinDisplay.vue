@@ -1,6 +1,15 @@
 <template>
-    <div class="productList">
+    <div class="productList" v-if="mypagejudg">
         <router-link to="/shohindetail" v-for="data in datas" :key="data.id" @click="tapAction" class="link">
+            <div class="product">
+                <img :src="data.product.productImagePath" loading="lazy" alt="商品画像">
+                <div class="product-name">{{ data.product.productName }}</div>
+                <div class="product-price">{{ formatCurrency(data.product.price) }}</div>
+            </div>
+        </router-link>
+    </div>
+    <div class="productList" v-else>
+        <router-link to="/shohindetail" v-for="data in datas.products" :key="data.id" @click="tapAction" class="link">
             <div class="product">
                 <img :src="data.product.productImagePath" loading="lazy" alt="商品画像">
                 <div class="product-name">{{ data.product.productName }}</div>
@@ -23,6 +32,11 @@ export default {
     props: {
         searchData: String,
         nowMypage: String
+    },
+    computed:{
+        mypagejudg(){
+            return this.nowMypage != 'mypage';
+        }
     },
     methods: {
         formatCurrency(price) {
@@ -71,6 +85,22 @@ export default {
                 .catch((error) => {
                     console.error('APIリクエストエラー:', error);
                 });
+        } else if (this.nowMypage == 'mypage'){
+                const userId = '1';
+                const apiUrl = `https://aso-2201402.main.jp/backend/api/users/${userId}/mypage`;
+                // Axiosを使用してAPIにリクエストを送信
+                axios
+                    .get(apiUrl)
+                    .then((response) => {
+                        // レスポンスデータをコンポーネントのデータにセット
+                        this.datas = response.data;
+                        this.shohinLen = this.datas.products.length
+                        this.$emit('Action', this.shohinLen);
+                        console.log(this.datas);
+                    })
+                    .catch((error) => {
+                        console.error('APIリクエストエラー:', error);
+                    });
         }
     },
 };

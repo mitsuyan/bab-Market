@@ -128,8 +128,7 @@ export default {
 
 .mainMenu {
   position: fixed;
-  z-index: 10001;
-  left: 500px;
+  z-index: 10000;
   bottom: 0px;
   background-color: rgba(20, 20, 20, 0.1);
   width: 431px;
@@ -137,9 +136,9 @@ export default {
 
 .menu {
   position: fixed;
-  z-index: 10002;
-  left: 587px;
+  z-index: 10000;
   bottom: 0px;
+  width: 431px;
 }
 
 .toggleBase{

@@ -57,7 +57,7 @@ export default {
         }
     },
     methods: {
-        handleClick(){
+        handleClick() {
             this.$emit('buttonClick')
         }
     }
@@ -77,9 +77,7 @@ export default {
     box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
-
-
-.nullDiv{
+.nullDiv {
     margin-left: 4px;
 }
 

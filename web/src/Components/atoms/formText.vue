@@ -114,4 +114,12 @@ export default{
     color:#444444;
 }
 
+.level6{
+    font-size:13px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#FF6969;
+}
+
 </style>

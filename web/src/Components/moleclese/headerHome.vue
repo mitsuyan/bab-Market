@@ -20,9 +20,40 @@
             </g></g></svg>
         </div>
     </div>
+    <div class="loginText" v-if="loginJuge">
+        <div class="log"><RouterLink to="/LoginHome" @click="loginTap" class="router"><formText :level="level6">ログイン</formText></RouterLink></div>
+        <div class="acount"><RouterLink to="/CreateAcount" @click="loginTap" class="router"><formText :level="level6">新規作成</formText></RouterLink></div>
+    </div>
 </template>
 <script>
+import formText from '../atoms/formText.vue';
 
+export default {
+    components: {
+        formText
+    },
+    data(){
+        return{
+            level6:'level6',
+            loginNow: false,
+            storege: [],
+        }
+    },
+    computed:{
+        loginJuge(){
+            return this.storege == null && this.loginNow != true;
+        }
+    },
+    methods: {
+        loginTap(){
+            this.$emit('pushAction');
+        }
+    },
+    mounted() {
+        this.storege = sessionStorage.getItem('loginUserData');
+        console.log(this.storege);
+    }
+}
 </script>
 
 <style scoped>
@@ -43,5 +74,18 @@
 .svgMessage{
     padding-left: 8pt;
     padding-right: 10pt;
+}
+.loginText{
+    display: flex;
+}
+.log{
+    padding: 0 10px;
+}
+.acount{
+    padding: 0 10px;
+}
+.router{
+    text-decoration:underline;
+    text-decoration-color:#FF6969;
 }
 </style>

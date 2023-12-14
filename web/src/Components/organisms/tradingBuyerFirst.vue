@@ -9,8 +9,9 @@
                 <profileLinkSmall></profileLinkSmall>
             </div>
             <div class="tradingInformation">
-                <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
-                        <headerTextSub level="level1Bold" text="購入者情報"></headerTextSub>
+                <div
+                    class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
+                    <headerTextSub level="level1Bold" text="購入者情報"></headerTextSub>
                 </div>
                 <tradingInformation></tradingInformation>
             </div>
@@ -28,8 +29,9 @@
                 <profileLinkSmall></profileLinkSmall>
             </div>
             <div class="tradingInformation">
-                <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
-                        <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
+                <div
+                    class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
+                    <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
                 </div>
                 <profileLinkSmall></profileLinkSmall>
                 <div class="tradingInformation"></div>
@@ -55,8 +57,9 @@
                 <profileLinkSmall></profileLinkSmall>
             </div>
             <div class="tradingInformation">
-                <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
-                        <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
+                <div
+                    class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
+                    <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
                 </div>
                 <profileLinkSmall></profileLinkSmall>
             </div>
@@ -80,14 +83,14 @@
                 <profileLinkSmall></profileLinkSmall>
             </div>
             <div class="tradingInformation">
-                <div class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
+                <div
+                    class="tradingHeadevscode-file://vscode-app/c:/Users/owner/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlrTextSub">
                     <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
                 </div>
                 <profileLinkSmall></profileLinkSmall>
             </div>
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -100,43 +103,44 @@ import tradingReview from '../moleclese/tradingReview.vue';
 import selectBox from '../atoms/selectBox.vue';
 import tradingReviewInput from '../moleclese/tradingReviewInput.vue';
 
-export default{
-components:{
-    tradingBase,
-    profileLinkSmall,
-    tradingInformation,
-    headerTextSub,
-    buttonRedLong,
-    tradingReview,
-    selectBox,
-    tradingReviewInput
-},
-data() {
-    return {
-        propText:"評価を更新する",
-    };
-  },
-methods: {
-
-},
+export default {
+    components: {
+        tradingBase,
+        profileLinkSmall,
+        tradingInformation,
+        headerTextSub,
+        buttonRedLong,
+        tradingReview,
+        selectBox,
+        tradingReviewInput
+    },
+    data() {
+        return {
+            propText: "評価を更新する",
+        };
+    },
 props:{
     tradingId:{
         type:Number,
         default:4,
     },
-}
+    props: {
+        tradingId: {
+            type: Number,
+            default: 4,
+        },
+    }
 };
 </script>
 
 <style scoped>
-
-.tradingContainer{
+.tradingContainer {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
 }
 
-.tradingHeaderTextSub{
+.tradingHeaderTextSub {
     margin-right: auto;
 
 }
@@ -155,4 +159,8 @@ props:{
 }
 </style>
 
-
+.tradingBuyerReviewCOntainer {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+</style>

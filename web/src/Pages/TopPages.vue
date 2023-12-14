@@ -51,7 +51,7 @@ export default {
             mainHeight: window.innerHeight + 'px', // 画面の高さを取得して設定
             mypageJudg: 'mypage',
             homeJudg: 'home',
-            searchpageJudg: 'search'
+            searchpageJudg: 'search',
         };
     },
     mounted() {
@@ -74,9 +74,3 @@ export default {
 };
 </script>
 
-<style>
-.mBase{
-    position: fixed;
-    left: 500px;
-}
-</style>

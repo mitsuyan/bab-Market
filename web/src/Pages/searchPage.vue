@@ -5,7 +5,7 @@
     <div class="shohin">
         <!-- 検索結果商品画面表示 -->
         <div v-if="screenDisplay">
-            <div>
+            <div v-if="togglePrint">
                 <toggleRefines />
             </div>
             <div>
@@ -51,6 +51,8 @@ export default {
     mounted() {
         // セッションストレージからデータを取得
         this.loadSessionData();
+        this.storege = sessionStorage.getItem('loginUserData');
+        console.log(this.storege);
     },
     data() {
         return {
@@ -58,7 +60,8 @@ export default {
             sessionItem: null,
             level5: 'level5',
             searchValue: null,
-            searchData: ''
+            searchData: '',
+            storege: []
         }
     },
     props: {
@@ -90,6 +93,9 @@ export default {
         },
         serchHistory() {
             return this.searchValue == null;
+        },
+        togglePrint(){
+            return this.storege != null;
         }
     }
 }
