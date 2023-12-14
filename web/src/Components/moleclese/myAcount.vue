@@ -57,7 +57,7 @@ export default {
             text: 'プロフィールを編集する',
             datas: { profile:{ } },
             imgName: 'gorira.png',
-            circleLarge: 'circleLarge'
+            circleLarge: 'circleLarge',
         }
     },
     mounted() {

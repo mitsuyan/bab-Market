@@ -44,6 +44,7 @@ export default {
     },
     methods: {
         handleButtonClick() {
+            this.$router.push("/dist/");
             axios.post('https://aso-2201402.main.jp/backend/api/auth/signup', {
                 "email": "sample1@email.com",
                 "password": "string",
