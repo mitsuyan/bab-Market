@@ -77,8 +77,6 @@ export default {
     box-shadow: 8pt 8pt 15pt #E7EAF0;
 }
 
-
-
 .nullDiv {
     margin-left: 4px;
 }
@@ -87,4 +85,5 @@ export default {
     margin-top: 4px;
     margin-right: 4px;
 }
+
 </style>
