@@ -69,4 +69,11 @@ export default{
  .evaluationStarLevel2{
     height:15px;
  }
+ .title{
+    height:84px;
+ }
+
+ .circleVector{
+    height:29.8px;
+ }
 </style>

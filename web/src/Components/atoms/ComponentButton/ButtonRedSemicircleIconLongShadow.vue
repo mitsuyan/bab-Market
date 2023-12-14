@@ -5,18 +5,25 @@
         padding: buttonPadding,
         width: buttonWidth
     }">
+        <div class="nullDiv">
+        </div>
         <div class="redtext">
             <buttonText :level="level3White" :propText="text" />
         </div>
-        <span :style="{ backgroundColor: arrowBackgroundColor }" class="arrow">{{ icon }}</span>
+        <div class="circle">
+            <ImgComp fileName="circleVectorPink.svg" className="circleVector"></ImgComp>
+        </div>
     </button>
 </template>
 
 <script>
 import buttonText from '../buttonText.vue';
+import ImgComp from '../imgComp.vue';
+
 export default {
     components: {
-        buttonText
+        buttonText,
+        ImgComp,
     },
     props: {
         back_color: {
@@ -61,37 +68,24 @@ export default {
 .loginProcess {
     display: flex;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    justify-content: space-between;
     border-radius: 23px;
     font-size: 17px;
     border: none;
     height: 34pt;
     box-shadow: 8pt 8pt 15pt #E7EAF0;
-    margin: 13pt 19pt;
 }
 
-.redtext {
-    display: flex;
-    align-items: center;
-    margin-left: 20pt;
+
+
+.nullDiv{
+    margin-left: 4px;
 }
 
-.arrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1em;
-    font-weight: bold;
-    color: #FF6969;
+.circle {
+    margin-top: 4px;
+    margin-right: 4px;
 }
-.level3White {
-    padding-left: 20pt;
-}
+
 </style>

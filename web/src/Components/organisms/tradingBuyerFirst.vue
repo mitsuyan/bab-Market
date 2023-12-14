@@ -1,7 +1,7 @@
 <template>
     <div v-if="tradingId === 1" class="tradingContainer">
         <tradingBase></tradingBase>
-        <div>
+        <div class="tradingBuyerContainer">
             <div class="tradingInformation">
                 <div class="tradingHeaderTextSub">
                     <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
@@ -19,8 +19,8 @@
 
     <div v-else-if="tradingId === 2" class="tradingContainer">
         <tradingBase :tradeId="2"></tradingBase>
-        <div>
-            <buttonRedLong></buttonRedLong>
+        <div class="tradingBuyerContainer">
+            <buttonRedLong propText="商品が到着しました"></buttonRedLong>
             <div class="tradingInformation">
                 <div class="tradingHeaderTextSub">
                     <headerTextSub level="level1Bold" text="出品者情報"></headerTextSub>
@@ -32,18 +32,21 @@
                         <headerTextSub level="level1Bold" text="商品情報"></headerTextSub>
                 </div>
                 <profileLinkSmall></profileLinkSmall>
+                <div class="tradingInformation"></div>
                 <tradingInformation></tradingInformation>
             </div>
         </div>
     </div>
 
     <div v-else-if="tradingId === 3" class="tradingContainer">
-        <tradingBase :tradeId="3"></tradingBase>
-        <div>
+        <tradingBase trader="seller" :tradeId="3"></tradingBase>
+        <div class="tradingBuyerContainer">
             <tradingReview></tradingReview>
-            <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
-            <selectBox></selectBox>
-            <tradingReviewInput></tradingReviewInput>
+            <div class="tradingBuyerReviewCOntainer">
+                <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
+                <selectBox></selectBox>
+                <tradingReviewInput></tradingReviewInput>
+            </div>
             <buttonRedLong :propText="propText"></buttonRedLong>
             <div class="tradingInformation">
                 <div class="tradingHeaderTextSub">
@@ -61,12 +64,14 @@
     </div>
 
     <div v-else-if="tradingId === 4" class="tradingContainer">
-        <tradingBase :tradeId="4"></tradingBase>
-        <div>
+        <tradingBase trader="seller" :tradeId="4"></tradingBase>
+        <div class="tradingBuyerContainer">
             <tradingReview></tradingReview>
-            <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
-            <selectBox></selectBox>
-            <tradingReviewInput></tradingReviewInput>
+            <div class="tradingBuyerReviewCOntainer">
+                <headerTextSub level="level3" text="商品の評価コメントを更新しましょう！"></headerTextSub>
+                <selectBox></selectBox>
+                <tradingReviewInput></tradingReviewInput>
+            </div>
             <buttonRedLong :propText="propText"></buttonRedLong>
             <div class="tradingInformation">
                 <div class="tradingHeaderTextSub">
@@ -117,7 +122,7 @@ methods: {
 props:{
     tradingId:{
         type:Number,
-        default:3,
+        default:4,
     },
 }
 };
@@ -136,7 +141,18 @@ props:{
 
 }
 
+.tradingBuyerContainer{
+    margin-top: 40px;
+}
 
+.tradingInformation{
+    margin-top: 30px;
+}
+
+.tradingBuyerReviewCOntainer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 </style>
 
 

@@ -14,8 +14,11 @@
                 </g></g></g>
             </svg>
         </div>
-            <div class="formControlLabel">EMAIL
-		<input type="text" class="inputUser" v-model="inputEmail" />
+            <div>
+                <div class="formControlLabel">
+                    EMAIL
+                </div>
+                <input type="text" class="inputUser inputText" v-model="inputEmail" />
 			</div>
         </div>
         <div class="inputGroup">
@@ -30,9 +33,12 @@
 					<circle id="楕円形_21" data-name="楕円形 21" cx="0.898" cy="0.898" r="0.898" transform="translate(10.352 13.954)" fill="#727c8e"/>
 					</g></g></g>
 				</svg></div>
-            <div class="formControlLabel">PASSWORD
-            <input type="password" class="inputPass" v-model="inputPass" />
-			</div>
+            <div>
+                <div class="formControlLabel">
+                    PASSWORD
+                </div>
+                <input type="password" class="inputPass inputText" v-model="inputPass" />
+            </div>
         </div>
     </div>
 </template>
@@ -90,14 +96,22 @@ export default {
     box-shadow: 0 0 0;
 }
 
+.inputText{
+    font-size:16px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#515C6F;
+}
+
 .formControlLabel {
-    font-size: 10px;
-    color: #6C6C6C;
-    font-weight: bold;
-    letter-spacing: 1px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
+    font-size:12px;
+    font-family:neusa-next-std,'游ゴシック Medium', sans-serif;
+    font-weight: 400;
+    font-style: Bold;
+    color:#515C6F;
+    opacity: 50%;
+    letter-spacing:0.84px;
 }
 
 .loginInputForm{

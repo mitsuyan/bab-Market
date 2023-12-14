@@ -8,7 +8,7 @@
             <Rectangle33Radius />
         </div>
         <div class="buttoIcon">
-            <ButtonRedSemicircleIconLongShadow :buttonWidth="buttonWidth" :text="text" />
+            <ButtonRedSemicircleIconLongShadow @click="handleButtonClick" :buttonWidth="buttonWidth" :text="text" />
         </div>
         <div class="formConsentText">
             <formText :level="textFormLabelBluegray">アカウント作成することで、当社の利用規約と<br>プライバシーポリシーに同意します。</formText>
@@ -23,6 +23,7 @@ import ButtonRedSemicircleIconLongShadow from '../Components/atoms/ComponentButt
 import formText from '../Components/atoms/formText.vue';
 import mainBase from '../Components/mainBase.vue';
 import headerIcon from '../Components/headerIcon.vue';
+import axios from 'axios';
 
 export default {
     name: 'CreateAcount',
@@ -40,7 +41,23 @@ export default {
             mainHeight: '699pt',
             textFormLabelBluegray: 'textFormLabelBluegray'
         }
-    }
+    },
+    methods: {
+        handleButtonClick() {
+            axios.post('https://aso-2201402.main.jp/backend/api/auth/signup',{
+                    "email": "sample1@email.com",
+                    "password": "string",
+                    "nickname":"String"
+                    }
+            )
+            .then(response => {
+                console.log(response.data); // レスポンスデータの取得
+            })
+            .catch(error => {
+                console.error('エラーが発生しました:', error);
+            });
+        },
+    },
 }
 </script>
 <style>

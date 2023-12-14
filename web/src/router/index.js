@@ -5,6 +5,7 @@ import LoginHome from '../Pages/LoginHome.vue';
 import shohinDetail from '../Pages/shohinDetail.vue';
 import myPage from '../Pages/myPage.vue';
 import tradingSeller from '../Components/organisms/tradingSeller.vue';
+import tradingManagement from '../Pages/TradingManagement.vue';
 
 const routes = [
     // ルートの定義はここに
@@ -27,6 +28,11 @@ const routes = [
         path: '/tradingSeller',
         name: 'tradingSeller',
         component: tradingSeller,
+    },
+    {
+        path: '/tradingManagement',
+        name: 'tradingManagement',
+        component: tradingManagement,
     },
 ];
 
